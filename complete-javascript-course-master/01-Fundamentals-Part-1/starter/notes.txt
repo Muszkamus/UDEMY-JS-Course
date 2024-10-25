@@ -1,0 +1,31 @@
+let name = "name"; #Stores the value as a string, start with small letter
+console.log(); #Print out console in the browser
+
+let firstName = "Jonas";
+console.log(firstName);
+
+***DATA TYPES***
+-Number = floating point numbers used for decimals and integer *let age = 23;
+-String = Sequence of characters used for text *let firstName = "Jonas";
+-Boolean = Logical type that can only be true or false *let fullage = true;
+-Undefined = Value taken vy a variable that is not yet defined *let children;
+-Null = Also mean empty value
+-Symbol = Value that is unique and cannot be changed
+-BigInt = Larger integers than the Number can hold
+
+***Comments**
+in JS = // and /* sample word */
+in HTML = <!-- sample word --!>
+
+***Type Of***
+let sample = true
+console.log(typeof sample); #Prints the type of data
+
+***Declaring variables***
+let = something that can be changed in the future code
+const = something that cannot be changed later (Use by default)
+var = used before 2015
+
+***Basic Operators***
+
+
