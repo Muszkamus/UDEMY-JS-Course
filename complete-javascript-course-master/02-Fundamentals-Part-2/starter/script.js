@@ -65,14 +65,14 @@ const age2 = calcAge2(1997);
 // Logs the values of 'age1' and 'age2' to the console
 console.log(age1, age2); */
 
-/*
+
 // Function expression
 // Defines a function named `calcAge2` using a function expression
 const calcAge2 = function (birthYear) {
   return 2024 - birthYear; // Calculates the age by subtracting birth year from 2024
 };
 
-// Arrow function
+//Arrow function
 // Defines a function named `calcAge3` using arrow function syntax
 const calcAge3 = birthYear => 2024 - birthYear; // Calculates the age by subtracting birth year from 2024
 
@@ -91,10 +91,10 @@ const yearsToRetirement = (birthYear, firstName) => {
 };
 
 // Calls `yearsToRetirement` with `1997` and `"Radek"` and logs the result to the console
-console.log(yearsToRetirement(1997, "Radek")); */
+console.log(yearsToRetirement(1997, "Radek"));
 
 
-/*//Functions Calling Other Functions
+//Functions Calling Other Functions
 // Function to cut fruit into pieces
 function cutFruitPieces(fruit) {
   return fruit * 4; // Returns the number of pieces by multiplying input by 4
@@ -111,12 +111,11 @@ function fruitProcessor(apples, oranges) {
 }
 
 // Calls fruitProcessor with 2 apples and 3 oranges, then logs the result
-console.log(fruitProcessor(2, 3)); */
+console.log(fruitProcessor(2, 3));
 
 
 
-//Reviewing Functions
-
+/*//Reviewing Functions
 // Function expression to calculate age based on birth year
 const calcAge = function (birthYear) {
   return 2024 - birthYear; // Calculates age by subtracting birth year from 2024
@@ -135,9 +134,10 @@ const yearsToRetirement = function (birthYear, firstName) {
   }
 };
 // Calls yearsToRetirement for two different cases
-yearsToRetirement(1940, "Radek"); // Radek born in 1940, likely already retired
-yearsToRetirement(2002, "Amy"); // Amy born in 2002, has years left until retirement
+yearsToRetirement(1997, "Person1"); // Radek born in 1940, likely already retired
+yearsToRetirement(1912, "Person2"); // Amy born in 2002, has years left until retirement
 
 // Function declaration - Functions that can be used before they’re declared in the code
 // Function expression - Functions stored in variables, useful for one-line or quick functions
-// Arrow Function - Great for a quick one-line functions.
+// Arrow Function - Great for a quick one-line functions.*/
+
