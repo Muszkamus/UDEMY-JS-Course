@@ -79,6 +79,7 @@ else {
 
 if (favourite !== 23) console.log(`Why not 23`) //!== means is not */
 
+
 /*const hasDriverLicense = true;
 const hasGoodVision = true;
 console.log(hasDriverLicense && hasGoodVision) // AND
@@ -101,3 +102,42 @@ if (shouldDrive){
 else {`Not Good to drive`} */
 
 
+/*
+//Switch Statetements//
+const day = 'monday';
+
+switch(day){
+  case 'monday': // day === 'monday'
+    console.log("MONDAAAY")
+  break;
+  case 'tuesday':
+    console.log("TUESDAYYY")
+    break;
+    case 'wednesday':
+    case 'thursday':
+      console.log("THUERSSSDAYY")
+      break
+  case 'Friday':
+    console.log("FRIDAAY FRIDAAY )
+    break;
+  case ' saturday':
+  case 'sunday':
+      console.log("Enjoy your SUNDAAAY")
+      break;
+  default:
+    console.log("Not a valid day")
+}
+
+*/
+
+// Define a constant variable 'age' and assign it the value 28
+/*const age = 28;
+
+// Use a ternary operator to determine the value of 'drink' based on 'age'
+// If 'age' is 18 or older, 'drink' will be set to "Wine"
+// Otherwise, 'drink' will be set to "Water"
+const drink = age >= 18 ? "Wine" : "Water";
+
+// Print the value of 'drink' to the console
+// In this case, since age is 28 (which is greater than 18), it will output "Wine"
+console.log(drink); */

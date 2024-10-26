@@ -1,5 +1,6 @@
+***activating strict mode***
 'use strict'; // Enforces strict mode, which catches common errors and enforces stricter syntax rules
-/*
+
 // Declares a variable 'hasDriverLicense' and initializes it as false
 let hasDriverLicense = false;
 
@@ -15,8 +16,9 @@ if (hasDriverLicense) console.log("I can drive");
 // Tries to declare two constants with names 'interface' and 'private'
 // In strict mode, using 'interface' and 'private' as variable names will cause an error
 const interface = "Audio"; // Error: 'interface' is a reserved word
-const private = 534;       // Error: 'private' is a reserved word */
-/*
+const private = 534;       // Error: 'private' is a reserved word
+
+***Functions***
 // Declares a function named 'logger' with no parameters
 function logger() {
   console.log("My name is Radek"); // Logs "My name is Radek" to the console
@@ -38,9 +40,9 @@ console.log(appleJuice); // Logs the result "Juice with 5 apples and 0 oranges"
 
 // Calls 'fruitProcessor' with 2 apples and 4 oranges, and stores the result in 'orangeJuice'
 const orangeJuice = fruitProcessor(2, 4);
-console.log(orangeJuice); // Logs the result "Juice with 2 apples and 4 oranges" */
+console.log(orangeJuice); // Logs the result "Juice with 2 apples and 4 oranges"
 
-
+***Function Declarations vs. Expressions
 // Function declaration
 // Declares a function called 'calcAge1' that takes 'birthYear' as a parameter
 function calcAge1(birthYear) {
@@ -64,4 +66,3 @@ const age2 = calcAge2(1997);
 
 // Logs the values of 'age1' and 'age2' to the console
 console.log(age1, age2);
-
