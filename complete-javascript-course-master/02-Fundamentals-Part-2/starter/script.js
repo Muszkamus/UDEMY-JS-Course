@@ -82,6 +82,10 @@ const age3 = calcAge3(1997);
 // Logs `age3` to the console, which is the calculated age
 console.log(age3);
 
+
+
+
+
 // Arrow function with multiple parameters
 // Defines a function named `yearsToRetirement` that takes `birthYear` and `firstName` as parameters
 const yearsToRetirement = (birthYear, firstName) => {
@@ -92,6 +96,13 @@ const yearsToRetirement = (birthYear, firstName) => {
 
 // Calls `yearsToRetirement` with `1997` and `"Radek"` and logs the result to the console
 console.log(yearsToRetirement(1997, "Radek"));
+
+
+
+
+
+
+
 
 
 //Functions Calling Other Functions
@@ -109,7 +120,6 @@ function fruitProcessor(apples, oranges) {
   const juice = `Juice with ${applePieces} apple pieces and ${orangePieces} orange pieces`;
   return juice; // Returns the juice description
 }
-
 // Calls fruitProcessor with 2 apples and 3 oranges, then logs the result
 console.log(fruitProcessor(2, 3));
 
