@@ -142,3 +142,7 @@ yearsToRetirement(2002, "Amy"); // Amy born in 2002, has years left until retire
 // Function declaration - Functions that can be used before they’re declared in the code
 // Function expression - Functions stored in variables, useful for one-line or quick functions
 // Arrow Function - Great for a quick one-line functions.
+
+
+
+***Arrays***

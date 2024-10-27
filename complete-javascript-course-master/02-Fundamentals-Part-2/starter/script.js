@@ -64,7 +64,7 @@ const age2 = calcAge2(1997);
 
 // Logs the values of 'age1' and 'age2' to the console
 console.log(age1, age2); */
-
+/*
 
 // Function expression
 // Defines a function named `calcAge2` using a function expression
@@ -121,7 +121,7 @@ function fruitProcessor(apples, oranges) {
   return juice; // Returns the juice description
 }
 // Calls fruitProcessor with 2 apples and 3 oranges, then logs the result
-console.log(fruitProcessor(2, 3));
+console.log(fruitProcessor(2, 3)); */
 
 
 
@@ -151,3 +151,30 @@ yearsToRetirement(1912, "Person2"); // Amy born in 2002, has years left until re
 // Function expression - Functions stored in variables, useful for one-line or quick functions
 // Arrow Function - Great for a quick one-line functions.*/
 
+const friends = ["Michael", "Steven", "Peter"] //literal syntax
+console.log(friends)
+
+console.log(friends[0]) //prints fir object in the array
+console.log(friends.length) //prints the length of the array
+console.log(friends[friends.length-1]) //prints last object, javascript expects expresion not a statement
+friends[2] = "Jay" //Third array gets changed
+
+console.log(friends)
+
+const firstname = "John"
+const radek = [firstname, "Smith", 2024-1991, "Teacher", friends]
+console.log(radek)
+
+
+//Exercise
+const calcAge = function (birthYear) {
+  return 2024 - birthYear
+}
+const years = [1990,1967,2002,2021,2018]
+const age1 = calcAge(years[0])
+const age2 = calcAge(years[1])
+const age3 = calcAge(years[2])
+console.log(age1,age2,age3)
+
+const ages = [age1,age2,age3]
+console.log(ages)
