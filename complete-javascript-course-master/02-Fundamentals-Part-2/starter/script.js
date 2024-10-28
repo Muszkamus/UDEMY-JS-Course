@@ -151,7 +151,7 @@ yearsToRetirement(1912, "Person2"); // Amy born in 2002, has years left until re
 // Function expression - Functions stored in variables, useful for one-line or quick functions
 // Arrow Function - Great for a quick one-line functions.*/
 
-const friends = ["Michael", "Steven", "Peter"] //literal syntax
+/*const friends = ["Michael", "Steven", "Peter"] //literal syntax
 console.log(friends)
 
 console.log(friends[0]) //prints fir object in the array
@@ -177,4 +177,33 @@ const age3 = calcAge(years[2])
 console.log(age1,age2,age3)
 
 const ages = [age1,age2,age3]
-console.log(ages)
+console.log(ages) */
+
+//Basic array operations (Methods)
+
+//Add elements
+
+const friends = ["Michael", "Steven", "Peter"]
+const newLength = friends.push("Jay") //adds at the end
+console.log(friends)
+console.log(newLength)
+
+friends.unshift("John") //adds at the beginning
+console.log(friends)
+
+//Remove elements
+friends.pop() //removes last one
+const popped = friends.pop()
+console.log(popped) //shows which one was removed
+console.log(friends)
+
+friends.shift() //removes first one
+console.log(friends)
+
+console.log(friends.indexOf("Steven")) //shows the position /index
+console.log(friends.indexOf("BOB")) //IT will pop -1 as it is not in the array
+
+
+console.log(friends.includes("Steven")) //True as is it in the array
+console.log(friends.includes("Bob")) //False as it is not in the array
+
