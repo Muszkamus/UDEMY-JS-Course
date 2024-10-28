@@ -1,10 +1,10 @@
-***activating strict mode***
+# **Activating strict mode**
+```js
 'use strict'; // Enforces strict mode, which catches common errors and enforces stricter syntax rules
 
 // Declares a variable 'hasDriverLicense' and initializes it as false
 let hasDriverLicense = false;
-
-// Declares a constant 'passTest' and sets it to true
+  // Declares a constant 'passTest' and sets it to true
 const passTest = true;
 
 // Checks if 'passTest' is true, and if so, assigns true to 'hasDriverLicense'
@@ -17,8 +17,9 @@ if (hasDriverLicense) console.log("I can drive");
 // In strict mode, using 'interface' and 'private' as variable names will cause an error
 const interface = "Audio"; // Error: 'interface' is a reserved word
 const private = 534;       // Error: 'private' is a reserved word
-
-***Functions***
+```
+# **Functions**
+```js
 // Declares a function named 'logger' with no parameters
 function logger() {
   console.log("My name is Radek"); // Logs "My name is Radek" to the console
@@ -41,8 +42,9 @@ console.log(appleJuice); // Logs the result "Juice with 5 apples and 0 oranges"
 // Calls 'fruitProcessor' with 2 apples and 4 oranges, and stores the result in 'orangeJuice'
 const orangeJuice = fruitProcessor(2, 4);
 console.log(orangeJuice); // Logs the result "Juice with 2 apples and 4 oranges"
-
-***Function Declarations vs. Expressions
+```
+# **Function Declarations vs. Expressions**
+```js
 // Function declaration
 // Declares a function called 'calcAge1' that takes 'birthYear' as a parameter
 function calcAge1(birthYear) {
@@ -66,9 +68,10 @@ const age2 = calcAge2(1997);
 
 // Logs the values of 'age1' and 'age2' to the console
 console.log(age1, age2);
+```
 
-
-***Arrow Functions***
+# **Arrow Functions**
+```js
 // Function expression
 // Defines a function named `calcAge2` using a function expression
 const calcAge2 = function (birthYear) {
@@ -96,14 +99,15 @@ const yearsToRetirement = (birthYear, firstName) => {
 // Calls `yearsToRetirement` with `1997` and `"Radek"` and logs the result to the console
 console.log(yearsToRetirement(1997, "Radek"));
 
-
-***Functions Calling Other Functions***
+```
+# **Functions Calling Other Functions**
+```js
 // Function to cut fruit into pieces
 function cutFruitPieces(fruit) {
   return fruit * 4; // Returns the number of pieces by multiplying input by 4
 }
 
-// Function to process fruits by calling another function
+// -  Function to process fruits by calling another function
 function fruitProcessor(apples, oranges) {
   const applePieces = cutFruitPieces(apples); // Calls cutFruitPieces to get apple pieces
   const orangePieces = cutFruitPieces(oranges); // Calls cutFruitPieces to get orange pieces
@@ -115,9 +119,10 @@ function fruitProcessor(apples, oranges) {
 
 // Calls fruitProcessor with 2 apples and 3 oranges, then logs the result
 console.log(fruitProcessor(2, 3));
+```
 
-***Reviewing Functions***
-
+# **Reviewing Functions**
+```js
 // Function expression to calculate age based on birth year
 const calcAge = function (birthYear) {
   return 2024 - birthYear; // Calculates age by subtracting birth year from 2024
@@ -142,7 +147,7 @@ yearsToRetirement(2002, "Amy"); // Amy born in 2002, has years left until retire
 // Function declaration - Functions that can be used before they’re declared in the code
 // Function expression - Functions stored in variables, useful for one-line or quick functions
 // Arrow Function - Great for a quick one-line functions.
+```
 
 
-
-***Arrays***
+# **Arrays**

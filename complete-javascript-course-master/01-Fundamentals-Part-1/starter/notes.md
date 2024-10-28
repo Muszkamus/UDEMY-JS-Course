@@ -4,29 +4,34 @@ console.log(); //Print out console in the browser
 let firstName = "Jonas";
 console.log(firstName);
 
-***DATA TYPES***
--Number = floating point numbers used for decimals and integer *let age = 23;
--String = Sequence of characters used for text *let firstName = "Jonas";
--Boolean = Logical type that can only be true or false *let fullage = true;
--Undefined = Value taken vy a variable that is not yet defined *let children;
--Null = Also mean empty value
--Symbol = Value that is unique and cannot be changed
--BigInt = Larger integers than the Number can hold
+# **DATA TYPES**
 
-***Comments**
+* Number = floating point numbers used for decimals and integer `let age = 23;*`
+* String = Sequence of characters used for text ` let firstName = "Jonas";`
+* Boolean = Logical type that can only be true or false ` let fullage = true; `
+* Undefined = Value taken by  a variable that is not yet defined ` let children;`
+* Null = Also mean empty value
+* Symbol = Value that is unique and cannot be changed
+* BigInt = Larger integers than the Number can hold
+
+# **Comments**
+
 in JS = // and /* sample word */
 in HTML = <!-- sample word --!>
 
-***Type Of***
+# **Type Of**
+```js
 let sample = true
-console.log(typeof sample); #Prints the type of data
+console.log(typeof sample); //Prints the type of data
+```
 
-***Declaring variables***
+# **Declaring variables**
 let = something that can be changed in the future code
 const = something that cannot be changed later (Use by default)
 var = used before 2015
 
-***Basic Operators***
+# **Basic Operators**
+```js
 ***Assignment Operators
 let x = 10 + 5; //The value is 15
 x += 10; // x = x + 10 = 25
@@ -34,17 +39,19 @@ x *= 4; // x = x * 4 =100
 x++; // x = x + 1
 x--; // x = x - 1
 
+```
+# **Operator Precedence**
 
-***Operator Precedence***
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
 
+```js
  x = y = 25 - 10 - 5 // x = y = 10
-
 const averageage = (ageJonas + ageSarah) /2
 console.log(ageJonas, ageSarah, averageage)
+```
+# **Template literals**
+```js
 
-
-***Template literals***
 const firstName = "Radek";
 const job = "Teacher";
 const birthYear = 1997;
@@ -56,9 +63,10 @@ console.log(radek)
 
 const radekNew = `I'm ${firstName} , a ${year - birthYear} year old ${job}`; //use backticks to use template string, above tab key
 console.log(radekNew)
+```
 
-**If Else statetements***
-
+# **If Else statetements**
+```js
 const age = 15;
 if(age >= 18){
   console.log(`You are old enough to drive`)
@@ -67,11 +75,12 @@ else{
   const yearsleft = 18 - age;
   console.log(`You need ${yearsleft} more years to drive!`)
 }
+```
 
-
-***Type conversion and Coercion***
---Type conversion is when we manually convert frrom one to another
---Type coercion is automatically done by JS
+# **Type conversion and Coercion**
+```js
+Type conversion is when we manually convert frrom one to another
+Type coercion is automatically done by JS
 
 //type conversion
 const inputYear = `1991`;
@@ -81,8 +90,10 @@ console.log(Number(inputYear) + 18) //This will be printed as number
 //type coercion
 console.log("I am " + 23 + "years old"); //The number gets converted to a string due to plus sign
 console.log("23" - "10" - 3); //The numbers(strings) get converted to number due to minus sign */
+```
+# **Falsy values**
+```js
 
-***Falsy values***
 0,'',undefined,null,NaN
 
 const money = 0 // Value here is false. It would work the same if it would be empty(Undefined)
@@ -92,8 +103,10 @@ if (money){
 else{
   console.log(`You should get a job`) //Hence this line will be printed, because it is false
 }
+```
+# **Equality operators**
 
-***Equality operators***
+```js
 const age = '18'
 if(age === 18) console.log(`you just became an adult! (strict)`) //(Strict will only match the same type )In this case, 18 === 18 is true, anything else will be false
 if(age == 18) console.log(`you just became an adult! (loose)`) //(Loose)In this case, 18 == 18 for number and string is true, anything else will be false
@@ -112,9 +125,12 @@ else {
 }
 
 if (favourite !== 23) console.log(`Why not 23`) //!== means is not
+```
 
-***Logical operators***
-/*const hasDriverLicense = true;
+# **Logical operators**
+
+```js
+const hasDriverLicense = true;
 const hasGoodVision = true;
 console.log(hasDriverLicense && hasGoodVision) // AND
 console.log(hasDriverLicense || hasGoodVision) // OR
@@ -122,10 +138,10 @@ console.log(!hasDriverLicense) // Swapping the value
 
 const shouldDrive = hasDriverLicense && hasDriverLicense
 
-// if (shouldDrive){
-//   console.log(`Good to drive!`)
-// }
-// else {`Not Good to drive`}
+ if (shouldDrive){
+   console.log(`Good to drive!`)
+ }
+ else {`Not Good to drive`}
 
 const isTired = false;  // C
 console.log(hasDriverLicense && hasGoodVision && !isTired) //has driving license, has good vision, is not tired
@@ -133,10 +149,13 @@ console.log(hasDriverLicense && hasGoodVision && !isTired) //has driving license
 if (shouldDrive){
   console.log(`Good to drive!`)
 }
-else {`Not Good to drive`} */
+else {`Not Good to drive`} 
+```
 
-***Switch statetements***
-/*const day = 'monday';
+# **Switch statetements**
+
+```js
+const day = 'monday';
 
 switch(day){
   case 'monday': // day === 'monday'
@@ -158,16 +177,17 @@ switch(day){
       break;
   default:
     console.log("Not a valid day")
-}*/
+    }
+```
 
-***Statements and expressions***
+# **Statements and expressions**
 expressions = 3+4, 1991, true && false && !false //They are more like values
 
 Statements = if (23 > 10) { // They are more like sentences
   const str = "23 is bigger"
 }
 
-***The conditional (Ternary) Operator***
+# **The conditional (Ternary) Operator**
 // Define a constant variable 'age' and assign it the value 28
 const age = 28;
 
