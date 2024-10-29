@@ -182,6 +182,7 @@ console.log(ages) */
 //Basic array operations (Methods)
 
 //Add elements
+/*
 
 const friends = ["Michael", "Steven", "Peter"]
 const newLength = friends.push("Jay") //adds at the end
@@ -205,5 +206,5 @@ console.log(friends.indexOf("BOB")) //IT will pop -1 as it is not in the array
 
 
 console.log(friends.includes("Steven")) //True as is it in the array
-console.log(friends.includes("Bob")) //False as it is not in the array
+console.log(friends.includes("Bob")) //False as it is not in the array */
 

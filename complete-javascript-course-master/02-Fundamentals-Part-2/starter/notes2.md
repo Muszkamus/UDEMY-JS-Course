@@ -151,3 +151,64 @@ yearsToRetirement(2002, "Amy"); // Amy born in 2002, has years left until retire
 
 
 # **Arrays**
+> Blockquote
+
+```js
+
+const friends = ["Michael", "Steven", "Peter"] //literal syntax
+console.log(friends)
+
+console.log(friends[0]) //prints fir object in the array
+console.log(friends.length) //prints the length of the array
+console.log(friends[friends.length-1]) //prints last object, javascript expects expresion not a statement
+friends[2] = "Jay" //Third array gets changed
+
+console.log(friends)
+
+const firstname = "John"
+const radek = [firstname, "Smith", 2024-1991, "Teacher", friends]
+console.log(radek)
+
+//Exercise
+const calcAge = function (birthYear) {
+  return 2024 - birthYear
+}
+const years = [1990,1967,2002,2021,2018]
+const age1 = calcAge(years[0])
+const age2 = calcAge(years[1])
+const age3 = calcAge(years[2])
+console.log(age1,age2,age3)
+
+const ages = [age1,age2,age3]
+console.log(ages)
+```
+
+# **Basic array operations (Methods)**
+```js 
+//Add elements
+
+const friends = ["Michael", "Steven", "Peter"]
+const newLength = friends.push("Jay") //adds at the end
+console.log(friends)
+console.log(newLength)
+
+friends.unshift("John") //adds at the beginning
+console.log(friends)
+
+//Remove elements
+
+friends.pop() //removes last one
+const popped = friends.pop()
+console.log(popped) //shows which one was removed
+console.log(friends)
+
+friends.shift() //removes first one
+console.log(friends)
+
+console.log(friends.indexOf("Steven")) //shows the position /index
+console.log(friends.indexOf("Bob")) //It will pop -1 as it is not in the array
+
+console.log(friends.includes("Steven")) //True as is it in the array
+console.log(friends.includes("Bob")) //False as it is not in the array
+```
+
