@@ -28,6 +28,10 @@ const bills = [
   44,
 ]
 
+function calcTip(){
+
+  
+}
 
 
 
