@@ -7,7 +7,7 @@ and if the value is different, the tip is 20%.
 
 Your tasks:
 
-Write a function calcTip that takes any bill value as an input and returns the corresponding tip, 
+***Write a function calcTip that takes any bill value as an input and returns the corresponding tip, 
 calculated based on the rules above (you can check out the code from the first tip calculator challenge
  if you need to). Use the function type you like the most. Test the function using a bill value of 100.
 
@@ -22,16 +22,20 @@ TEST DATA: 125, 555, and 44.
 */
 
 
-const bills = [
-  125,
-  555,
-  44,
-]
+/* Write your code below. Good luck! 🙂 */
 
-function calcTip(){
+const bill = [125,555,44]
 
+function calcTip(x){
+  let total = x
+  let tip = x  >= 50 && x <=300 ? (x * 0.15) : (x * 0.2); 
+  console.log(`Total: ${total} + Tip: ${tip}`)
+  return total, tip
   
 }
+const bill1 = calcTip(bill[1])
+
+
 
 
 
