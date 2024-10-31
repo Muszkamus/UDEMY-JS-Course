@@ -428,3 +428,6 @@ console.log(friends.includes("Steven")) //True as is it in the array
 console.log(friends.includes("Bob")) //False as it is not in the array
 ```
 
+
+
+# 42. **Introduction to Objects**
