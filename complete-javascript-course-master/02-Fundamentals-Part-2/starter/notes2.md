@@ -431,3 +431,82 @@ console.log(friends.includes("Bob")) //False as it is not in the array
 
 
 # 42. **Introduction to Objects**
+
+In JavaScript, arrays and objects are both data structures, but they are suited to different types of data:
+
+Arrays are used for ordered data, where the order matters and each item is identified by its position (or index) in the list. Arrays work well for lists where the order and sequence of elements are important.
+
+Objects are used for unordered or unstructured data. In objects, data is organized into key-value pairs, making it easy to access values by their keys rather than by position. The order of properties in an object doesn't matter, so objects provide flexibility in managing collections of related data without worrying about order.
+
+```js
+const objects = {
+  firstName: "Jon",
+  lastName: "Snow",
+  age: 2024 - 1978,
+  job: "Killa",
+  friends: ["Michael", "Peter", "Steven"]
+}
+```
+This person object organizes information by descriptive keys, making it easy to access attributes like firstName or job directly by name.
+
+# 43. **Dot. vs Bracket Notation**
+
+```js
+const objects = {
+  firstName: "Jon",
+  lastName: "Snow",
+  age: 2024 - 1978,
+  job: "Killa",
+  friends: ["Michael", "Peter", "Steven"]
+};
+```
+Here, an object objects is defined with properties such as firstName, lastName, age, job, and friends. The age is calculated by subtracting 1978 from 2024, which will evaluate to 46. This object serves as a collection of information about a character.
+```js 
+console.log(objects.firstName); // dot notation
+console.log(objects["firstName"]); // bracket notation
+```
+Both lines here retrieve the firstName property of the object in two different ways:
+
+Dot notation (e.g., objects.firstName) directly accesses the property.
+Bracket notation (e.g., objects["firstName"]) accesses the property by providing a string key, which can be particularly useful for dynamic keys.
+```js
+
+const nameKey = "Name";
+console.log(objects['first' + nameKey]); // prints 'Jon'
+console.log(objects['last' + nameKey]); // causes an error
+```
+nameKey is a variable with the value "Name".
+The expression 'first' + nameKey becomes "firstName", so objects["firstName"] retrieves and prints "Jon".
+```js
+const interestedIn = prompt("What do you want to know?- firstName, lastName, age, job and friends");
+```
+The code prompts the user to enter a key (e.g., firstName, lastName, etc.). The response is saved in the interestedIn variable.
+
+```js
+if (objects[interestedIn]) {
+  console.log(objects[interestedIn]);
+} else {
+  console.log("not on the list, wrong request");
+}
+```
+This conditional checks if objects[interestedIn] exists:
+
+If it does, it prints the value.
+If not, it displays "not on the list, wrong request".
+This is a way to handle user errors gracefully by checking if the input corresponds to a valid key.
+```js
+objects.location = "Spain";
+objects["Twitter"] = "@TWITTIEEE";
+console.log(objects);
+```
+
+This part shows how to add new properties to an existing object:
+
+objects.location = "Spain"; adds a location property.
+objects["Twitter"] = "@TWITTIEEE"; adds a Twitter property using bracket notation.
+In summary:
+
+This code demonstrates how to define and manipulate objects in JavaScript.
+It shows accessing properties in different ways, handling user input, and adding new properties.
+
+# 44. **Object Methods**

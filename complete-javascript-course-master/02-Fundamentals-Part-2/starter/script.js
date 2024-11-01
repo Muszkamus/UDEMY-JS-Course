@@ -208,3 +208,60 @@ console.log(friends.indexOf("BOB")) //IT will pop -1 as it is not in the array
 console.log(friends.includes("Steven")) //True as is it in the array
 console.log(friends.includes("Bob")) //False as it is not in the array */
 
+
+/*
+const objects = {
+  firstName: "Jon",
+  lastName: "Snow",
+  age: 2024 - 1978,
+  job: "Killa",
+  friends: ["Michael", "Peter", "Steven"]
+};
+
+
+console.log(objects.firstName); //dot notation
+console.log(objects["firstName"]); //bracket notation
+
+
+const nameKey = "Name"
+console.log(objects['first' + nameKey]); //the output is firstName, and it will print out firstName
+console.log(objects['last' + nameKey]);//the output is lastName, and it will print out LastName
+
+
+const interestedIn = prompt("What do you want to know?- firstName, lastName, age, job and friends")
+if (objects[interestedIn]) {
+  console.log(objects[interestedIn]);
+}
+else {
+  console.log("not on the list, wrong request");
+} 
+
+objects.location = "Spain"
+objects["Twitter"] = "@TWITTIEEE"
+
+console.log(objects);
+
+//Challenge
+// "Jon" has "3" friends, and his best friend is "Michael"
+
+console.log(`${objects.firstName} has ${objects.friends.length} friends, and his best friend is ${objects.friends[0]}`);
+*/
+
+
+const objects = {
+  firstName: "Jon",
+  lastName: "Snow",
+  birthYear: 1997,
+  job: "Killa",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriverLicense: true,
+
+  //adding expression
+  calcAge: function (birthYear) {
+    return 2024 - birthYear
+  }
+};
+
+console.log(objects.calcAge(objects.birthYear))
+
+
