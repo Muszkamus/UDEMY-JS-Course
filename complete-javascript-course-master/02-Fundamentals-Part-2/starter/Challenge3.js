@@ -24,27 +24,29 @@ BMI.Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!".
 
 
 const mark = {
-    fullname: "Mark Miller",
+    fullName: "Mark Miller",
     mass: 78,
     height: 1.69,
     calcBMI: function () {
-        return console.log(this.mass / (this.height * this.height));
-    }
+        return this.bmi = ((this.mass / (this.height * this.height)));
+    },
 }
 
 const john = {
-    fullname: "John Smith",
+    fullName: "John Smith",
     mass: 92,
     height: 1.95,
     calcBMI: function () {
-        return console.log(this.mass / (this.height * this.height));
+        this.bmi = (this.mass / (this.height * this.height));
+        return this.bmi
     }
 }
+john.calcBMI()
+mark.calcBMI()
 
-
-if (mark.calcBMI >= john.calcBMI) {
-    console.log(`${mark.calcBMI()}`);
+if (john.calcBMI >= mark.calcBMI) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})`);
 }
 else {
-    console.log(`${john.calcBMI()}`);
+    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})`);
 }

@@ -545,3 +545,5 @@ objects.getSummary();
 ```
 objects.calcAge(): This call calculates the age and stores it in objects.age.
 objects.getSummary(): This call logs the summary message. Since calcAge() was called first, this.age is defined.
+
+# 46. Iteration: The for loop
