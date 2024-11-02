@@ -249,19 +249,29 @@ console.log(`${objects.firstName} has ${objects.friends.length} friends, and his
 
 
 const objects = {
-  firstName: "Jon",
+  firstName: "Jonas",
   lastName: "Snow",
   birthYear: 1997,
-  job: "Killa",
+  job: "Teacher",
   friends: ["Michael", "Peter", "Steven"],
   hasDriverLicense: true,
 
   //adding expression
-  calcAge: function (birthYear) {
-    return 2024 - birthYear
+  calcAge: function () {
+    this.age = 2024 - this.birthYear  //"this" relates to actual object itself
+    return this.age
+  },
+
+  getSummary: function () {
+    console.log(`${this.firstName} is a ${this.age} ${this.job}, and he can${this.hasDriverLicense ? " drive" : "'t drive"}`);
   }
 };
 
-console.log(objects.calcAge(objects.birthYear))
 
+objects.calcAge()
 
+//console.log(objects.age)
+
+//challenge
+//Jonas is a 46 year old teacher. and he has a driver's license
+objects.getSummary();

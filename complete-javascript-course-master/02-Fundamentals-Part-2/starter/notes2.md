@@ -510,3 +510,38 @@ This code demonstrates how to define and manipulate objects in JavaScript.
 It shows accessing properties in different ways, handling user input, and adding new properties.
 
 # 44. **Object Methods**
+```js
+const objects = {
+  firstName: "Jonas",
+  lastName: "Snow",
+  birthYear: 1997,
+  job: "Teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriverLicense: true,
+```
+Method: calcAge
+This method calculates the person's age by subtracting their birth year from the current year (2024) and then assigns this value to a new property called age.
+```js
+calcAge: function () {
+  this.age = 2024 - this.birthYear;  // "this" refers to the object itself
+  return this.age;
+},
+```
+The keyword this refers to the objects object itself.
+This method calculates the age (2024 - this.birthYear) and assigns it to this.age.
+It also returns the calculated age, which can be used if you call objects.calcAge() directly.
+```js
+getSummary: function () {
+  console.log(`${this.firstName} is a ${this.age} ${this.job}, and he can${this.hasDriverLicense ? " drive" : "'t drive"}`);
+}
+```
+String Interpolation: It uses template literals (backticks) to include variables directly inside the string.
+Driving Status: The hasDriverLicense property is used in a conditional (? : ) expression. If hasDriverLicense is true, it outputs "drive"; if false, it outputs "'t drive".
+this.age: It uses this.age, which was set by calcAge. Since you called calcAge() before calling getSummary, age already has a value.
+
+```js
+objects.calcAge();
+objects.getSummary();
+```
+objects.calcAge(): This call calculates the age and stores it in objects.age.
+objects.getSummary(): This call logs the summary message. Since calcAge() was called first, this.age is defined.
