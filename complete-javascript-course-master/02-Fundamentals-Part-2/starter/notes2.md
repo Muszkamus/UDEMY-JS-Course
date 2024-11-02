@@ -214,9 +214,10 @@ console.log(drink);
 
 
 
-
 # 32. **Activating strict mode**
+****
 ```js
+
 'use strict'; // Enforces strict mode, which catches common errors and enforces stricter syntax rules
 
 // Declares a variable 'hasDriverLicense' and initializes it as false
@@ -235,7 +236,9 @@ if (hasDriverLicense) console.log("I can drive");
 const interface = "Audio"; // Error: 'interface' is a reserved word
 const private = 534;       // Error: 'private' is a reserved word
 ```
+****
 # 33. **Functions**
+****
 ```js
 // Declares a function named 'logger' with no parameters
 function logger() {
@@ -260,7 +263,9 @@ console.log(appleJuice); // Logs the result "Juice with 5 apples and 0 oranges"
 const orangeJuice = fruitProcessor(2, 4);
 console.log(orangeJuice); // Logs the result "Juice with 2 apples and 4 oranges"
 ```
+****
 # 34. **Function Declarations vs. Expressions**
+****
 ```js
 // Function declaration
 // Declares a function called 'calcAge1' that takes 'birthYear' as a parameter
@@ -286,8 +291,9 @@ const age2 = calcAge2(1997);
 // Logs the values of 'age1' and 'age2' to the console
 console.log(age1, age2);
 ```
-
+****
 # 35. **Arrow Functions**
+****
 ```js
 // Function expression
 // Defines a function named `calcAge2` using a function expression
@@ -317,7 +323,9 @@ const yearsToRetirement = (birthYear, firstName) => {
 console.log(yearsToRetirement(1997, "Radek"));
 
 ```
+****
 # 36. **Functions Calling Other Functions**
+****
 ```js
 // Function to cut fruit into pieces
 function cutFruitPieces(fruit) {
@@ -337,8 +345,9 @@ function fruitProcessor(apples, oranges) {
 // Calls fruitProcessor with 2 apples and 3 oranges, then logs the result
 console.log(fruitProcessor(2, 3));
 ```
-
+****
 # 37. **Reviewing Functions**
+****
 ```js
 // Function expression to calculate age based on birth year
 const calcAge = function (birthYear) {
@@ -366,9 +375,9 @@ yearsToRetirement(2002, "Amy"); // Amy born in 2002, has years left until retire
 // Arrow Function - Great for a quick one-line functions.
 ```
 
-
+****
 # 49. **Arrays**
-
+****
 ```js
 
 const friends = ["Michael", "Steven", "Peter"] //literal syntax
@@ -398,8 +407,9 @@ console.log(age1,age2,age3)
 const ages = [age1,age2,age3]
 console.log(ages)
 ```
-
+****
 # 40. **Basic array operations (Methods)**
+****
 ```js 
 //Add elements
 
@@ -429,9 +439,9 @@ console.log(friends.includes("Bob")) //False as it is not in the array
 ```
 
 
-
+****
 # 42. **Introduction to Objects**
-
+****
 In JavaScript, arrays and objects are both data structures, but they are suited to different types of data:
 
 Arrays are used for ordered data, where the order matters and each item is identified by its position (or index) in the list. Arrays work well for lists where the order and sequence of elements are important.
@@ -448,9 +458,9 @@ const objects = {
 }
 ```
 This person object organizes information by descriptive keys, making it easy to access attributes like firstName or job directly by name.
-
+****
 # 43. **Dot. vs Bracket Notation**
-
+****
 ```js
 const objects = {
   firstName: "Jon",
@@ -508,8 +518,9 @@ In summary:
 
 This code demonstrates how to define and manipulate objects in JavaScript.
 It shows accessing properties in different ways, handling user input, and adding new properties.
-
+****
 # 44. **Object Methods**
+****
 ```js
 const objects = {
   firstName: "Jonas",
@@ -545,5 +556,134 @@ objects.getSummary();
 ```
 objects.calcAge(): This call calculates the age and stores it in objects.age.
 objects.getSummary(): This call logs the summary message. Since calcAge() was called first, this.age is defined.
+****
+# 46. Iteration: The for loop 3 STEP METHOD
+****
+```js
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`lifting weight repetition ${rep}`);
+}
+```
+Breakdown of Each Part of the Loop:
+**Initialization (let rep = 1;):**
 
-# 46. Iteration: The for loop
+Here, we're creating a variable called rep and setting it to 1.
+This rep variable acts as our "counter" and will keep track of the number of repetitions.
+The loop starts with rep set to 1.
+**Condition (rep <= 10;):**
+
+This is the condition that the loop checks before each repetition (iteration).
+As long as rep is less than or equal to 10, the loop will keep running.
+Once rep exceeds 10, the loop stops.
+**Increment (rep++):**
+
+After each loop iteration, rep is increased by 1 using rep++ (which is shorthand for rep = rep + 1).
+This means that rep goes from 1 to 2, 3, and so on, until it reaches 10.
+Inside the Loop
+```js
+console.log(`lifting weight repetition ${rep}`);
+```
+****
+# 47. **Looping Arrays, Breaking and Continuing**
+****
+
+```js
+const objects = [
+   "Jon",
+   "Snow",
+   2024 - 1978,  // This calculates the number 46 (2024 - 1978)
+   "Killa",
+   ["Michael", "Peter", "Steven"],  // An array of strings
+   true  // A boolean value
+];
+```
+
+Next, you create an empty array called types, which you’ll use to store the type of each item in objects.
+
+1. Reading from the Array and Filling the types Array
+You use a for loop to iterate over each item in objects:
+
+```js
+for (let i = 0; i < objects.length; i++) {
+  types.push(typeof objects[i]);
+}
+```
+For each element in objects, you determine its type with **typeof objects[i].**
+You add the type **(e.g., "string", "number", "object", "boolean") to the types array using types.push().**
+By the end of the loop, types will contain the type of each element in objects in the same order:
+
+**// Example output for types: ["string", "string", "number", "string", "object", "boolean"]**
+
+3. Calculating Ages Based on Years Array
+You define another array years:
+
+```js
+ const years = [1991, 2007, 1969, 2020];
+ ```
+Then, you create an empty array called ages. The following for loop calculates the age for each year in years:
+
+``` js
+for (let i = 0; i < years.length; i++) {
+  ages.push(2024 - years[i]);
+}
+```
+For each year, the code calculates the age by subtracting the year from 2024 (the current year).
+The result is added to the ages array.
+After this loop, ages will contain the calculated ages:
+
+**Example output for ages: [33, 17, 55, 4]**
+
+1. Using continue and breakk
+The next part uses continue and break in loops to control when certain parts of the code execute.
+
+### **Continue - Skipping Non-String Elements**
+```js
+console.log(`---Only Strings---`);
+for (let i = 0; i < objects.length; i++) {
+  if (typeof objects[i] !== `string`) continue; // Skip if not a string
+  console.log(objects[i], typeof objects[i]);
+}
+```
+This loop checks each element in objects. If the type is not string, the continue statement skips to the next iteration.
+If it is a string, it prints the element and its type.
+This section will output only the string elements.
+### **Break - Stopping at the First Number**
+
+```js
+console.log(`---Break with Number---`);
+for (let i = 0; i < objects.length; i++) {
+  if (typeof objects[i] == `number`) break; // Stop if a number is found
+  console.log(objects[i], typeof objects[i]);
+}
+```
+This loop stops entirely when it encounters the first number in objects.
+If it finds a non-number, it prints the element and its type.
+Once it finds a number, break exits the loop, so any elements after the first number won’t be checked or printed.
+
+****
+# **48. Looping Backwards and Loops in Loops**
+****
+
+
+```js
+  const objects = [
+    "Jon",
+    "Snow",
+    2024 - 1978,  // This calculates the number 46 (2024 - 1978)
+    "Killa",
+    ["Michael", "Peter", "Steven"],  // An array of strings
+    true  // A boolean value
+ ];
+//first part= putting things backwards of the array
+ for(let i = objects.length - 1;i >=0; i-- ){
+  console.log(i,objects[i])
+ }
+
+//second part= loop inside of loop
+ for (let exercise = 1; exercise <4; exercise++){
+console.log(`---starting exercise--- ${exercise}`)
+  for (let rep = 1; rep <6; rep++){
+    console.log(`lifting weight repetition ${rep}`)
+  }
+ }
+ ```

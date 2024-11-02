@@ -248,7 +248,7 @@ console.log(`${objects.firstName} has ${objects.friends.length} friends, and his
 */
 
 
-const objects = {
+/* const objects = {
   firstName: "Jonas",
   lastName: "Snow",
   birthYear: 1997,
@@ -267,11 +267,86 @@ const objects = {
   }
 };
 
-
 objects.calcAge()
 
 //console.log(objects.age)
 
 //challenge
 //Jonas is a 46 year old teacher. and he has a driver's license
-objects.getSummary();
+objects.getSummary(); */
+
+/*
+for(let rep = 1; rep <=10; rep++ ) {
+console.log(`lifting weight repetition ${rep}`)
+} //loop consists of 3 parts. first one is initial value of the counter starting here with number 1. Second, Loop will stop at given , third one is by how much it is added
+*/
+
+/*
+
+const objects = [
+   "Jon",
+   "Snow",
+  2024 - 1978,
+  "Killa",
+  ["Michael", "Peter", "Steven"],
+  true,
+]
+
+const types = []
+//reading from array
+for (let i = 0; i < objects.length ;i++){
+  //console.log(objects[i]),
+
+  //filling types of array
+ // types[i] = typeof objects[i]
+
+  types.push(typeof objects [i])
+}
+
+//console.log(types)
+
+const years = [1991,2007,1969,2020]
+const ages = []
+
+for (let i =0;i < years.length; i++ ){
+
+  ages.push(2024 - years[i])
+}
+//console.log(ages)
+
+//continue and break 
+console.log(`---Only Strings---`)
+for (let i = 0; i < objects.length ;i++){
+
+  if(typeof objects[i] !== `string`) continue //continue skips (in this case, whatever is a not string is skipped)
+  console.log(objects[i]),typeof objects[i]
+}
+console.log(`---Break with Number---`)
+for (let i = 0; i < objects.length ;i++){
+
+  if(typeof objects[i] == `number`) break //Break stops the whole code if one variable is found
+  console.log(objects[i]),typeof objects[i]
+} */
+
+  const objects = [
+    "Jon",
+    "Snow",
+    2024 - 1978,  // This calculates the number 46 (2024 - 1978)
+    "Killa",
+    ["Michael", "Peter", "Steven"],  // An array of strings
+    true  // A boolean value
+ ];
+//first part= putting things backwards of the array
+ for(let i = objects.length - 1;i >=0; i-- ){
+  console.log(i,objects[i])
+ }
+
+//second part= loop inside of loop
+ for (let exercise = 1; exercise <4; exercise++){
+console.log(`---starting exercise--- ${exercise}`)
+  for (let rep = 1; rep <6; rep++){
+    console.log(`lifting weight repetition ${rep}`)
+  }
+ }
+
+
