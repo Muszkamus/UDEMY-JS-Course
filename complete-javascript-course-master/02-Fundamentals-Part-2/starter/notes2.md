@@ -620,7 +620,12 @@ You define another array years:
 ```js
  const years = [1991, 2007, 1969, 2020];
  ```
-Then, you create an empty array called ages. The following for loop calculates the age for each year in years:
+Then, you create an empty array called ages.
+```js
+ages = []
+```
+ The following for loop calculates the age for each year in years:
+
 
 ``` js
 for (let i = 0; i < years.length; i++) {
