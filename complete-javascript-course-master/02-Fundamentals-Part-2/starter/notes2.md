@@ -687,3 +687,5 @@ console.log(`---starting exercise--- ${exercise}`)
   }
  }
  ```
+
+ # 49. **While Loop**

@@ -327,7 +327,7 @@ for (let i = 0; i < objects.length ;i++){
   if(typeof objects[i] == `number`) break //Break stops the whole code if one variable is found
   console.log(objects[i]),typeof objects[i]
 } */
-
+/*
   const objects = [
     "Jon",
     "Snow",
@@ -348,5 +348,21 @@ console.log(`---starting exercise--- ${exercise}`)
     console.log(`lifting weight repetition ${rep}`)
   }
  }
+*/
 
 
+//While Loop
+let rep = 1
+while (rep <=10){
+  console.log(`rep ${rep}`)
+  rep++
+}
+
+//Random while loop
+
+let dice = Math.trunc(Math.random() * 6 ) +1
+while (dice !== 6){
+    console.log(`You rollex a ${dice}`)
+   dice = Math.trunc(Math.random() * 6 ) +1
+
+}
