@@ -687,5 +687,37 @@ console.log(`---starting exercise--- ${exercise}`)
   }
  }
  ```
-
+****
  # 49. **While Loop**
+****
+ ###
+
+ ```js
+let rep = 1
+while (rep <=10){
+  console.log(`rep ${rep}`)
+  rep++
+}
+```
+This will print numbers from 0 to 4. The loop has:
+
+An initialization (let i = 0)
+A condition (i < 5)
+An increment (i++)
+
+**For Loop:** A for loop is generally used when you know in advance how many times you want to execute a block of code.
+It's often used to iterate over a sequence (like a list, string, range, etc.) or when you have a set number of iterations.
+The structure is straightforward, usually with an initialization, a condition, and an increment or decrement.
+
+### **Random while loop**
+```js
+let dice = Math.trunc(Math.random() * 6 ) +1
+while (dice !== 6){
+    console.log(`You rolled a ${dice}`)
+   dice = Math.trunc(Math.random() * 6 ) +1
+   if (dice ==6)console.log("Loops finished")
+}
+```
+**While Loop:** A while loop is generally used when the number of iterations isn't known upfront, and you want to repeat the block of code as long as a condition is true.
+It continues executing until the specified condition becomes false.
+With a while loop, you need to be careful to modify a variable in the loop body to avoid infinite loops.
