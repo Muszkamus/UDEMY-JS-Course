@@ -43,3 +43,9 @@ NPM - Node Package Manager (program to download tools)
 -g (Means its global)
 
 In Powershell, locate then html you want to live, and then type live-server in powershell
+
+---
+
+# ** Solving issues**
+
+---
