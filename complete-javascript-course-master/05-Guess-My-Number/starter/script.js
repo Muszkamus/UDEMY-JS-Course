@@ -23,6 +23,7 @@ Implement a gam rest functionality, so that the player can make a new guess! Her
 let secretNumber = Math.trunc(Math.random() * 20) + 1; //as the number would be from 0-19, adding +1 at the end would make 1-20
 console.log(`Secret number is: ${secretNumber}`);
 let score = 20;
+let highscore = 0;
 //Again button
 document.querySelector('.btn.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
@@ -49,6 +50,8 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347'; //CSS Manipulation can only be in String format
     document.querySelector('.number').style.width = '30rem'; //CSS Manipulation can only be in String format
+    if (score > highscore) highscore = score; //
+    document.querySelector('.highscore').textContent = highscore;
   } else if (guess > secretNumber) {
     if (score > 1) {
       //Too high
