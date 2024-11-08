@@ -24,17 +24,21 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1; //as the number would be 
 console.log(`Secret number is: ${secretNumber}`);
 let score = 20;
 let highscore = 0;
+
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message; //Cretaed Function for easier code thats used for later
+};
 //Again button
 document.querySelector('.btn.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('.message').textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
   document.querySelector('.score').textContent = 20;
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
   document.querySelector('.number').style.width = '15rem';
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
-  console.log(secretNumber);
+  console.log(`Secret number is: ${secretNumber}`);
 });
 //Check the correct number
 document.querySelector('.check').addEventListener('click', function () {
@@ -43,33 +47,26 @@ document.querySelector('.check').addEventListener('click', function () {
 
   if (!guess) {
     //No Input
-    document.querySelector('.message').textContent = 'No Number!!!';
-  } else if (guess === secretNumber) {
+    displayMessage('No Number!!!');
     //Win
-    document.querySelector('.message').textContent = 'Correct Number!';
+  } else if (guess === secretNumber) {
+    displayMessage('Correct Number!');
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347'; //CSS Manipulation can only be in String format
     document.querySelector('.number').style.width = '30rem'; //CSS Manipulation can only be in String format
     if (score > highscore) highscore = score; //
     document.querySelector('.highscore').textContent = highscore;
-  } else if (guess > secretNumber) {
+  }
+
+  //When guess is wrong
+  else if (guess !== secretNumber) {
     if (score > 1) {
-      //Too high
-      document.querySelector('.message').textContent = 'Too high!';
+      displayMessage(guess > secretNumber ? 'Too high!' : 'Too Low!'); //Used Ternary operator to cut half of the code.
+
       score--;
       document.querySelector('.score').textContent -= 1;
     } else {
-      document.querySelector('.message').textContent = 'You lost!!!';
-      document.querySelector('.score').textContent = 0;
-    }
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      //Too low
-      document.querySelector('.message').textContent = 'Too low!';
-      score--;
-      document.querySelector('.score').textContent -= 1;
-    } else {
-      document.querySelector('.message').textContent = 'You lost!!!';
+      displayMessage('You Lost!!!');
       document.querySelector('.score').textContent = 0;
     }
   }
