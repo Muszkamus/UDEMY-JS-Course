@@ -12,6 +12,14 @@ const btnNew = document.querySelector('.btn--new'); // "New Game" button
 const btnRoll = document.querySelector('.btn--roll'); // "Roll Dice" button
 const btnHold = document.querySelector('.btn.btn--hold'); // "Hold" button
 
+const switchPlayer = function () {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0; // Toggle active player
+  currentScore = 0; // Reset current score
+  player0El.classList.toggle('player--active'); // Switch active styling
+  player1El.classList.toggle('player--active');
+};
+
 // Starting conditions
 score0El.textContent = 0; // Sets player 0's score to 0
 score1El.textContent = 0; // Sets player 1's score to 0
@@ -20,34 +28,56 @@ const scores = [0, 0]; // Holds scores for both players
 let currentScore = 0; // Tracks current round score
 let activePlayer = 0; // Tracks which player is active
 
+let playing = true;
+
 // Rolling Dice functionality
 btnRoll.addEventListener('click', function () {
-  // 1. Generate random dice roll (1-6)
-  let diceNumber = Math.trunc(Math.random() * 6) + 1;
-  console.log(diceNumber);
+  if (playing) {
+    // 1. Generate random dice roll (1-6)
+    let diceNumber = Math.trunc(Math.random() * 6) + 1;
 
-  // 2. Display dice image for the rolled number
-  diceEl.classList.remove('hidden'); // Show the dice
-  diceEl.src = `dice-${diceNumber}.png`; // Update dice image to match roll
+    // 2. Display dice image for the rolled number
+    diceEl.classList.remove('hidden'); // Show the dice
+    diceEl.src = `dice-${diceNumber}.png`; // Update dice image to match roll
 
-  // 3. Check for roll of 1
-  if (diceNumber !== 1) {
-    // If not a 1, add dice roll to current score and update active player's score
-    currentScore += diceNumber;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-  } else {
-    // If rolled 1, reset current score, switch active player, toggle active styling
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0; // Toggle active player
-    currentScore = 0; // Reset current score
-    player0El.classList.toggle('player--active'); // Switch active styling
-    player1El.classList.toggle('player--active');
+    // 3. Check for roll of 1
+    if (diceNumber !== 1) {
+      // If not a 1, add dice roll to current score and update active player's scor
+      currentScore += diceNumber;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+    } else {
+      // If rolled 1, reset current score, switch active player, toggle active styling
+      switchPlayer();
+    }
   }
 });
 // Holding
 btnHold.addEventListener('click', function () {
-  //add current score to the main score to the active player
-  //2. check if player's score is >=100
-  //Switch to the next player
+  if (playing) {
+    //add current score to the main score to the active player
+    scores[activePlayer] += currentScore;
+    //scores[1] = score[1] + currentscore
+
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    //2. check if player's score is >=100
+
+    if (scores[activePlayer] >= 10) {
+      playing = false;
+      //Finish the game
+      diceEl.classList.add('hidden'); // Hides dice
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add('player--winner');
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove('player--active');
+    } else {
+      //Switch to the next player
+      switchPlayer();
+    }
+  }
+
+  //Create play again
 });
