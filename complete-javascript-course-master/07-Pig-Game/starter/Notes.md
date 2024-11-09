@@ -1454,6 +1454,26 @@ document.addEventListener('keydown', function (event) {
 
 ---
 
+```js
+'use strict';
+// Selecting elements
+const score0El = document.querySelector('#score--0'); // Hash is used to select ID, . is used for classes. It is more versatile and can be used for everything
+const score1El = document.getElementById('score--1'); //This is a little bit faster, and only works with ID's
+const diceEl = document.querySelector('.dice');
+
+score0El.textContent = 0;
+score1El.textContent = 0;
+diceEl.classList.add('hidden');
+```
+
+---
+
+# **83. Rolling the Dice**
+
+---
+
+## Text
+
 .
 .
 .
