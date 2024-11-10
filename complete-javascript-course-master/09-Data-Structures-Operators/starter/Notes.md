@@ -2287,3 +2287,5 @@ console.log('NEW After marriage: ', jessicaCopy);
 # **103. Destructuring Arrays**
 
 ---
+
+- Destructuring is a feature of unpacking values from and array/object into seperate variables.
