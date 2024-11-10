@@ -21,14 +21,8 @@ const switchPlayer = function () {
 };
 
 // Starting conditions
-score0El.textContent = 0; // Sets player 0's score to 0
-score1El.textContent = 0; // Sets player 1's score to 0
-diceEl.classList.add('hidden'); // Hides dice at the start
-let scores = [0, 0]; // Holds scores for both players
-let currentScore = 0; // Tracks current round score
-let activePlayer = 0; // Tracks which player is active
 
-let playing = true;
+let playing, activePlayer, currentScore, scores;
 
 // Rolling Dice functionality
 btnRoll.addEventListener('click', function () {
@@ -79,8 +73,8 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
-//Create play again
-const playAgain = function () {
+
+const init = function () {
   playing = true;
   //Function to reset everything
   score0El.textContent = 0; // Sets player 0's score to 0
@@ -89,19 +83,26 @@ const playAgain = function () {
   scores = [0, 0]; // Holds scores for both players
   currentScore = 0; // Tracks current round score
   activePlayer = 0; // Tracks which player is active
-  document.getElementById(`current--1`).textContent = 0;
+  //
+  //
+  //
+  //
   document.getElementById(`current--0`).textContent = 0;
+  document.getElementById(`current--1`).textContent = 0;
 
   currentScore = 0; // Reset current score
 
   player0El.classList.add('player--active'); // Switch active styling
   player1El.classList.remove('player--active');
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
+
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.add('player--active');
+
+  document.querySelector(`.player--${0}`).classList.remove('player--winner');
+  document.querySelector(`.player--${1}`).classList.remove('player--winner');
 };
 
-btnNew.addEventListener('click', playAgain);
+btnNew.addEventListener('click', init);
+
+init();
