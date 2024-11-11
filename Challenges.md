@@ -1,3 +1,27 @@
+# FizzBuzz
+
+```js
+"use strict";
+
+//FizzBuzz
+for (let i = 1; i <= 15; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+```
+
+---
+
+# StudentDiscount 1.0
+
+```js
 "use strict";
 ///Sdtudent discount
 const calculateTicketPrice = function (isStudent, age, hour) {
@@ -20,3 +44,4 @@ const calculateTicketPrice = function (isStudent, age, hour) {
 
 let totalTicket = calculateTicketPrice(true, 22, 15);
 console.log(totalTicket.toFixed(2)); //round by 2 decimals
+```
