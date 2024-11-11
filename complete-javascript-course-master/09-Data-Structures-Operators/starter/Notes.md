@@ -2241,6 +2241,7 @@ console.log('Me', me); // Me {name: 'Radek', age: 27}
 
 ---
 
+```js
 // Primitives vs. Objects in Practice
 
 // Primitive types
@@ -2251,9 +2252,9 @@ console.log(lastName, oldLastName);
 
 // Reference types
 const jessica = {
-firstName: 'Jessica',
-lastName: 'Williams',
-age: 27,
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
 };
 const marriedJessica = jessica;
 marriedJessica.lastName = 'Davis';
@@ -2263,10 +2264,10 @@ console.log('After marriage: ', marriedJessica);
 
 // Copying objects
 const jessica2 = {
-firstName: 'Jessica',
-lastName: 'Williams',
-age: 27,
-family: ['Alice', 'Bob'],
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
 };
 
 const jessicaCopy = Object.assign({}, jessica2);
@@ -2277,6 +2278,7 @@ jessicaCopy.family.push(['John']);
 
 console.log('NEW Before marriage:', jessica2);
 console.log('NEW After marriage: ', jessicaCopy);
+```
 
 ---
 
@@ -2289,3 +2291,255 @@ console.log('NEW After marriage: ', jessicaCopy);
 ---
 
 - Destructuring is a feature of unpacking values from and array/object into seperate variables.
+
+```js
+'use strict';
+
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// Data needed for first part of the section
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
+
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+const [x, y, z] = arr;
+
+console.log(x, y, z);
+console.log(arr);
+
+let [main, , secondary] = restaurant.categories; //Take positions  from restaurant > categorie
+console.log(main, secondary); //Italian, Vegetarian
+
+//Switching variables
+// const temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary); //Vegetarian, Italian
+//Here is easir version of the same
+
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+//Nested arrays (one array inside of another)
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j);
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+// Default values
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
+```
+
+---
+
+# **104. Destructuring Objects**
+
+---
+
+**First Example:**
+
+```js
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+```
+
+Here, direct destructuring is used to extract the properties `name, openingHours, and categories from the restaurant object.`
+
+Each variable will be named exactly as it is in the restaurant object:
+
+- `name` corresponds to `restaurant.name`
+- `openingHours` corresponds to `restaurant.openingHours`
+- `categories` corresponds to `restaurant.categories`
+
+If you log these variables, they will have the same names and values as in the original object.
+
+**Second Example:**
+
+```js
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+```
+
+In this case, renamed destructuring is used. The properties name, `openingHours`, and categories are destructured from restaurant, but each is assigned a new variable name.
+
+The syntax name: `restaurantName` means:
+Extract the name property from restaurant but assign it to a new variable called `restaurantName`.
+
+Similarly, `openingHours` is assigned to `hours` and `categories` is assigned to `tags`.
+
+This allows you to customize the names of the variables in your local scope, making the code potentially more descriptive or better aligned with your context.
+
+<center> Summary of Differences </center>
+
+- **Direct destructuring:** The variable names are the same as the property names in the object.
+
+- **Renamed destructuring:** The properties are assigned to new variable names, allowing for flexibility in naming.
+
+These two approaches achieve the same result but offer flexibility based on naming preferences or conventions.
+
+---
+
+This code defines a restaurant object with various properties and methods.
+
+Key Parts
+
+**Properties:**
+Basic properties like `name, location, categories, starterMenu, mainMenu, and openingHours.`
+
+**Methods:**
+
+- **order:** Takes two indices (for starter and `main` menu `items`) and returns the selected items as an array.
+- **orderDelivery:** A method that takes an object as a parameter with properties starterIndex, `mainIndex`, time, and address. It logs an order confirmation message, with default values for `starterIndex`, `mainIndex`, and time.
+
+`restaurant.orderDelivery` Call
+
+```js
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 2,
+});
+```
+
+This calls `orderDelivery` with:
+
+```js
+address set to 'Via del Sole, 21'
+starterIndex set to 2
+Since mainIndex and time aren’t provided, they use their defaults (mainIndex = 0, time = '20:00').
+```
+
+The console logs:
+
+```
+Order received: Garlic Bread and Pizza will be delivered to Via del Sole, 21 at 20:00
+```
+
+This message combines values from the `starterMenu, mainMenu,` and provided/determined options.
+
+---
+
+1. Setting Default Values
+
+```js
+const { menu = [], starterMenu: starters = [] } = restaurant;
+```
+
+This destructures menu and starterMenu from restaurant. If menu doesn’t exist in restaurant, it defaults to an empty array ([]).
+
+`starterMenu` is renamed to starters and will use an empty array as a default if not found.
+
+- **Usefulness:** Common when dealing with external data (like APIs) where certain fields might be missing.
+
+2. Mutating Variables
+
+```js
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+```
+
+This technique reassigns a and b to values from obj.
+The parentheses around `{ a, b } = obj` are necessary to treat it as an expression, not a code block.
+
+- **Usefulness:** Handy for reassigning existing variables based on an object's properties.
+
+3. Nested Objects
+
+```js
+const { fri } = openingHours;
+```
+
+```js
+const {
+  fri: { open, close },
+} = openingHours;
+```
+
+The first line extracts the `fri` object from `openingHours.`
+The second line goes deeper, extracting open and close from within `fri` directly.
+
+- **Usefulness:** Common for nested data structures, but can become hard to read if deeply nested.
+
+Which is Easier or More Common?
+
+Setting defaults and basic destructuring (like the first approach) are the most common and easiest to read.
+
+Nested destructuring is also popular but should be used sparingly for deeply nested objects, as it can reduce readability.
+
+---
+
+# **106. The Spread Operator (...)**
+
+---
+
+The spread operator simplifies code by allowing you to work with collections (arrays/objects) as individual elements, making merging, copying, and passing data cleaner and more flexible.
+
+**Without Spread Operator:**
+
+```js
+const baddNewArr = [1, 2, arr[0], arr[1], arr[2]];
+```
+
+Manually adds each item from arr. Not scalable; requires updating if arr changes size.
+
+**With Spread Operator:**
+
+```js
+const newArr = [1, 2, ...arr];
+```
+
+Automatically includes all items from `arr`, making it cleaner and scalable. Preferred approach.
+
+Conclusion: Using the spread operator (`...arr`) is simpler and more efficient.
+
+### Spread Operator vs. Destructuring
+
+**Similarity**: Both help extract elements from arrays.
+
+**Key Differences:** Spread Operator pulls all elements from an array but doesn't create new variables.
+
+It can only be used in contexts that expect comma-separated values (e.g., in arrays, function arguments).
+
+In summary, the spread operator is ideal for including elements in lists, while destructuring is used to assign elements to specific variables.
+
+```js
+//Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//Join 2 arrays or more
+
+const menu = `Main Menu: ${[...restaurant.mainMenu]},
+Starter Menu: ${[...restaurant.starterMenu]}`;
+console.log(menu);
+
+//Spread operator works also on all so-called "iterables"
+// Iterables: Strings, maps, arrays, sets but not objects
+const str = 'Radek';
+const letter = [...str, '', 'S.'];
+console.log(letter); // ['R', 'a', 'd', 'e', 'k', '', 'S.']
+console.log(...str); //Prints all individual letters = R a d e k
+```
