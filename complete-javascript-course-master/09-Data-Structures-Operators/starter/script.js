@@ -39,50 +39,14 @@ const restaurant = {
       `here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient, otherIngredients);
+  },
 };
-///
-const ingredients = [
-  //Each prompt is each new value
-  prompt(`Let's make pasta! Ingeredient 1?`),
-  prompt(`Ingeredient 2?`),
-  prompt(`Ingeredient 3?`),
-];
-console.log(ingredients);
 
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
-restaurant.orderPasta(...ingredients); //same but quicker
+restaurant.orderPizza('Mushrooms', 'Onion', 'Olives', 'Spinach');
+//Mushrooms (3) ['Onion', 'Olives', 'Spinach']
 
-///
-const arr = [7, 8, 9];
-
-const baddNewArr = [1, 2, arr[0], arr[1], arr[2]];
-//console.log(baddNewArr);
-
-//Spread operator
-const newArr = [1, 2, ...arr];
-//console.log(newArr);
-
-//console.log(...newArr); // 1 2 7 8 9
-
-const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
-//console.log(newMenu); //['Pizza', 'Pasta', 'Risotto', 'Gnocchi']
-//
-//
-//
-//
-
-//Copy Array
-const mainMenuCopy = [...restaurant.mainMenu];
-
-//Join 2 arrays or more
-
-const menu = `Main Menu: ${[...restaurant.mainMenu]},
-Starter Menu: ${[...restaurant.starterMenu]}`;
-//console.log(menu);
-
-//Spread operator works also on all so-called "iterables"
-// Iterables: Strings, maps, arrays, sets but not objects
-const str = 'Radek';
-const letter = [...str, '', 'S.'];
-//console.log(letter); // ['R', 'a', 'd', 'e', 'k', '', 'S.']
-//console.log(...str); //Prints all individual letters = R a d e k
+restaurant.orderPizza('Mushrooms');
+//[]

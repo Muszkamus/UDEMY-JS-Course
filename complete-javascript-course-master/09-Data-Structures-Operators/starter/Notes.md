@@ -2543,3 +2543,133 @@ const letter = [...str, '', 'S.'];
 console.log(letter); // ['R', 'a', 'd', 'e', 'k', '', 'S.']
 console.log(...str); //Prints all individual letters = R a d e k
 ```
+
+Spread operator as a function
+
+```js
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+};
+///
+const ingredients = [
+  //Each prompt is each new value [1] [2] [3]
+  prompt(`Let's make pasta! Ingeredient 1?`),
+  prompt(`Ingeredient 2?`),
+  prompt(`Ingeredient 3?`),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients); //same but quicker
+```
+
+```js
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant); //{foundedIn: 1998, name: 'Classico Italiano', location: 'Via Angelo Tavanti 23, Firenze, Italy', categories: Array(4), starterMenu: Array(4), …}
+```
+
+```js
+// Shallow copy `restaurant` - only top-level properties are copied.
+const restaurantcopy = { ...restaurant };
+
+// Change `name` in the original `restaurant` object.
+restaurant.name = 'Ristorante Roma';
+
+// `restaurantcopy.name` still has the original name (shallow copy doesn't update it).
+console.log(restaurantcopy.name); // Original name
+
+// `restaurant.name` now reflects the change.
+console.log(restaurant.name); // "Ristorante Roma"
+```
+
+---
+
+# **107. Rest Pattern and Parameters (Reverse of Spread)**
+
+---
+
+Rest Pattern
+The rest pattern is used in destructuring objects and arrays. It allows you to collect the "rest" of the values that haven't been individually extracted into a separate variable.
+
+Example with an Array
+
+```js
+const [first, ...restOfItems] = [10, 20, 30, 40];
+console.log(first); // 10
+console.log(restOfItems); // [20, 30, 40]
+```
+
+Example with an Object
+
+```js
+const { name, ...otherDetails } = { name: 'Alice', age: 25, job: 'Developer' };
+console.log(name); // "Alice"
+console.log(otherDetails); // { age: 25, job: "Developer" }
+```
+
+**Rest Parameter**
+The rest parameter is used in function parameters to gather all remaining arguments into an array. This is especially useful when you don’t know how many arguments will be passed to the function.
+
+Example
+
+```js
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+```
+
+In this function, numbers collects all arguments passed into an array, allowing us to handle them easily.
+
+`**Summary**
+Rest pattern: Used in destructuring to collect remaining elements or properties.
+Rest parameter: Used in function parameters to gather an indefinite number of arguments into an array.
+`
+
+```js
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood); //Pizza Risotto Focaccia Bruschetta Garlic Bread Caprese Salad
+```
+
+There can only be one `Rest` , and it's only at the end
+
+```js
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours; // Destructure 'sat' and collect the rest into 'weekdays' object
+console.log(sat, weekdays);
+
+// Functions
+const add = function (...numbers) {
+  // 'numbers' gathers all arguments into an array
+  let sum = 0; // Start sum at 0
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i]; // Loop to add each number
+  console.log(sum);
+};
+add(2, 3); // Outputs 5
+add(5, 3, 7, 2, 3, 1, 7); // Outputs 28
+
+const x = [23, 5, 75];
+add(...x); // Spread array 'x' into individual arguments for 'add'
+```
+
+The rest operator (...numbers) in the function parameters collects all arguments into an array, while the spread operator (...x) in add(...x) expands the array into individual values. These operators are powerful tools in JavaScript and work well in your examples!
+
+```js
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient, otherIngredients);
+  },
+};
+
+restaurant.orderPizza('Mushrooms', 'Onion', 'Olives', 'Spinach');
+//Mushrooms (3) ['Onion', 'Olives', 'Spinach']
+
+restaurant.orderPizza('Mushrooms');
+//Mushrooms []
+```
