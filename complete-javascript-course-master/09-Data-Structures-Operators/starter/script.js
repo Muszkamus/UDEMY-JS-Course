@@ -45,8 +45,14 @@ const restaurant = {
   },
 };
 
-restaurant.orderPizza('Mushrooms', 'Onion', 'Olives', 'Spinach');
-//Mushrooms (3) ['Onion', 'Olives', 'Spinach']
+///////////
+//Nullish
+restaurant.numGuests = 0; //Falsy value so there is a problem
 
-restaurant.orderPizza('Mushrooms');
-//[]
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // Result is 10 as 0 is falsy value in this context
+
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect); //Result is 0
+
+//Nullish:  NULL or UNDEFINED (NOT 0 or "")

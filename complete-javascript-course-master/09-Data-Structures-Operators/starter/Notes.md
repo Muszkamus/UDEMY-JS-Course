@@ -2673,3 +2673,80 @@ restaurant.orderPizza('Mushrooms', 'Onion', 'Olives', 'Spinach');
 restaurant.orderPizza('Mushrooms');
 //Mushrooms []
 ```
+
+---
+
+# **108. Short Circuiting (&& and ||) (AND and OR)**
+
+---
+
+```js
+//Short Circuiting ($$ and ||) AND and OR
+//Use any data type, return ANY data type, short-circuiting
+//Basically, AND and OR statements
+
+console.log(3 || 'Radek'); //If the first value is truthy value, it will print it
+console.log('' || 'Radek'); //Radek
+console.log(true || 0); // true
+console.log(undefined || null); //null
+```
+
+```js
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1); //result = 10, as two first ones don't exist
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // Same as above
+```
+
+Using a Ternary Operator:
+
+`const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;`
+This line checks if `restaurant.numGuests` exists and is a "truthy" value. If it is, `guests1` will be set to `restaurant.numGuests`. If it is "falsy" (e.g., `null`, undefined, 0, etc.), `guests1` will default to 10.
+Using Logical OR (||):
+
+`const guests2 = restaurant.numGuests || 10;`
+This line uses the || operator, which is a shorthand way of doing the same thing as the ternary in this context. If `restaurant.numGuests` is "falsy," `guests2` will be set to 10. If it's "truthy," `guests2` will take on the value of `restaurant.numGuests`.
+Why They Produce the Same Result
+Both lines work because they both rely on the "falsy" nature of `restaurant.numGuests` when it doesn’t exist (e.g., if `restaurant.numGuests` is undefined or `null`). In both cases, `guests1` and `guests2` will default to 10 if `restaurant.numGuests` is "falsy."
+
+Benefit of the `||` Operator
+Using `||` is generally shorter and simpler when you want to set a default value. The logical OR approach is often preferred in these cases because it’s more concise.
+
+```js
+console.log(`---AND---`);
+console.log(0 && 'Radek'); // =0, Opposite of || (OR), it prints first falsy value
+console.log(7 && 'Radek'); // =Radek, If all are truthy, then last value gets printed
+```
+
+```js
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach'); // Prints first falsy value, (It doesn't eists)
+}
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach'); //Spinach
+```
+
+---
+
+# **109. The Nullish Coalescing Operator (??)**
+
+---
+
+```js
+///////////
+//Nullish
+restaurant.numGuests = 0; //Falsy value so there is a problem
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2); // Result is 10 as 0 is falsy value in this context
+
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect); //Result is 0
+
+//Nullish:  NULL or UNDEFINED (NOT 0 or "")
+```
+
+Nullish Coalescing Operator (??):
+The ?? operator only treats null and undefined as "nullish" values.
+
+It’s useful when you want to allow "falsy" values like 0 or "" without defaulting to another value
