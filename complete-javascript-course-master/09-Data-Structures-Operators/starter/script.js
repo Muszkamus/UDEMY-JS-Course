@@ -44,15 +44,31 @@ const restaurant = {
     console.log(mainIngredient, otherIngredients);
   },
 };
+// Goal- Set default numGuests for objects that do not have this property
+const rest1 = {
+  name: 'Capri',
+  //numGuests: 20,
+  numGuests: 0, // As 0 is falsy number, it will print what is set as default
+};
 
-///////////
-//Nullish
-restaurant.numGuests = 0; //Falsy value so there is a problem
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+//OR assignment operator, setting default value if not existent.
+//rest1.numGuests = rest1.numGuests || 10;
+//rest2.numGuests = rest2.numGuests || 10;
 
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2); // Result is 10 as 0 is falsy value in this context
+rest1.numGuests ||= 10; //The same as above,
+rest2.numGuests ||= 10;
 
-const guestsCorrect = restaurant.numGuests ?? 10;
-console.log(guestsCorrect); //Result is 0
+//However, if we want opposite effect, NULLISH OPERATOR
 
-//Nullish:  NULL or UNDEFINED (NOT 0 or "")
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+rest1.owner = rest1.owner && '<ANONYMOUS>'; // This will throw an undefined, as there is not owner in rest1
+rest2.owner &&= '<ANONYMOUS>'; // rest2.owner = rest2.owner && "<ANONYMOUS>"; (even without like above, it will avoid undefined)
+
+console.log(rest1);
+console.log(rest2);

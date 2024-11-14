@@ -2680,6 +2680,90 @@ restaurant.orderPizza('Mushrooms');
 
 ---
 
+`&& (AND)`
+Returns the first falsy value or the last truthy value if all are true.
+Stops evaluating if a falsy value is found (short-circuiting).
+
+`|| (OR)`
+Returns the first truthy value or the last falsy value if all are false.
+Stops evaluating if a truthy value is found (short-circuiting).
+
+```js
+function accessPage(user) {
+  // Allow access only if user is logged in AND has admin rights
+  if (user.isLoggedIn && user.isAdmin) {
+    console.log('Access granted to admin page');
+  } else {
+    console.log('Access denied');
+  }
+}
+
+// Example with OR: Default value for user role if undefined
+const userRole = user.role || 'guest'; // If user.role is falsy, set to "guest"
+console.log(`User role is: ${userRole}`);
+```
+
+---
+
+`! (NOT)`
+Inverts the truthiness of a value.
+!true becomes false and !false becomes true.
+
+```js
+function submitForm(data) {
+  if (!data.name || !data.email) {
+    console.log('Please fill out all required fields');
+  } else {
+    console.log('Form submitted successfully');
+  }
+}
+```
+
+`?? (Nullish Coalescing)`
+Returns the right operand only if the left is null or undefined.
+Useful for default values when null or undefined might appear.
+
+```js
+function displayUserName(user) {
+  // Display "Guest" only if user.name is null or undefined, not if it's empty string or false
+  const nameToDisplay = user.name ?? 'Guest';
+  console.log(`Hello, ${nameToDisplay}!`);
+}
+```
+
+`&&= (AND Assignment)`
+Assigns the right value only if the left value is truthy.
+
+```js
+function anonymizeUser(user) {
+  // Anonymize only if user.email exists
+  user.email &&= 'anonymous@example.com';
+  console.log('User email:', user.email);
+}
+```
+
+`||= (OR Assignment)`
+Assigns the right value only if the left value is falsy.
+
+```js
+function setUserCountry(user) {
+  // If user.country is falsy (e.g., undefined, null, or empty), default to "USA"
+  user.country ||= 'USA';
+  console.log('User country:', user.country);
+}
+```
+
+`??= (Nullish Assignment)`
+Assigns the right value only if the left value is null or undefined.
+
+```js
+function setProfilePicture(user) {
+  // Only set a default picture if user.profilePic is null or undefined
+  user.profilePic ??= 'default-avatar.png';
+  console.log('Profile picture:', user.profilePic);
+}
+```
+
 ```js
 //Short Circuiting ($$ and ||) AND and OR
 //Use any data type, return ANY data type, short-circuiting
@@ -2700,18 +2784,27 @@ console.log(guests2); // Same as above
 ```
 
 Using a Ternary Operator:
+Both the ternary operator and the logical OR (||) operator can be used to set a default value if `restaurant.numGuests` is "falsy" (e.g., null, undefined, or 0):
 
-`const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;`
-This line checks if `restaurant.numGuests` exists and is a "truthy" value. If it is, `guests1` will be set to `restaurant.numGuests`. If it is "falsy" (e.g., `null`, undefined, 0, etc.), `guests1` will default to 10.
-Using Logical OR (||):
+```js
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+```
 
-`const guests2 = restaurant.numGuests || 10;`
-This line uses the || operator, which is a shorthand way of doing the same thing as the ternary in this context. If `restaurant.numGuests` is "falsy," `guests2` will be set to 10. If it's "truthy," `guests2` will take on the value of `restaurant.numGuests`.
+Logical OR (||):
+
+```js
+const guests2 = restaurant.numGuests || 10;
+```
+
+This uses || to assign 10 only if `restaurant.numGuests` is falsy, otherwise, it assigns `restaurant.numGuests`.
+
 Why They Produce the Same Result
-Both lines work because they both rely on the "falsy" nature of `restaurant.numGuests` when it doesn’t exist (e.g., if `restaurant.numGuests` is undefined or `null`). In both cases, `guests1` and `guests2` will default to 10 if `restaurant.numGuests` is "falsy."
+Both approaches set a default value of 10 when `restaurant.numGuests` is falsy.
 
-Benefit of the `||` Operator
-Using `||` is generally shorter and simpler when you want to set a default value. The logical OR approach is often preferred in these cases because it’s more concise.
+Benefit of ||
+Using || is shorter and often preferred for setting default values due to its simplicity.
+
+Ternary Operator:
 
 ```js
 console.log(`---AND---`);
@@ -2750,3 +2843,28 @@ Nullish Coalescing Operator (??):
 The ?? operator only treats null and undefined as "nullish" values.
 
 It’s useful when you want to allow "falsy" values like 0 or "" without defaulting to another value
+
+# **110. Logical Assignment Operators**
+
+```js
+// Goal- Set default numGuests for objects that do not have this property
+const rest1 = {
+  name: 'Capri',
+  //numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+//OR assignment operator
+//rest1.numGuests = rest1.numGuests || 10;
+//rest2.numGuests = rest2.numGuests || 10;
+
+rest1.numGuests ||= 10; //The same as above,
+rest2.numGuests ||= 10;
+
+console.log(rest1);
+console.log(rest2);
+```
