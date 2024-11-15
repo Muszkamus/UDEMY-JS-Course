@@ -3003,3 +3003,37 @@ const users = [];
 // If not, use nullish coalescing (??) to provide a fallback value ('Array is empty')
 console.log(users[0]?.name ?? 'Array is empty');
 ```
+
+---
+
+# 115. Looping Objects: Object Keys, Values, and Entries
+
+---
+
+```js
+//////////////
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties); //['thu', 'fri', 'sat']
+
+let openStr = `We are open on ${properties.length} days: `; //We are open for 3 days
+
+for (const day of properties) {
+  // Same as looping array
+  openStr += `${day},`;
+}
+console.log(openStr); //We are open on 3 days: thu, fri, sat,
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values); //0: {open: 12, close: 22} 1: {open: 11, close: 23} 2: {open: 0, close: 24}
+
+//Entire OBJECT
+const entries = Object.entries(openingHours);
+//console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+  //On thu we open at 12 and close at 22 (And so on so on)
+}
+```
