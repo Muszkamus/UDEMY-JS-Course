@@ -1,40 +1,43 @@
 'use strict';
+// Object literal is the hardcoded information in the program
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
+const openingHours = {
+  //Mon-Thu
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  //Friday
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0,
+    close: 24,
+  },
+};
+//console.log(openingHours);
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0,
-      close: 24,
-    },
-  },
 
+  //ES6 Enhanced object literal (Adding another variable)
+  openingHours,
+  //Functions (Removing function word, but function still works)
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    time = '20:00',
-    address,
-  }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
     console.log(
       `Order received: ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
@@ -44,31 +47,26 @@ const restaurant = {
     console.log(mainIngredient, otherIngredients);
   },
 };
-// Goal- Set default numGuests for objects that do not have this property
-const rest1 = {
-  name: 'Capri',
-  //numGuests: 20,
-  numGuests: 0, // As 0 is falsy number, it will print what is set as default
-};
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
 
-const rest2 = {
-  name: 'La Piazza',
-  owner: 'Giovanni Rossi',
-};
-//OR assignment operator, setting default value if not existent.
-//rest1.numGuests = rest1.numGuests || 10;
-//rest2.numGuests = rest2.numGuests || 10;
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
 
-rest1.numGuests ||= 10; //The same as above,
-rest2.numGuests ||= 10;
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-//However, if we want opposite effect, NULLISH OPERATOR
+for (const day of days) {
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
 
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist'); //(2) ['Focaccia', 'Pasta']
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist'); //Method does not exist
 
-rest1.owner = rest1.owner && '<ANONYMOUS>'; // This will throw an undefined, as there is not owner in rest1
-rest2.owner &&= '<ANONYMOUS>'; // rest2.owner = rest2.owner && "<ANONYMOUS>"; (even without like above, it will avoid undefined)
+//Arrays
 
-console.log(rest1);
-console.log(rest2);
+//const users = [{ name: 'Radek', email: 'Mordeczka@gmail.com' }];
+const users = [];
+console.log(users[0]?.name ?? 'Array is empty');

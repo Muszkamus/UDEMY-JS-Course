@@ -2851,20 +2851,155 @@ It’s useful when you want to allow "falsy" values like 0 or "" without default
 const rest1 = {
   name: 'Capri',
   //numGuests: 20,
-  numGuests: 0,
+  numGuests: 0, // As 0 is falsy number, it will print what is set as default
 };
 
 const rest2 = {
   name: 'La Piazza',
   owner: 'Giovanni Rossi',
 };
-//OR assignment operator
+//OR assignment operator, setting default value if not existent.
 //rest1.numGuests = rest1.numGuests || 10;
 //rest2.numGuests = rest2.numGuests || 10;
 
 rest1.numGuests ||= 10; //The same as above,
 rest2.numGuests ||= 10;
 
+//However, if we want opposite effect, NULLISH OPERATOR
+
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+rest1.owner = rest1.owner && '<ANONYMOUS>'; // This will throw an undefined, as there is not owner in rest1
+rest2.owner &&= '<ANONYMOUS>'; // rest2.owner = rest2.owner && "<ANONYMOUS>"; (even without like above, it will avoid undefined)
+
 console.log(rest1);
 console.log(rest2);
+```
+
+---
+
+# **112. Looping Arrays: The for-of Loop**
+
+---
+
+Standard `for` loop: When precise index control is necessary.
+`for...of` loop: When you only need to iterate over the values.
+`for...of` with .entries(): When both index and value are needed, and readability is a priority.
+
+```js
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// Combines the arrays 'starterMenu' and 'mainMenu' from the 'restaurant' object into a single array 'menu' using the spread operator (...).
+
+console.log(menu);
+// Logs the entire 'menu' array to the console.
+
+for (const item of menu) console.log(item);
+// Loops through each item in the 'menu' array and logs each item to the console.
+
+for (const [i, element] of menu.entries()) {
+  // Uses the '.entries()' method to get an iterable of index-value pairs from the 'menu' array.
+  // Destructures the pair into 'i' (index) and 'element' (value) in each iteration of the loop.
+  console.log(`${i + 1}: ${element}`);
+  // Logs the index (starting from 1, so +1 is added) and the corresponding menu item in a formatted string.
+}
+
+console.log([...menu.entries()]);
+// Logs an array of all the index-value pairs from 'menu' created by spreading the iterable returned by '.entries()' into a new array.
+```
+
+---
+
+# **113. Enhanced Object Literals**
+
+---
+
+```js
+'use strict';
+// Object literal is the hardcoded information in the program
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day- ${2 + 4}`]: {
+    open: 0,
+    close: 24,
+  },
+};
+console.log(openingHours);
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  //ES6 Enhanced object literal (Adding another variable)
+  openingHours,
+  //Functions (Removing function word, but function still works)
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+```
+
+---
+
+# **114. Optional Chaining (?.)**
+
+---
+
+Optional chaining `(?.)` is a JavaScript feature that allows you to safely access deeply nested properties, methods, or array elements without causing an error if any part of the chain is `null` or `undefined`. Instead of throwing an error, it simply returns `undefined` when it encounters a missing or invalid property.
+
+```js
+// Check if 'openingHours' exists and if 'mon' (Monday) exists in 'openingHours'
+// If both exist, log the opening time of 'mon'
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// The same logic as above, but written more concisely using optional chaining (?.)
+// If 'mon' exists in 'openingHours', log the 'open' time; otherwise, logs 'undefined'
+console.log(restaurant.openingHours.mon?.open);
+
+// Optional chaining is applied at each level of the chain.
+// Checks if 'openingHours' exists, then if 'mon' exists within it, and finally logs 'open'
+console.log(restaurant.openingHours?.mon?.open);
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// Array of all days in a week
+
+// Loop through each day in the 'days' array
+for (const day of days) {
+  // Dynamically access the opening time of the current day using optional chaining
+  // If the day doesn't exist in 'openingHours', 'open' will be 'undefined'
+  // Use nullish coalescing (??) to set 'closed' as the fallback value
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+
+  // Log the day's opening time or 'closed' if the property doesn't exist
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Check if the 'order' method exists in the 'restaurant' object
+// If it exists, call it with arguments (0, 1); if not, log 'Method does not exist'
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+
+// Check if the 'orderRisotto' method exists in the 'restaurant' object
+// If it exists, call it; otherwise, log 'Method does not exist'
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+
+// Example 1: Uncomment the below line to simulate an array with one user
+// const users = [{ name: 'Radek', email: 'Mordeczka@gmail.com' }];
+const users = [];
+// Example 2: Simulate an empty array
+
+// Check if the first user in the 'users' array exists and has a 'name' property
+// If not, use nullish coalescing (??) to provide a fallback value ('Array is empty')
+console.log(users[0]?.name ?? 'Array is empty');
 ```
