@@ -25,8 +25,9 @@ So here are your tasks:
 
 *5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
 
-6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints
+*6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints
     each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
+
 7. The team with the lower odd is more likely to win. 
     Print to the console which team is more likely to win, WITHOUT using an if/else statement or the ternary operator.
 
@@ -115,11 +116,28 @@ console.log(players1Final);
 
 //5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
 //Destructured from object
-const { team1, x: draw, team2 } = game.odds;
-console.log(team1, draw, team2);
+const { team1: team1odds, x: draw, team2: team2odds } = game.odds;
+console.log(team1odds, draw, team2odds);
 /*
 6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints
  each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
     */
 
-const printGoals = function () {};
+const printGoals = function (...players) {
+  for (let i = 0; i < players.length; i++) {
+    console.log(`${i + 1}: ${players[i]}`); // This will show all the players as an array
+  }
+  console.log(`Total number of goals scored: ${players.length}`);
+};
+
+printGoals(...game.scored);
+
+/* 7. The team with the lower odd is more likely to win. 
+    Print to the console which team is more likely to win, WITHOUT using an if/else statement or the ternary operator.
+    */
+
+const minOdd = Math.min(team1odds, team2odds);
+console.log(minOdd);
+const likelyWinner = (minOdd === team1odds && game.team1) || game.team2;
+
+console.log(`${likelyWinner} is more likely to win`);
