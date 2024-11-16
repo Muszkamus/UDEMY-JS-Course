@@ -3037,3 +3037,93 @@ for (const [day, { open, close }] of entries) {
   //On thu we open at 12 and close at 22 (And so on so on)
 }
 ```
+
+---
+
+# **117. Sets**
+
+---
+
+```js
+console.log(orderSet); // {'Pasta', 'Pizza', 'Risotto'}
+console.log(new Set('Radek')); // {'R', 'a', 'd', 'e', 'k'}
+console.log(orderSet.size); // Counts unique values
+console.log(orderSet.has('Pizza')); // Checks for the value...True
+console.log(orderSet.has('Bread')); // False
+orderSet.add('Garlic Bread'); // Adds Garlic Bread
+orderSet.add('Garlic Bread'); // Ignores as there is one already
+orderSet.delete('Risotto');
+console.log(orderSet); //{'Pasta', 'Pizza', 'Garlic Bread'}
+//orderSet.clear();
+
+for (const order of orderSet) console.log(order);
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const positions = [...new Set(staff)]; //
+console.log(staff);
+console.log(positions);
+```
+
+`Array:`
+
+- Can store duplicate values.
+- Maintains the order of elements.
+- Offers methods like .push(), .map(), .filter(), etc.
+
+`Set:`
+
+- Stores only unique values (removes duplicates).
+- Does not maintain insertion order strictly for all operations.
+- Provides .add() to insert and .has() to check for values.
+
+---
+
+# **118. Maps**
+
+---
+
+```js
+// Creating a new Map object called 'rest'
+const rest = new Map();
+
+// Using the .set() method to add key-value pairs to the Map
+rest.set('name', 'Classico Italiano'); // Key: 'name', Value: 'Classico Italiano'
+rest.set(1, 'Firenze, Italy'); // Key: 1 (number), Value: 'Firenze, Italy'
+console.log(rest.set(2, 'Lisbon, Portugal')); // Key: 2 (number), Value: 'Lisbon, Portugal', outputs the updated Map
+
+// Chaining .set() calls to add multiple key-value pairs in one statement
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']) // Key: 'categories', Value: an array of strings
+  .set('Open', 11) // Key: 'Open', Value: 11
+  .set('Close', 23) // Key: 'Close', Value: 23
+  .set(true, 'We are open') // Key: true (boolean), Value: 'We are open'
+  .set(false, 'We are closed'); // Key: false (boolean), Value: 'We are closed'
+
+// Retrieving values from the Map using the .get() method
+console.log(rest.get('name')); // Outputs the value associated with key 'name': 'Classico Italiano'
+console.log(rest.get(true)); // Outputs the value associated with key true: 'We are open'
+
+// Checking if a specific key exists in the Map using the .has() method
+console.log(rest.has('categories')); // Outputs true, as the key 'categories' exists
+
+// Removing a key-value pair from the Map using the .delete() method
+rest.delete(2); // Deletes the key-value pair with key 2 ('Lisbon, Portugal')
+
+// Uncommenting the line below would remove all key-value pairs in the Map
+// rest.clear();
+
+// Adding a unique key that is an array
+const arr = [1, 2]; // Creating an array [1, 2]
+rest.set(arr, 'Test'); // Using the array as a key and setting its value to 'Test'
+
+// Adding a key that references a DOM element (e.g., an <h1> element)
+rest.set(document.querySelector('h1'), 'Heading'); // Key: the <h1> element, Value: 'Heading'
+
+// Logging the entire Map object to the console
+console.log(rest);
+
+// Logging the size of the Map using the .size property
+console.log(rest.size); // Outputs the number of key-value pairs in the Map
+
+// Accessing the value associated with the array key
+console.log(rest.get(arr)); // Outputs 'Test', as the array [1, 2] is a valid key and retrieves its value
+```
