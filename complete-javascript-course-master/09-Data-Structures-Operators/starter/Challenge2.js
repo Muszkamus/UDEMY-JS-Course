@@ -52,24 +52,33 @@ along with the goal number
 */
 
 for (const [goal, player] of game.scored.entries()) {
-  console.log(`Goal ${goal}: ${player}`);
+  console.log(`Goal ${goal + 1}: ${player}`);
 }
+console.log('-------------');
 /*
 2. Use a loop to calculate the average odd and log it to the console
  (We already studied how to calculate averages, you can go check if you don't remember) 
-*
-for (let i = 0; i < 5; i++) {
-  console.log(i);
+*/
+const oddsValues = Object.values(game.odds);
+let sum = 0;
+//console.log(odds.length);
+for (let i = 0; i < oddsValues.length; i++) {
+  sum += oddsValues[i];
 }
+console.log(`average odd: ${sum / oddsValues.length}`);
 //It will be divided by the length of the array/object
 /*
+
+
 3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
       Odd of victory Bayern Munich: 1.33
       Odd of draw: 3.25
       Odd of victory Borrussia Dortmund: 6.5
 Get the team names directly from the game object, don't hardcode them (except for "draw"). 
 */
-
+console.log(`Odd of victory ${game.team1}: ${oddsValues[0]}`);
+console.log(`Odd of draw: ${oddsValues[1]}`);
+console.log(`Odd of victory ${game.team2}: ${oddsValues[2]}`);
 /*
 HINT: Note how the odds and the game objects have the same property names 😉
 
@@ -84,3 +93,15 @@ of the players who scored as properties,
 
 GOOD LUCK 😀
 */
+console.log('-------------');
+const scorers = {};
+
+for (const player of game.scored) {
+  if (scorers[player]) {
+    scorers[player]++; // Increment the count if the player exists
+  } else {
+    scorers[player] = 1; // Initialize the count for new players
+  }
+}
+
+console.log(scorers);
