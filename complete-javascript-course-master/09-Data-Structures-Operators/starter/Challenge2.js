@@ -57,17 +57,20 @@ for (const [goal, player] of game.scored.entries()) {
 /*
 2. Use a loop to calculate the average odd and log it to the console
  (We already studied how to calculate averages, you can go check if you don't remember) 
-*/
-//
-//
-///
-//
+*
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+//It will be divided by the length of the array/object
 /*
-3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
       Odd of victory Bayern Munich: 1.33
       Odd of draw: 3.25
       Odd of victory Borrussia Dortmund: 6.5
 Get the team names directly from the game object, don't hardcode them (except for "draw"). 
+*/
+
+/*
 HINT: Note how the odds and the game objects have the same property names 😉
 
 BONUS: Create an object called 'scorers' which contains the names 
