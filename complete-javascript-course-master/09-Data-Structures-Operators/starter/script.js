@@ -47,5 +47,3 @@ const restaurant = {
     console.log(mainIngredient, otherIngredients);
   },
 };
-
-// 119. Maps: Iteration

@@ -3127,3 +3127,69 @@ console.log(rest.size); // Outputs the number of key-value pairs in the Map
 // Accessing the value associated with the array key
 console.log(rest.get(arr)); // Outputs 'Test', as the array [1, 2] is a valid key and retrieves its value
 ```
+
+---
+
+# **119. Maps: Iteration**
+
+---
+
+```js
+// 119. Maps: Iteration
+
+const question = new Map([
+  ['Question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['Correct', 3],
+  [true, 'Correct!'],
+  [false, 'Try again!'],
+]);
+
+console.log(question);
+
+// Convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+// Quiz app
+console.log(question.get('Question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+if (answer === question.get('Correct')) {
+  console.log(question.get(true));
+} else {
+  console.log(question.get(false));
+}
+
+console.log(question.get(question.get('Correct') === answer)); // Same as above but shorter
+
+// Convert map to array
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());
+```
+
+---
+
+# **120. Summary: Which Data Structure to Use?**
+
+---
+
+Sources of data =
+
+- **From the program itself:** Data written directly in source code `(e.g. status messages)`
+- **From the UI:** Data input from the user or data written in DOM `(e.g. tasks in todo app)`
+- **From external sources:** Data fetched for example from web API `(e.g. recipe objects)`
+
+In this scenario, Objects and Maps are the best if we want to get specific information.
+API is usually a JSON file, stored in Object > Array format with Key and Value.
+
+However for Array or Sets
+
+////// Check chat GPT for notes
