@@ -3187,9 +3187,43 @@ Sources of data =
 - **From the UI:** Data input from the user or data written in DOM `(e.g. tasks in todo app)`
 - **From external sources:** Data fetched for example from web API `(e.g. recipe objects)`
 
-In this scenario, Objects and Maps are the best if we want to get specific information.
-API is usually a JSON file, stored in Object > Array format with Key and Value.
+In this scenario, `Objects` and `Maps` are the best if we want to get specific information.
+`API` is usually a JSON file, stored in Object > Array format with Key and Value.
 
-However for Array or Sets
+`Notes:` `Arrays` of `Objects` in JavaScript
 
-////// Check chat GPT for notes
+**Key-Value Pairs in `Objects`:**
+
+- `Objects` store data in the form of key-value pairs.
+  Keys provide context for the values, making the data meaningful.
+- `Example:` A recipe object has keys like title and publisher to describe its values.
+
+**Why `Objects` for Recipes?:**
+
+- Each recipe is a single unit of information.
+- Storing recipe data in `objects` makes it easier to group related information (e.g., title, ingredients, publisher).
+- `Objects` are ideal for structured data with named properties.
+
+**Using `Arrays` to Hold Multiple Recipes:**
+
+- Each recipe object is a value.
+- To manage a collection of recipes, a data structure is needed to organize them.
+- `Arrays` are perfect for creating a simple list to hold these `objects`.
+- `Arrays` allow easy iteration and management of multiple items.
+
+**No Need to Describe Each Object in the Array:**
+
+- Since all `objects` represent recipes, the context is already clear.
+- Additional metadata about the array is unnecessary; each object carries its own relevant data.
+
+**Importance in JavaScript Development:**
+
+- Combining `arrays` and `objects` is a common practice.
+- Professional JavaScript developers frequently work with `arrays` of `objects`.
+- This approach is foundational for handling structured, dynamic data in JavaScript applications.
+
+---
+
+# **122. Working With Strings. Part 1**
+
+---
