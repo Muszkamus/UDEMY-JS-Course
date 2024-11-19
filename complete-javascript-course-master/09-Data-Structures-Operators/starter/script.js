@@ -49,38 +49,59 @@ const restaurant = {
 };
 
 const airLine = 'TAP Air Portugal';
-const plane = 'A320';
 
-console.log(plane[0]); // A
-console.log(plane[1]); // 3
-console.log(plane[2]); // 2
+console.log(airLine.toLowerCase());
+console.log(airLine.toUpperCase());
 
-console.log(airLine.length); // 16
-console.log('B737'.length); // 4
+// Fix capitalisation in name
 
-console.log(airLine.indexOf('r')); // 6 as this is thep osition of the character (Even the space counts)
-console.log(airLine.lastIndexOf('r')); // space 10 but tfrom the right to left
-console.log(airLine.indexOf('Portugal')); // -1 if not found, and 8 if found (position of the first letter)
-
-console.log(airLine.slice(4)); // Slices first 4 characters
-console.log(airLine.slice(4, 7)); // Slices first 4 characters and starts again at 7 (7-4) = 4 characters
-
-console.log(airLine.slice(0, airLine.indexOf(' '))); // Prints first word
-console.log(airLine.slice(airLine.lastIndexOf(' ') + 1)); //Prints last word and add +1 to get rid of the space at the beginning
-
-console.log(airLine.slice(-2)); // Shows the last 2 characters
-console.log(airLine.slice(1, -1)); //Cuts first and last character of the string
-console.log('-------------------------');
-
-const checkMiddleSeat = function (seat) {
-  // B and E and middle seats
-  const s = seat.slice(-1);
-  if (s === 'B' || s === 'E') {
-    console.log("It's a middle seat!");
-  } else console.log('');
+const changing = function (name) {
+  const passengerLower = name.toLowerCase();
+  const passengetCorrect =
+    passengerLower[0].toUpperCase() + passengerLower.slice(1);
+  console.log(passengetCorrect);
 };
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
-checkMiddleSeat('3E');
+changing('RaDoSlaw');
 
-console.log(new String('radek')); //It's an object
+// Comparing email
+const email = 'hello@radek.io';
+const loginEmail = '   Hello@Radek.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim(); // Same as the above
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.'); // First one is what we want to change, second is what we are changing it to
+console.log(priceUS);
+
+const announcement =
+  'All Passengers come to barding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate')); //Only works on the first occurence
+
+console.log(announcement.replace(/door/g, 'gate')); // /door/g means it will be global change (close to replaceALL)
+
+// Booleans
+const plane = 'Airbus A320neo';
+//console.log(plane.includes('A32')); // Gives true when string is shown
+//console.log(plane.startsWith('')); // Gives true if given strign starts with it
+
+if (plane.startsWith('Air') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family!');
+} else {
+  ('Not a family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  // Make sure they dont board thep plance with specific items
+};
+checkBaggage('I have a laptop, some Food, and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snack and a gun for protection');
