@@ -3266,3 +3266,114 @@ checkMiddleSeat('3E');
 
 console.log(new String('radek')); //It's an object
 ```
+
+---
+
+# **123. Working With Strings. Part 2**
+
+---
+
+```js
+const airLine = 'TAP Air Portugal';
+
+console.log(airLine.toLowerCase());
+console.log(airLine.toUpperCase());
+
+// Fix capitalisation in name
+
+const changing = function (name) {
+  const passengerLower = name.toLowerCase();
+  const passengetCorrect =
+    passengerLower[0].toUpperCase() + passengerLower.slice(1);
+  console.log(passengetCorrect);
+};
+changing('RaDoSlaw');
+
+// Comparing email
+const email = 'hello@radek.io';
+const loginEmail = '   Hello@Radek.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim(); // Same as the above
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.'); // First one is what we want to change, second is what we are changing it to
+console.log(priceUS);
+
+const announcement =
+  'All Passengers come to barding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate')); //Only works on the first occurence
+
+console.log(announcement.replace(/door/g, 'gate')); // /door/g means it will be global change (close to replaceALL)
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A32')); // Gives true when string is shown
+console.log(plane.startsWith('')); // Gives true if given strign starts with it
+
+if (plane.startsWith('Air') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family!');
+} else {
+  ('Not a family');
+}
+```
+
+---
+
+# **124. Working With Strings. Part 3**
+
+---
+
+```js
+console.log('a+very+nice+string'.split('+'));
+console.log('Radek Balicki'.split(' '));
+const [firstName, lastName] = 'Radek Balicki'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+// Function to capitalize the first letter of each word
+const capitalizedName = function (name) {
+  const names = name.split(' '); // Split the input string into an array of words
+  const namesUpper = []; // Create an empty array to store capitalized words
+
+  for (const word of names) {
+    // Loop through each word in the array
+    namesUpper.push(word[0].toUpperCase() + word.slice(1)); // Capitalize the first letter and add the rest of the word
+  }
+
+  console.log(namesUpper.join(' ')); // Join the capitalized words into a single string and print it
+};
+
+capitalizedName('Jessica ann smith davis');
+capitalizedName('radoslaw jan balicki');
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+')); // Makes sure the string is 25 characters long
+console.log(message.padEnd(35, '-')); // Adds 10.... 35 - 25
+
+const maskCreditCard = function (number) {
+  const str = number + ''; // Convert the input number to a string
+  const last = str.slice(-4); // Extract the last 4 characters of the string
+  return console.log(last.padStart(str.length, '*')); // Pad the rest of the string with '*' and keep the last 4 visible
+};
+maskCreditCard(1234123412341234); // Output: "************1234"
+
+//Repeat
+const message2 = 'Bad weather! All Departures Delayed...\n';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`there are ${n} planes in the line: ${'✈️'.repeat(n)}`);
+};
+planesInLine(7);
+planesInLine(4);
+```
