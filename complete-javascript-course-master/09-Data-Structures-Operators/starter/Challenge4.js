@@ -31,14 +31,39 @@ Afterwards, test with your own test data!
 
 GOOD LUCK 😀
 */
-const array = [
-  'underscore case',
-  ' first_name',
-  'So"me_Variable',
-  '  calculate_AGE',
-  'delayed_departure',
-];
-console.log(array);
-for (const word of array) {
-  console.log(word.split());
-}
+'use strict';
+
+// Event Listener for Button
+document.querySelector('button').addEventListener('click', function () {
+  // Step 1: Get the input from the textarea
+  const text = document.querySelector('textarea').value;
+
+  // Step 2: Split input into lines by new lines
+  const lines = text.split('\n');
+  const emptyArray = [];
+
+  // Step 3: Process each line
+  for (const word of lines) {
+    const lowerCase = word
+      .toLowerCase()
+      .trim()
+      .replace('"', '') // Remove double quotes
+      .replace(/ /g, '_'); // Replace spaces with underscores
+
+    // Split into parts by underscore
+    const split = lowerCase.split('_');
+
+    // Convert to camelCase
+    for (let i = 1; i < split.length; i++) {
+      split[i] = split[i][0].toUpperCase() + split[i].slice(1); // Capitalize first letter of each part except the first
+    }
+
+    const camelCase = split.join('');
+    emptyArray.push(camelCase);
+  }
+
+  // Step 4: Log each result with formatting
+  for (let i = 0; i < emptyArray.length; i++) {
+    console.log(emptyArray[i].padEnd(25, ' ') + `${'✅'.repeat(i + 1)}`);
+  }
+});

@@ -3412,9 +3412,3 @@ for (const flight of flights.split('+')) {
   console.log(output);
 }
 ```
-
----
-
-# <center> **Section 10: A Closer Look at Functions**
-
----
