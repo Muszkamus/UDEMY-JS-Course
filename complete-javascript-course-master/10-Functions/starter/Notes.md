@@ -3412,3 +3412,102 @@ for (const flight of flights.split('+')) {
   console.log(output);
 }
 ```
+
+---
+
+# <center> **Section 10: A Closer Look at Functions**
+
+---
+
+# **129. Default Parameters**
+
+```js
+'use strict';
+
+// Default parameters
+
+const bookings = [];
+
+const createBooking = function (
+  flightNum,
+  numPassengers = 1, //ES6 Way
+  price = 199 * numPassengers //ES6 Way
+) {
+  // ES5 Way
+  // numPassengers = numPassengers || 1;
+  // price = price || 1;
+  const booking = {
+    flightNum,
+    numPassengers,
+    price,
+  };
+  console.log(booking);
+  bookings.push(booking);
+};
+createBooking('LH123');
+createBooking('LH123', 2);
+createBooking('LH123', 5);
+createBooking('LH123', undefined, 500); // Skips second value
+```
+
+---
+
+# **130. How Passing Arguments Works: Value vs. Reference**
+
+---
+
+Javascript is not passing by reference but by value (EXPLAIN)
+
+```js
+const flight = 'LH234';
+const radek = {
+  name: 'Radek Balicki',
+  passport: 242354322,
+};
+
+const checkIn = function (flightNumber, passenger) {
+  flightNumber = 'LH999';
+  passenger.name = 'Mr.' + passenger.name;
+  if (passenger.passport === 242354322) {
+    alert('Check in!');
+  } else {
+    console.log('Wrong passport number');
+  }
+};
+checkIn(flight, radek);
+console.log(flight);
+console.log(radek);
+
+const newPassport = function (person) {
+  person.passport = Math.random() * 100000000;
+};
+newPassport(radek);
+checkIn(flight, radek);
+```
+
+---
+
+# **131. First-Class and Higher-Order Functions**
+
+---
+
+Understanding First-Class and Higher-Order Functions in JavaScript
+Source: Excerpts from provided text
+
+**I. First-Class Functions**
+
+**A. What it Means:** This section defines first-class functions in JavaScript, highlighting their treatment as values or "first-class citizens."
+**B. Power of First-Class Functions:** This section details the versatile applications of first-class functions, including their assignment to variables, use as arguments and return values, and storage in data structures.
+**C. Key Point:** This section emphasises that the first-class nature of functions in JavaScript is a fundamental language feature that underpins their flexibility and is not something directly "used" by developers.
+
+**II. Higher-Order Functions**
+
+**A. What it Means:** This section defines higher-order functions, explaining that they operate on other functions by either accepting them as arguments or returning them as results.
+**B. Examples:** This section provides concrete examples of higher-order functions in JavaScript, including the addEventListener method and array methods like map, filter, and reduce.
+**C. Why Possible:** This section clarifies that the existence of higher-order functions is a direct consequence of the first-class nature of functions in JavaScript, as passing and returning functions would be impossible otherwise.
+
+---
+
+# **132. Functions Accepting Callback Functions**
+
+---
