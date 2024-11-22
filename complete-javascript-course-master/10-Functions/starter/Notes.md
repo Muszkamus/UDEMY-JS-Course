@@ -3511,3 +3511,184 @@ Source: Excerpts from provided text
 # **132. Functions Accepting Callback Functions**
 
 ---
+
+```js
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+// Higher-order function
+const transformer = function (str, fn) {
+  console.log(`Original String: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
+transformer('Javascript is the best', upperFirstWord);
+```
+
+---
+
+# **133. Functions Returning Functions**
+
+---
+
+```js
+//Returning other function
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+//Closures
+const greeterHey = greet('Hey');
+greeterHey('Radek');
+greeterHey('Jonas');
+
+greet('Hello')('Radek');
+
+//Change the above to the arrow function
+
+const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+
+const greetHey2 = greet2('Hey');
+greetHey2('Radek2');
+greetHey2('Lol');
+
+greet2('Hello2')('Radek2');
+```
+
+---
+
+# **134. The call and apply Methods**
+
+---
+
+### Code Breakdown: Understanding `this`, `call`, and `apply`
+
+```js
+'use strict';
+
+const lufthansa = {
+  airLine: 'Lufthansa', // Airline name
+  iataCode: 'LH', // Airline code
+  bookings: [], // Array to store bookings
+  // book: function(){}, // Slightly longer method syntax
+  book(flightNum, name) {
+    // Method to book a flight
+    console.log(
+      `${name} booked a seat on ${this.airLine} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name }); // Add booking to the array
+  },
+};
+
+lufthansa.book(239, 'Radek Balicki'); // Booking on Lufthansa
+lufthansa.book(673, 'Jon Doe'); // Another booking
+console.log(lufthansa); // Check bookings for Lufthansa
+
+const eurowings = {
+  airLine: 'Eurowings', // Another airline
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book; // Assign the `book` method to a variable (loses `this` context)
+
+// Does not work because `this` is undefined
+// book(23, "Sarah Williams");
+
+book.call(eurowings, 23, 'Sarah Williams'); // Use `call` to set `this` to eurowings
+console.log(eurowings); // Check bookings for Eurowings
+
+book.call(lufthansa, 239, 'Mary Cooper'); // `this` set to Lufthansa
+console.log(lufthansa); // Check updated bookings for Lufthansa
+
+const swiss = {
+  airLine: 'Swiss Air Lines', // A third airline
+  iataCode: 'LX',
+  bookings: [],
+};
+book.call(swiss, 583, 'Mary Cooper'); // `this` set to Swiss
+console.log(swiss); // Check bookings for Swiss
+
+console.log('------------------');
+
+// Apply method (OLD)
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData); // `apply` works like `call` but with an array of arguments
+console.log(swiss); // Check updated bookings for Swiss
+
+// NEW
+book.call(swiss, ...flightData); // Modern spread syntax achieves the same result
+```
+
+1.  **Creating Objects with Methods**
+
+- `lufthansa` is an object representing an airline with properties like `airLine`, `iataCode`, and `bookings`.
+- The `book` method allows you to book a flight and logs the booking details using `this` to refer to the current object (`lufthansa`).
+- Example:
+  ```javascript
+  lufthansa.book(239, 'Radek Balicki');
+  ```
+  This directly calls the `book` method on the `lufthansa` object.
+
+---
+
+2. **Understanding `this`**
+
+- In JavaScript, `this` refers to the object that is calling the method.
+- When you use `lufthansa.book(...)`, `this` inside the `book` method refers to `lufthansa`.
+
+---
+
+3.  **Storing the `book` Method in a Variable**
+
+- Assigning the `book` method to a variable:
+  ```javascript
+  const book = lufthansa.book;
+  ```
+- At this point, `book` is just a standalone function. `this` is no longer bound to `lufthansa`.
+
+---
+
+4.  **`call` Method to Bind `this`**
+
+- The `call` method explicitly sets what `this` refers to in a function.
+- Example:
+  ```javascript
+  book.call(eurowings, 23, 'Sarah Williams');
+  ```
+  - The first argument is the object (`eurowings`) that `this` should refer to.
+  - This allows you to reuse the `book` method for other objects.
+
+---
+
+5.  **Using `apply` (Old Style)**
+
+- The `apply` method is similar to `call` but expects arguments as an array.
+- Example:
+  ```javascript
+  const flightData = [583, 'George Cooper'];
+  book.apply(swiss, flightData);
+  ```
+
+---
+
+6.  **Modern Spread Syntax with `call`**
+
+- Instead of `apply`, you can use the spread syntax (`...`) with `call`.
+- Example:
+  ```javascript
+  book.call(swiss, ...flightData);
+  ```
+
+---
+
+**Summary of Key Points**
+
+1. `call` is used to set the value of `this` and pass arguments individually.
+2. `apply` does the same but expects arguments as an array (less common now).
+3. The spread syntax (`...`) replaces `apply` for simplicity.
