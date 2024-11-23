@@ -129,3 +129,46 @@ const longestWord = function (string) {
 
 longestWord(phrase);
 ```
+
+---
+
+# **Simple Calculations**
+
+```js
+"use strict";
+
+const array = [1, 2, 3, 4, 5];
+
+const calculations = function (number) {
+  // Variables
+  let max = number[0];
+  let min = number[0];
+  let sum = 0;
+  const evenNumber = [];
+  const oddNumber = [];
+
+  for (let i = 0; i < number.length; i++) {
+    sum += number[i];
+
+    if (number[i] > max) max = number[i];
+    if (number[i] < min) min = number[i];
+
+    if (number[i] % 2 === 0) {
+      evenNumber.push(number[i]);
+    } else {
+      oddNumber.push(number[i]);
+    }
+  }
+  const findAverage = sum / number.length;
+  // Logs
+
+  console.log(...number);
+  console.log(`Sum of the array: ${sum}`);
+  console.log(`Average of the array: ${findAverage}`);
+  console.log(`Max of the array: ${max}`);
+  console.log(`Min of the array: ${min}`);
+  console.log(`Even Numbers: ${evenNumber}`);
+  console.log(`Odd numbers: ${oddNumber}`);
+};
+calculations(array);
+```
