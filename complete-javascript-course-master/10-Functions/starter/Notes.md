@@ -3692,3 +3692,161 @@ book.call(swiss, ...flightData); // Modern spread syntax achieves the same resul
 1. `call` is used to set the value of `this` and pass arguments individually.
 2. `apply` does the same but expects arguments as an array (less common now).
 3. The spread syntax (`...`) replaces `apply` for simplicity.
+
+---
+
+# Topic 137: Immediately Invoked Function Expressions (IIFE)
+
+---
+
+**Code Example:**
+
+```javascript
+'use strict';
+
+const runOnce = function () {};
+runOnce();
+
+// Transforming function to function expression (Immediately Invoked Function Expression - IIFE)
+(function () {
+  console.log('this will never run again');
+  const isPrivate = 23;
+})();
+
+// Same thing but using an arrow function
+(() => console.log('this will ALSO never run again'))();
+
+// Functions create a scope
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+
+// `isPrivate` cannot be accessed outside its block due to `const` scope
+// console.log(isPrivate); // This will throw an error
+
+// `notPrivate` is accessible because `var` is function-scoped, not block-scoped
+console.log(notPrivate); // Outputs: 46
+```
+
+1. **What is an IIFE?**
+
+   - An **Immediately Invoked Function Expression (IIFE)** is a function that is executed right after it is defined.
+   - It helps create a private scope to avoid polluting the global namespace.
+
+2. **Syntax**:
+
+   - Wrap the function in parentheses: `(function() {})` or `(() => {})`.
+   - Immediately invoke it by adding parentheses at the end: `()`.
+   - Example:
+     ```javascript
+     (function () {
+       console.log('IIFE is executed!');
+     })();
+     ```
+
+3. **Why Use IIFE?**
+
+   - **Encapsulation**: Creates a private scope for variables to avoid conflicts with other parts of the program.
+   - **Immediate Execution**: Useful for initialization code that only needs to run once.
+   - **Global Namespace Protection**: Keeps global variables clean by containing logic within the function.
+
+4. **Block Scope vs. Function Scope**:
+
+   - Variables declared with `const` or `let` inside an IIFE are block-scoped and cannot be accessed outside the block.
+   - Variables declared with `var` are function-scoped and can "leak" outside the block.
+
+5. **Practical Use Case**:
+
+   - Use IIFE to initialize a library or module without exposing variables to the global scope.
+
+6. **Key Takeaways**:
+   - Functions inside an IIFE cannot be re-invoked.
+   - Private variables within an IIFE are inaccessible from outside the function.
+   - IIFE is a common pattern in JavaScript to achieve modularization and avoid variable conflicts.
+
+---
+
+# **138. Closures**
+
+---
+
+Imagine a backpack: When a function is created, it gets a little invisible "backpack" attached to it. This backpack can carry things (like variables) that were around when the function was made.
+
+The backpack stays with the function: Even after the function’s "home" (where it was created) is gone, the backpack stays with the function wherever it goes.
+
+What’s inside the backpack? In this case, the backpack holds the passengerCount variable. Every time you use the function, it can look inside the backpack, see what’s in there, and update it if needed.
+
+Why does this matter? It means the function can "remember" things, even after the place where it was created has disappeared. This is what we call a closure—the function "closes over" the variables it needs to keep.
+
+```js
+'use strict';
+
+// Closures
+// They happen automatically, we just need to recognise them
+
+const secureBooking = function () {
+  let passengerCount = 0; // 2. Variable environment
+
+  return function () {
+    // 3. This function gets called with return, and when the job is done, whole function disappears.
+    passengerCount++; // Increment the passenger count
+    console.log(`${passengerCount} passengers`); // Log the current count
+  };
+};
+
+const booker = secureBooking(); // 1. secureBooking runs and returns the inner function
+
+// Each call to booker uses the closure to access passengerCount
+booker(); // Logs: "1 passengers"
+booker(); // Logs: "2 passengers"
+booker(); // Logs: "3 passengers"
+
+console.dir(booker);
+
+// //[[Scopes]]
+// :
+// Scopes[3]
+// 0
+// :
+// Closure (secureBooking) {passengerCount: 3}
+// 1
+// :
+// Script {secureBooking: ƒ, booker: ƒ}
+```
+
+1. **Function Definition:**
+   When the secureBooking function is defined, it’s stored in memory.
+   The JavaScript engine doesn’t execute it yet—it just knows there’s a function and what it can do.
+
+2. **Function Execution (secureBooking()):**
+   The JavaScript engine creates a new execution context for secureBooking and adds it to the call stack.
+   Inside this context:
+   A variable passengerCount is created and initialized to 0.
+   The engine prepares the inner function to be returned (but not executed yet).
+   When the secureBooking function returns the inner function, the secureBooking execution context is removed from the call stack, but...
+
+3. **Closure Keeps Variable Environment Alive:**
+   The returned inner function still has access to secureBooking’s variable environment (where passengerCount is stored) because of the closure.
+   The variable environment stays in memory as long as the returned function (booker) exists.
+
+4. **Calling the Inner Function (booker()):**
+   When booker() is called, the JavaScript engine:
+   Creates a new execution context for the booker function and adds it to the call stack.
+   Accesses passengerCount from the closure’s variable environment and increments it.
+   Logs the updated value (1 passengers, 2 passengers, etc.).
+
+5. **Garbage Collection:**
+   Normally, when a function finishes, its variables are cleaned up by the JavaScript engine’s garbage collector.
+   However, because the closure keeps a reference to the passengerCount variable, it is not garbage collected, allowing it to persist.
+
+**Summary of JS Engine Process:**
+Call Stack handles function calls (secureBooking, booker).
+Variable Environment retains the passengerCount because of the closure.
+Memory Management ensures passengerCount isn’t deleted as long as the closure needs it.
+
+---
+
+# **139. More closure Examples**
+
+---
