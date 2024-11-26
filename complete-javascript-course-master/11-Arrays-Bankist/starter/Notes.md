@@ -1,4 +1,4 @@
-# <center>**Section 1 - Fundamentals pt.1** </center>
+# <center>**Section 2 - Fundamentals pt.1** </center>
 
 ---
 
@@ -347,7 +347,7 @@ console.log(yearsToRetirement(1997, 'Radek'));
 
 ---
 
-# **36. Functions Calling Other Functions**
+# 36. **Functions Calling Other Functions**
 
 ---
 
@@ -373,7 +373,7 @@ console.log(fruitProcessor(2, 3));
 
 ---
 
-# **37. Reviewing Functions**
+# 37. **Reviewing Functions**
 
 ---
 
@@ -406,7 +406,7 @@ yearsToRetirement(2002, 'Amy'); // Amy born in 2002, has years left until retire
 
 ---
 
-# **39. Arrays**
+# 39. **Arrays**
 
 ---
 
@@ -441,7 +441,7 @@ console.log(ages);
 
 ---
 
-# **40. Basic array operations (Methods)**
+# 40. **Basic array operations (Methods)**
 
 ---
 
@@ -573,7 +573,7 @@ It shows accessing properties in different ways, handling user input, and adding
 
 ---
 
-# **44. Object Methods**
+# 44. **Object Methods**
 
 ---
 
@@ -621,7 +621,7 @@ objects.getSummary(): This call logs the summary message. Since calcAge() was ca
 
 ---
 
-# **46. Iteration: The for loop 3 STEP METHOD**
+# 46. **Iteration: The for loop 3 STEP METHOD**
 
 ---
 
@@ -654,7 +654,7 @@ console.log(`lifting weight repetition ${rep}`);
 
 ---
 
-# **47. Looping Arrays, Breaking and Continuing**
+# 47. **Looping Arrays, Breaking and Continuing**
 
 ---
 
@@ -746,7 +746,7 @@ Once it finds a number, break exits the loop, so any elements after the first nu
 
 ---
 
-# **48. Looping Backwards and Loops in Loops**
+# 48. **Looping Backwards and Loops in Loops**
 
 ---
 
@@ -775,7 +775,7 @@ for (let exercise = 1; exercise < 4; exercise++) {
 
 ---
 
-# **49. While Loop**
+# 49. **While Loop**
 
 ---
 
@@ -820,7 +820,7 @@ With a while loop, you need to be careful to modify a variable in the loop body 
 
 ---
 
-# **51. Setting up Prettier and VS Code**
+# 51. **Setting up Prettier and VS Code**
 
 ---
 
@@ -847,7 +847,7 @@ TODO Highlight
 
 ---
 
-# **56. Installing Node.js and Setting Up a Dev Environment**
+# 56. **Installing Node.js and Setting Up a Dev Environment**
 
 ---
 
@@ -864,19 +864,19 @@ In Powershell, locate then html you want to live, and then type live-server in p
 
 ---
 
-# ** Solving issues**
+### Solving issues
 
 ---
 
 ```js
 //Problem
-/\* We work for a company building a smart home hermometer.
+/* We work for a company building a smart home hermometer.
 Out most recent task: "given an array of tempertures of one day, calculate the temperature amplitude.
 Keep in mind that sometimes theer might be a sensor error"
 
 \*/
 
-const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
 // Understanding the problem --
 // What is the amplitude? :Between the highest and lowest temp
@@ -891,19 +891,19 @@ substract min from max (amplitude) and return it
 */
 
 const calcTempAmplitude = function (t1, t2) {
-const temps = t1.concat(t2);
-console.log(temps);
+  const temps = t1.concat(t2);
+  console.log(temps);
 
-let max = temps[0]; //first number in array
-let min = temps[0];
-for (let i = 0; i < temps.length; i++) {
-const curTemp = temps[i];
-if (typeof curTemp !== "number") continue;
-if (curTemp > max) max = curTemp; //if the number is above , then it becomes new ma number, and it goes to the next numebr in array
-if (curTemp < min) min = curTemp; //same here but lowest
-}
-console.log(`Max: ${max}, Min: ${min}`);
-return max - min;
+  let max = temps[0]; //first number in array
+  let min = temps[0];
+  for (let i = 0; i < temps.length; i++) {
+    const curTemp = temps[i];
+    if (typeof curTemp !== 'number') continue;
+    if (curTemp > max) max = curTemp; //if the number is above , then it becomes new ma number, and it goes to the next numebr in array
+    if (curTemp < min) min = curTemp; //same here but lowest
+  }
+  console.log(`Max: ${max}, Min: ${min}`);
+  return max - min;
 };
 
 const amplitude = calcTempAmplitude([3, 5, 1], [9, 0, 5]); //t1, t2
@@ -922,7 +922,7 @@ console.log(amplitude);
 
 ---
 
-# **60. Debugging (Fixing Errors)**
+# 60. **Debugging (Fixing Errors)**
 
 ---
 
@@ -1014,7 +1014,7 @@ console.log(amplitude);
 
 ---
 
-# Basic HTML Structure and Elements
+# **Basic HTML Structure and Elements**
 
 Tag Description
 
@@ -1036,7 +1036,7 @@ Tag Description
 
 ---
 
-# INPUT CHEAT SHEET
+### INPUT CHEAT SHEET
 
 ---
 
@@ -1106,18 +1106,18 @@ format).
 
 ---
 
-### Classes in Ids
+### Classes and Ids
 
 Difference between classes and Ids
 **Ids have to be unique!**
 
 ---
 
-# <center>**Section 7 - JavaScript in the Browser: DOM and Events** </center>
+# <center> **Section 7 - JavaScript in the Browser: DOM and Events** </center>
 
 ---
 
-# **70. Project#1: Guess My Number!**
+# 70. **Project#1: Guess My Number!**
 
 ---
 
@@ -1128,7 +1128,7 @@ console.log(document.querySelector('.message').textContent); //Start guessing...
 
 ---
 
-# **71. What's the DOM and DOM manipulation**
+# 71. **What's the DOM and DOM manipulation**
 
 ---
 
@@ -1141,7 +1141,7 @@ DOM is not a part of JS language but WEB API's
 
 ---
 
-# **72. Selecting and Manipulating Objects**
+# 72. **Selecting and Manipulating Objects**
 
 ---
 
@@ -1157,7 +1157,7 @@ document.querySelector('.guess').value = 0; // sets 0 in input
 
 ---
 
-# **73. Handling Click events**
+# 73. **Handling Click events**
 
 ---
 
@@ -1178,7 +1178,7 @@ This code adds a click event listener to an element with the class .check. When 
 
 ---
 
-# **74. Implementing the Game Logic**
+# 74. **Implementing the Game Logic**
 
 ---
 
@@ -1220,7 +1220,7 @@ document.querySelector('.check').addEventListener('click', function () {
 
 ---
 
-# **75. Manipulating CSS Styles**
+# 75. **Manipulating CSS Styles**
 
 ---
 
@@ -1231,7 +1231,7 @@ document.querySelector('.number').style.width = '30rem'; //CSS Manipulation can 
 
 ---
 
-# **76. Challenge #1**
+# 76. **Challenge #1**
 
 ---
 
@@ -1296,7 +1296,7 @@ document.querySelector('.score').textContent = 0;
 
 ---
 
-# **77. Implementing Highscores**
+# 77. **Implementing Highscores**
 
 ---
 
@@ -1307,7 +1307,7 @@ document.querySelector('.highscore').textContent = highscore;
 
 ---
 
-# **78. Refactoring Our Code. The DRY Principle (Dont Repeat Yourself)**
+# 78. **Refactoring Our Code. The DRY Principle (Dont Repeat Yourself)**
 
 ---
 
@@ -1372,11 +1372,11 @@ document.querySelector('.check').addEventListener('click', function () {
 
 ---
 
-# **79. Project #2: Modal Window**
+# 79. **Project #2: Modal Window**
 
 ---
 
-# **80. Working with Classes (CSS)**
+# 80. **Working with Classes (CSS)**
 
 ---
 
@@ -1407,7 +1407,7 @@ overlay.addEventListener('click', closeModal);
 
 ---
 
-# **81. Handling and "Esc" Keypress Event**
+# 81. **Handling and "Esc" Keypress Event**
 
 ---
 
@@ -1450,7 +1450,7 @@ document.addEventListener('keydown', function (event) {
 
 ---
 
-# **82. Project #3: Pig Game**
+# 82. **Project #3: Pig Game**
 
 ---
 
@@ -1468,7 +1468,7 @@ diceEl.classList.add('hidden');
 
 ---
 
-# **86. Adding again button**
+# 86. **Adding again button**
 
 ---
 
@@ -1503,7 +1503,7 @@ btnNew.addEventListener('click', playAgain);
 
 ---
 
-# **86. Resetting the Game**
+# 86. **Resetting the Game**
 
 ---
 
@@ -1626,7 +1626,7 @@ init();
 
 ---
 
-# **89. An High-Level Overview of Javascript**
+# 89. **An High-Level Overview of Javascript**
 
 ---
 
@@ -1654,7 +1654,7 @@ Non-blocking event loop
 
 ---
 
-# **90. The Javascript engine and runtime**
+# 90. **The Javascript engine and runtime**
 
 ---
 
@@ -1702,7 +1702,7 @@ For example, callbacks from setTimeout, fetch, and event listeners wait here unt
 
 ---
 
-# **91. Execution Contexts and The Call Stack**
+# 91. **Execution Contexts and The Call Stack**
 
 ---
 
@@ -1771,7 +1771,7 @@ In this code, the Call Stack manages the sequence of function calls and returns 
 
 ---
 
-# **92. Scope and The Scope Chain**
+# 92. **Scope and The Scope Chain**
 
 ---
 
@@ -1886,7 +1886,7 @@ When the Call Stack pushes a function's Execution Context onto the stack, that f
 
 ---
 
-# **93. Scoping in Practice**
+# 93. **Scoping in Practice**
 
 ---
 
@@ -1929,7 +1929,7 @@ calcAge(1991);
 
 ---
 
-# **94. Variable Environment: Hoisting and the TDZ**
+# 94. **Variable Environment: Hoisting and the TDZ**
 
 ---
 
@@ -2024,7 +2024,7 @@ pi = 3.14159; // ❌ TypeError: Assignment to constant variable
 
 ---
 
-# **96. The "this" keyword**
+# 96. **The "this" keyword**
 
 ---
 
@@ -2103,7 +2103,11 @@ const dog = new Animal('Dog');
 dog.speak(); // "Dog"
 ```
 
-# **97. The "This" keyword in practice**
+---
+
+# 97. **The "This" keyword in practice**
+
+---
 
 ```js
 //Regular function
@@ -2145,7 +2149,7 @@ const f = radek.calcAge; // f variable copies calcAge function
 
 ---
 
-# **98. Regular functions vs Arrow functions**
+# 98. **Regular functions vs Arrow functions**
 
 ---
 
@@ -2207,7 +2211,7 @@ addArrow(2, 5);
 
 ---
 
-# **99. Primitives vs Objects (Primitive vs Reference Types)**
+# 99. **Primitives vs Objects (Primitive vs Reference Types)**
 
 ---
 
@@ -2237,7 +2241,7 @@ console.log('Me', me); // Me {name: 'Radek', age: 27}
 
 ---
 
-# **100. Primitives vs Objects in Practice**
+# 100. **Primitives vs Objects in Practice**
 
 ---
 
@@ -2286,7 +2290,7 @@ console.log('NEW After marriage: ', jessicaCopy);
 
 ---
 
-# **103. Destructuring Arrays**
+# 103. **Destructuring Arrays**
 
 ---
 
@@ -2351,7 +2355,7 @@ console.log(p, q, r);
 
 ---
 
-# **104. Destructuring Objects**
+# 104. **Destructuring Objects**
 
 ---
 
@@ -2492,7 +2496,7 @@ Nested destructuring is also popular but should be used sparingly for deeply nes
 
 ---
 
-# **106. The Spread Operator (...)**
+# 106. **The Spread Operator (...)**
 
 ---
 
@@ -2587,7 +2591,7 @@ console.log(restaurant.name); // "Ristorante Roma"
 
 ---
 
-# **107. Rest Pattern and Parameters (Reverse of Spread)**
+# 107. **Rest Pattern and Parameters (Reverse of Spread)**
 
 ---
 
@@ -2676,7 +2680,7 @@ restaurant.orderPizza('Mushrooms');
 
 ---
 
-# **108. Short Circuiting (&& and ||) (AND and OR)**
+# 108. **Short Circuiting (&& and ||) (AND and OR)**
 
 ---
 
@@ -2821,7 +2825,7 @@ restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach'); //Spinac
 
 ---
 
-# **109. The Nullish Coalescing Operator (??)**
+# 109. **The Nullish Coalescing Operator (??)**
 
 ---
 
@@ -2844,7 +2848,7 @@ The ?? operator only treats null and undefined as "nullish" values.
 
 It’s useful when you want to allow "falsy" values like 0 or "" without defaulting to another value
 
-# **110. Logical Assignment Operators**
+# 110. **Logical Assignment Operators**
 
 ```js
 // Goal- Set default numGuests for objects that do not have this property
@@ -2879,7 +2883,7 @@ console.log(rest2);
 
 ---
 
-# **112. Looping Arrays: The for-of Loop**
+# 112. **Looping Arrays: The for-of Loop**
 
 ---
 
@@ -2910,7 +2914,7 @@ console.log([...menu.entries()]);
 
 ---
 
-# **113. Enhanced Object Literals**
+# 113. **Enhanced Object Literals**
 
 ---
 
@@ -2950,7 +2954,7 @@ const restaurant = {
 
 ---
 
-# **114. Optional Chaining (?.)**
+# 114. **Optional Chaining (?.)**
 
 ---
 
@@ -3006,7 +3010,7 @@ console.log(users[0]?.name ?? 'Array is empty');
 
 ---
 
-# 115. Looping Objects: Object Keys, Values, and Entries
+# 115. **Looping Objects: Object Keys, Values, and Entries**
 
 ---
 
@@ -3040,7 +3044,7 @@ for (const [day, { open, close }] of entries) {
 
 ---
 
-# **117. Sets**
+# 117. **Sets**
 
 ---
 
@@ -3077,7 +3081,7 @@ console.log(positions);
 
 ---
 
-# **118. Maps**
+# 118. **Maps**
 
 ---
 
@@ -3130,7 +3134,7 @@ console.log(rest.get(arr)); // Outputs 'Test', as the array [1, 2] is a valid ke
 
 ---
 
-# **119. Maps: Iteration**
+# 119. **Maps: Iteration**
 
 ---
 
@@ -3177,7 +3181,7 @@ console.log(question.values());
 
 ---
 
-# **120. Summary: Which Data Structure to Use?**
+# 120. **Summary: Which Data Structure to Use?**
 
 ---
 
@@ -3224,7 +3228,7 @@ In this scenario, `Objects` and `Maps` are the best if we want to get specific i
 
 ---
 
-# **122. Working With Strings. Part 1**
+# 122. **Working With Strings. Part 1**
 
 ---
 
@@ -3269,7 +3273,7 @@ console.log(new String('radek')); //It's an object
 
 ---
 
-# **123. Working With Strings. Part 2**
+# 123. **Working With Strings. Part 2**
 
 ---
 
@@ -3327,7 +3331,7 @@ if (plane.startsWith('Air') && plane.endsWith('neo')) {
 
 ---
 
-# **124. Working With Strings. Part 3**
+# 124. **Working With Strings. Part 3**
 
 ---
 
@@ -3380,7 +3384,7 @@ planesInLine(4);
 
 ---
 
-# **126. String Methods Practice**
+# 126. **String Methods Practice**
 
 ---
 
@@ -3419,7 +3423,7 @@ for (const flight of flights.split('+')) {
 
 ---
 
-# **129. Default Parameters**
+# 129. **Default Parameters**
 
 ```js
 'use strict';
@@ -3452,7 +3456,7 @@ createBooking('LH123', undefined, 500); // Skips second value
 
 ---
 
-# **130. How Passing Arguments Works: Value vs. Reference**
+# 130. **How Passing Arguments Works: Value vs. Reference**
 
 ---
 
@@ -3487,7 +3491,7 @@ checkIn(flight, radek);
 
 ---
 
-# **131. First-Class and Higher-Order Functions**
+# 131. **First-Class and Higher-Order Functions**
 
 ---
 
@@ -3508,7 +3512,7 @@ Source: Excerpts from provided text
 
 ---
 
-# **132. Functions Accepting Callback Functions**
+# 132. **Functions Accepting Callback Functions**
 
 ---
 
@@ -3531,7 +3535,7 @@ transformer('Javascript is the best', upperFirstWord);
 
 ---
 
-# **133. Functions Returning Functions**
+# 133. **Functions Returning Functions**
 
 ---
 
@@ -3562,7 +3566,7 @@ greet2('Hello2')('Radek2');
 
 ---
 
-# **134. The call and apply Methods**
+# 134. **The call and apply Methods**
 
 ---
 
@@ -3695,7 +3699,7 @@ book.call(swiss, ...flightData); // Modern spread syntax achieves the same resul
 
 ---
 
-# Topic 137: Immediately Invoked Function Expressions (IIFE)
+# 137. **Immediately Invoked Function Expressions (IIFE)**
 
 ---
 
@@ -3767,7 +3771,7 @@ console.log(notPrivate); // Outputs: 46
 
 ---
 
-# **138. Closures**
+# 138. **Closures**
 
 ---
 
@@ -3847,7 +3851,7 @@ Memory Management ensures passengerCount isn’t deleted as long as the closure 
 
 ---
 
-# **139. More closure Examples**
+# 139. **More closure Examples**
 
 ---
 
@@ -3891,4 +3895,124 @@ const boardPassengers = function (n, wait) {
 };
 
 boardPassengers(180, 3); // `n` = 180 passengers, `wait` = 3 seconds
+```
+
+---
+
+# <center> **Section 11: Working With arrays [Project]** </center>
+
+---
+
+# 143. **Simple Array Methods**
+
+---
+
+```js
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// Slice - creates a shallow copy of the array, DOES NOT mutate the original array.
+console.log(arr.slice(2)); // ['c', 'd', 'e'] - Creates a new array starting from index 2 to the end of the array.
+console.log(arr.slice(2, 4)); // ['c', 'd'] - Creates a new array from index 2 up to (but not including) index 4.
+console.log(arr.slice(-2)); // ['d', 'e'] - Creates a new array with the last 2 elements (negative indices count from the end).
+console.log(arr.slice(1, -2)); // ['b', 'c'] - Creates a new array from index 1 up to (but not including) the last 2 elements.
+console.log(arr.slice()); // ['a', 'b', 'c', 'd', 'e'] - Creates a shallow copy of the entire array (no arguments).
+
+// Splice - mutates the original array by removing and/or replacing elements.
+console.log(arr.splice(1, 2)); // ['b', 'c'] - Removes 2 elements starting at index 1 ('b', 'c') and returns them.
+console.log(arr); // ['a', 'd', 'e'] - The original array is mutated to include only the remaining elements.
+
+// Reverse - mutates the original array by reversing its elements.
+arr = ['a', 'b', 'c', 'd', 'e']; // Reset the array for demonstration.
+const arr2 = ['j', 'i', 'h', 'g', 'f'];
+console.log(arr2.reverse()); // ['f', 'g', 'h', 'i', 'j'] - Reverses the elements of the array and mutates `arr2`.
+console.log(arr2); // ['f', 'g', 'h', 'i', 'j'] - The mutated array after reversing.
+
+// Concat - creates a new array by merging arrays, DOES NOT mutate the original arrays.
+const letters = arr.concat(arr2); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'] - Merges `arr` and `arr2` into a new array.
+console.log(letters); // Logs the merged array created by `concat`.
+console.log([...arr, ...arr2]); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'] - Same result using the spread operator instead of `concat`.
+
+// Join - combines all array elements into a string with a specified separator.
+console.log(letters.join('-')); // 'a-b-c-d-e-f-g-h-i-j' - Joins all elements of `letters` into a single string, separated by a `-`.
+```
+
+---
+
+# 144. **The New at Method**
+
+---
+
+```js
+const arr = [23, 11, 64];
+console.log(arr[0]);
+console.log(arr.at(0));
+// What is the difference?
+
+// The last value of the array
+console.log(arr[arr.length - 1]);
+console.log(arr.slice(-1)[0]);
+console.log(arr.at(-1));
+```
+
+---
+
+# 145 **Looping Arrays: forEach**
+
+---
+
+```js
+// Looping Arrays: forEach
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// Approach 1 with For of loop
+//for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`); // Math.abs makes sure there are no negative numbers
+  }
+}
+
+console.log('---------------');
+
+// Approach 2 with Callback
+movements.forEach(function (movement, i) {
+  if (movement > 0) {
+    console.log(`Movement ${i++}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i++}: You withdrew ${Math.abs(movement)}`); // Math.abs makes sure there are no negative numbers
+  }
+});
+// 0: function(200)
+// 1: function(450)
+// 2: function(400)
+// ...
+
+// The fundamental difference is that ForEach loop cannot be stopped.
+```
+
+---
+
+# 146. **forEach With Maps and Sets**
+
+---
+
+```js
+// Map
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+console.log('--------------');
+// Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${value}: ${value}`);
+});
 ```
