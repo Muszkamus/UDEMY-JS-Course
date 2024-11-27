@@ -4022,3 +4022,22 @@ currenciesUnique.forEach(function (value, _, map) {
 # 148. **Creating DOM Elements**
 
 ---
+
+```js
+const diplayMovements = function (movements) {
+  // Empty the existing container
+  containerMovements.innerHTML = ''; // similar to text content
+  movements.forEach(function (mov, i) {
+    // mov is the value, i is the position
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const html = `<div class="movements__row">
+          <div class="movements__type movements__type--${type}">
+          ${i + 1} ${type}</div>
+          <div class="movements__value">${mov}</div>
+        </div>`;
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+    //https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
+  });
+};
+diplayMovements(account1.movements); // 200, 450, -400, 3000, -650
+```
