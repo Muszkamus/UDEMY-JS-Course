@@ -1,25 +1,82 @@
 'use strict';
-// Coding Challenge #2
 
-/* 
-This is more of a thinking challenge than a coding challenge 🤓
+const lufthansa = {
+  airLine: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  //book: function(){}, // Slightly longer method
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airLine} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
 
-Take the IIFE below and at the end of the function, 
-attach an event listener that changes the color of the selected h1 element
- ('header') to blue, each time the BODY element is clicked.
-  Do NOT select the h1 element again!
+lufthansa.book(239, 'Radek Balicki');
+lufthansa.book(673, 'Jon Doe');
+console.log(lufthansa);
 
-And now explain to YOURSELF (or someone around you) WHY this worked! Take all the time you need.
- Think about WHEN exactly the callback function is executed, and what that means for the variables involved in this example.
+const eurowings = {
+  airLine: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
 
-GOOD LUCK 😀
-*/
+const book = lufthansa.book;
 
-(function () {
-  const header = document.querySelector('h1');
-  header.style.color = 'red';
+//Does not work
+// book(23, "Sarah Williams");
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
 
-  document.querySelector('body').addEventListener('click', function () {
-    header.style.color = 'blue';
-  });
-})();
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airLine: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+book.call(swiss, 583, 'Mary Cooper');
+console.log(swiss);
+
+console.log('------------------');
+// Apply method (OLD)
+const flightData = [583, 'George Cooper'];
+book.apply[(swiss, flightData)];
+console.log(swiss);
+
+// NEW
+book.call(swiss, ...flightData);
+
+// 135. The Bind method
+// Bind method
+console.log('-------------------');
+const bookEW = book.bind(eurowings);
+bookEW(23, 'Steven Williams');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Radek Balicki');
+bookEW23('Martha Cooper');
+
+// With event listeners
+lufthansa.planes = 0;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+//In General, bind method is something I really need to udnerstand
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application
+
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+//addVAT = value => value + value * 0.23;
+console.log(addVAT(100));
