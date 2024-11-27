@@ -208,3 +208,32 @@ person.greeting(); // Introduce without hobbies
 person.addHobbies("coding", "gym"); // Add multiple hobbies
 person.greeting(); // Introduce with hobbies
 ```
+
+---
+
+```js
+"use strict";
+
+// Input array with nested numbers
+const input = [1, [2, [3, 4], 5], [6, [7, [8]]]];
+
+// Function to calculate the sum of all numbers in a nested array
+const nestedArraySum = function (number) {
+  let sum = 0; // Initialize the sum to 0
+
+  // Iterate over each element in the current array
+  for (let element of number) {
+    if (Array.isArray(element)) {
+      // If the element is an array, make a recursive call to process its contents
+      sum += nestedArraySum(element);
+    } else {
+      // If the element is a number, add it to the sum
+      sum += element;
+    }
+  }
+  return sum; // Return the total sum for the current array
+};
+
+// Call the function with the input array and print the result
+console.log(nestedArraySum(input)); // Expected output: 36
+```
