@@ -4041,3 +4041,97 @@ const diplayMovements = function (movements) {
 };
 diplayMovements(account1.movements); // 200, 450, -400, 3000, -650
 ```
+
+---
+
+# 150. **Data transformations: map, filter, reduce**
+
+---
+
+### **Map**
+
+- **Description:** Creates a new array by applying a transformation function to each element in the original array.
+- **Key Points:**
+  - The number of elements in the new array matches the number of elements in the original array.
+  - Does not mutate the original array; it creates a new one.
+
+### **Example:**
+
+```javascript
+const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2); // [2, 4, 6]
+```
+
+---
+
+### **Filter**
+
+- **Description:** Returns a new array containing only the elements that satisfy a given condition (or pass a test).
+- **Key Points:**
+  - The resulting array can be smaller (or empty) compared to the original array.
+  - Does not mutate the original array.
+
+### **Example:**
+
+```javascript
+const numbers = [1, 2, 3, 4];
+const evenNumbers = numbers.filter(num => num % 2 === 0); // [2, 4]
+```
+
+---
+
+### **Reduce**
+
+- **Description:** Combines all elements of the array into a single value based on a reducer function you define.
+- **Key Points:**
+  - Works by taking an accumulator (a running total or combined value) and the current element, and applying a function to update the accumulator.
+  - You can optionally provide an initial value for the accumulator.
+
+### **Example:**
+
+```javascript
+const numbers = [1, 2, 3];
+const sum = numbers.reduce((accumulator, current) => accumulator + current, 0); // 6
+```
+
+---
+
+### Summary
+
+- **Map:** Transforms each element of the array into a new form.
+- **Filter:** Extracts a subset of elements based on a condition.
+- **Reduce:** Combines elements into a single result.
+
+---
+
+# **151. The map Method**
+
+---
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// Paradigm 1: Functional programming (preferred method)
+// The 'map' method is used to create a new array where each movement is converted to USD
+// 'euroToUsd' is the conversion rate from euros to USD
+const euroToUsd = 1.1; // Conversion rate from euros to USD
+const movementsUSD = movements.map(function (mov) {
+  // For each movement in the 'movements' array, multiply it by the conversion rate
+  return mov * euroToUsd; // Return the converted value
+});
+// 'movements' array remains unchanged (original data is preserved)
+// 'movementsUSD' is a new array containing the converted values
+console.log(movements);
+console.log(movementsUSD);
+
+// Paradigm 2: Imperative programming (traditional method using a loop)
+// Create an empty array to store the converted movements
+const movementsUSDfor = [];
+// Use a 'for-of' loop to iterate over the 'movements' array
+for (const mov of movements) {
+  // Multiply each movement by the conversion rate and add it to the new array
+  movementsUSDfor.push(mov * euroToUsd);
+}
+// 'movementsUSDfor' contains the same converted values as 'movementsUSD'
+console.log(movementsUSDfor); // Logs the new array of movements converted to USD
+```

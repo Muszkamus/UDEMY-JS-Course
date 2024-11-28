@@ -83,56 +83,34 @@ const diplayMovements = function (movements) {
 };
 diplayMovements(account1.movements); // 200, 450, -400, 3000, -650
 
-// Challenge
-///////////////////////////////////////
-// Coding Challenge #1
+///////////////////////////
 
-/* 
-Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age,
- and stored the data into an array (one array for each). 
- For now, they are just interested in knowing whether a dog is an adult or a puppy.
-  A dog is an adult if it is at least 3 years old, and it's a puppy if it's less than 3 years old.
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-Create a function 'checkDogs', which accepts 2 arrays of dog's ages 
-('dogsJulia' and 'dogsKate'), and does the following things:
+// Paradigm 1: Functional programming (preferred method)
+// The 'map' method is used to create a new array where each movement is converted to USD
+// 'euroToUsd' is the conversion rate from euros to USD
+const euroToUsd = 1.1; // Conversion rate from euros to USD
+const movementsUSD = movements.map(mov => mov * euroToUsd);
 
-**1. Julia found out that the owners of the FIRST and the LAST TWO dogs actually have cats, not dogs!
- So create a shallow copy of Julia's array, and remove the cat ages from that copied array
- (because it's a bad practice to mutate function parameters)
-**2. Create an array with both Julia's (corrected) and Kate's data
+console.log(movements);
+console.log(movementsUSD);
 
-******3. For each remaining dog, log to the console whether it's an adult 
-("Dog number 1 is an adult, and is 5 years old") or a puppy 
-("Dog number 2 is still a puppy 🐶")
-******4. Run the function for both test datasets
+// Paradigm 2: Imperative programming (traditional method using a loop)
+// Create an empty array to store the converted movements
+const movementsUSDfor = [];
+// Use a 'for-of' loop to iterate over the 'movements' array
+for (const mov of movements) {
+  // Multiply each movement by the conversion rate and add it to the new array
+  movementsUSDfor.push(mov * euroToUsd);
+}
+// 'movementsUSDfor' contains the same converted values as 'movementsUSD'
+console.log(movementsUSDfor); // Logs the new array of movements converted to USD
 
-HINT: Use tools from all lectures in this section so far 😉
+console.log('--------------');
 
-TEST DATA 1: Julia's data [3, 5, 2, 12, 7], Kate's data [4, 1, 15, 8, 3]
-TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
-
-GOOD LUCK 😀
-*/
-const juliasData = [3, 5, 2, 12, 7];
-const katesData = [4, 1, 15, 8, 3];
-juliasData.slice(2, -2);
-
-const checkDogs = function (arr, arr1) {
-  const juliasCorrected = arr.slice(1, -2);
-  console.log(juliasCorrected);
-  const allDogs = juliasCorrected.concat(arr1);
-  for (let i = 0; i < allDogs.length; i++) {
-    if (allDogs[i] < 3) {
-      console.log(
-        `Dog number ${i + 1} is a puppy, and is ${allDogs[i]} years old`
-      );
-    } else {
-      console.log(
-        `Dog number ${i + 1} is an adult dog, and is ${allDogs[i]} years old`
-      );
-    }
-  }
-};
-2;
-checkDogs(juliasData, katesData);
-console.log('----------');
+if (mov > 0) {
+  console.log(`Movement ${i + 1}: You deposited ${mov}`);
+} else {
+  console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+}
