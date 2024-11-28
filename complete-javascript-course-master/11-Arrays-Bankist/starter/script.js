@@ -108,9 +108,12 @@ for (const mov of movements) {
 console.log(movementsUSDfor); // Logs the new array of movements converted to USD
 
 console.log('--------------');
-
-if (mov > 0) {
-  console.log(`Movement ${i + 1}: You deposited ${mov}`);
-} else {
-  console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
-}
+//
+const movementDescriptions = movements.map((mov, i, arr) => {
+  if (mov > 0) {
+    return `Movement ${i + 1}: You deposited ${mov}`;
+  } else {
+    return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
+  }
+});
+console.log(movementDescriptions);
