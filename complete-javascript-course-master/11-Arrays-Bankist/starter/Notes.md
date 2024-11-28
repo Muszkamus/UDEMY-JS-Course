@@ -4135,3 +4135,61 @@ for (const mov of movements) {
 // 'movementsUSDfor' contains the same converted values as 'movementsUSD'
 console.log(movementsUSDfor); // Logs the new array of movements converted to USD
 ```
+
+### Mapped arrow function
+
+```js
+const movementDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementDescriptions);
+```
+
+### Purpose of the Code
+
+The goal of this code snippet is to take an array of movements (likely representing financial transactions) and create an array of descriptive strings that explain whether each transaction was a deposit or withdrawal, including the transaction amount.
+
+### Components of the Code
+
+### 1. `map` Method
+
+- The `map` method is called on the `movements` array.
+- It iterates through each element in the array, applies a function to each element, and creates a **new array** based on the returned values.
+
+### 2. Arrow Function
+
+- The arrow function `(mov, i)` takes two arguments:
+  - `mov`: the current element in the `movements` array.
+  - `i`: the index of the current element.
+
+### 3. Template Literals
+
+- Inside the arrow function, a **template literal** is used to construct a string for each movement:
+
+```javascript
+`Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`;
+```
+
+#### Components of the Template Literal:
+
+1. `Movement ${i + 1}`:
+
+   - Identifies which movement (1-based index) this string describes.
+
+2. `${mov > 0 ? 'deposited' : 'withdrew'}`:
+
+   - Uses a **ternary operator** to check if `mov` is positive:
+     - If positive, it says `'deposited'`.
+     - If not positive, it says `'withdrew'`.
+
+3. `${Math.abs(mov)}`:
+   - Ensures the absolute value of the movement is used, so negative numbers don’t display as `-` in the description.
+
+---
+
+# **152. Computing Usernames**
+
+---
