@@ -83,36 +83,40 @@ const diplayMovements = function (movements) {
 };
 diplayMovements(account1.movements); // 200, 450, -400, 3000, -650
 
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0]) //
+      .join('');
+  });
+};
+
 ///////////////////////////
+createUsernames(accounts); // const accounts = [account1, account2, account3, account4];
+console.log(accounts);
+// Arrow function to get first letter of the words
+// const username = user
+//   .toLowerCase()
+//   .split(' ')
+//   .map(name => name[0]) //  .map(name => RETURN name[0])
+//   .join('');
 
+////////////////
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// 1. standard Filter method
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
 
-// Paradigm 1: Functional programming (preferred method)
-// The 'map' method is used to create a new array where each movement is converted to USD
-// 'euroToUsd' is the conversion rate from euros to USD
-const euroToUsd = 1.1; // Conversion rate from euros to USD
-const movementsUSD = movements.map(mov => mov * euroToUsd);
+console.log(movements); //[200, 450, -400, 3000, -650, -130, 70, 1300]
+// 2. Arrow function with Filter method
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+console.log(deposits); // [200, 450, 3000, 70, 1300]
 
-console.log(movements);
-console.log(movementsUSD);
-
-// Paradigm 2: Imperative programming (traditional method using a loop)
-// Create an empty array to store the converted movements
-const movementsUSDfor = [];
-// Use a 'for-of' loop to iterate over the 'movements' array
-for (const mov of movements) {
-  // Multiply each movement by the conversion rate and add it to the new array
-  movementsUSDfor.push(mov * euroToUsd);
-}
-// 'movementsUSDfor' contains the same converted values as 'movementsUSD'
-console.log(movementsUSDfor); // Logs the new array of movements converted to USD
-
-console.log('--------------');
-//
-const movementDescriptions = movements.map(
-  (mov, i) =>
-    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
-      mov
-    )}`
-);
-console.log(movementDescriptions);
+// 3. For of method
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);

@@ -4104,7 +4104,7 @@ const sum = numbers.reduce((accumulator, current) => accumulator + current, 0); 
 
 ---
 
-# **151. The map Method**
+# 151. **The map Method**
 
 ---
 
@@ -4190,6 +4190,77 @@ The goal of this code snippet is to take an array of movements (likely represent
 
 ---
 
-# **152. Computing Usernames**
+# 152. **Computing Usernames**
 
 ---
+
+```js
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0]) //
+      .join('');
+  });
+};
+
+///////////////////////////
+createUsernames(accounts); // const accounts = [account1, account2, account3, account4];
+
+// Arrow function to get first letter of the words
+// const username = user
+//   .toLowerCase()
+//   .split(' ')
+//   .map(name => name[0]) //  .map(name => RETURN name[0])
+//   .join('');
+```
+
+---
+
+# 153. **The filter Method**
+
+---
+
+- **`movements` Array**: This array contains positive and negative numbers, where positive values represent deposits and negative values represent withdrawals.
+
+### Filter Method with Standard Function
+
+```javascript
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+```
+
+This creates a new array `deposits` containing only positive numbers (deposits) from the `movements` array using the `filter` method with a regular function.
+
+### Filter Method with Arrow Function
+
+```javascript
+const withdrawals = movements.filter(mov => mov < 0);
+```
+
+This creates a new array `withdrawals` containing only negative numbers (withdrawals) from the `movements` array using the `filter` method with an arrow function.
+
+### Output
+
+- `deposits`: [200, 450, 3000, 70, 1300]
+- `withdrawals`: [-400, -650, -130]
+
+### Using a For-Of Loop for Filtering
+
+```javascript
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+```
+
+This creates the `depositsFor` array by iterating through the `movements` array and manually adding positive values (deposits) to it using a `for-of` loop.
+
+### Output
+
+- `depositsFor`: [200, 450, 3000, 70, 1300]
+
+### Summary
+
+- The `filter` method is a concise way to filter arrays based on a condition.
+- The `for-of` loop offers a manual approach to achieve the same result but requires more code.
