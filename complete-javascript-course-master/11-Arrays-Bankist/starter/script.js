@@ -93,30 +93,23 @@ const createUsernames = function (accs) {
   });
 };
 
-///////////////////////////
 createUsernames(accounts); // const accounts = [account1, account2, account3, account4];
-console.log(accounts);
-// Arrow function to get first letter of the words
-// const username = user
-//   .toLowerCase()
-//   .split(' ')
-//   .map(name => name[0]) //  .map(name => RETURN name[0])
-//   .join('');
 
+const calcPrintBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcPrintBalance(account1.movements);
+
+///////////////////////////
+
+//
 ////////////////
+//
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-// 1. standard Filter method
-const deposits = movements.filter(function (mov) {
-  return mov > 0;
-});
 
-console.log(movements); //[200, 450, -400, 3000, -650, -130, 70, 1300]
-// 2. Arrow function with Filter method
-const withdrawals = movements.filter(mov => mov < 0);
-console.log(withdrawals);
-console.log(deposits); // [200, 450, 3000, 70, 1300]
-
-// 3. For of method
-const depositsFor = [];
-for (const mov of movements) if (mov > 0) depositsFor.push(mov);
-console.log(depositsFor);
+// Maximum value
+const maximumValue = movements.reduce(function (accumulator, movement) {
+  console.log('Comparing:', accumulator, 'and', movement); // Log comparisons
+  return accumulator > movement ? accumulator : movement; // Return if accumulator is higher than movement, return accumulator, if not then movement
+}, movements[0]);

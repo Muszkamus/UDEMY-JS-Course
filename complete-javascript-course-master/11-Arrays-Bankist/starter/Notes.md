@@ -4222,6 +4222,25 @@ createUsernames(accounts); // const accounts = [account1, account2, account3, ac
 
 ---
 
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// 1. standard Filter method
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+
+console.log(movements); //[200, 450, -400, 3000, -650, -130, 70, 1300]
+// 2. Arrow function with Filter method
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+console.log(deposits); // [200, 450, 3000, 70, 1300]
+
+// 3. For of method
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+```
+
 - **`movements` Array**: This array contains positive and negative numbers, where positive values represent deposits and negative values represent withdrawals.
 
 ### Filter Method with Standard Function
@@ -4264,3 +4283,43 @@ This creates the `depositsFor` array by iterating through the `movements` array 
 
 - The `filter` method is a concise way to filter arrays based on a condition.
 - The `for-of` loop offers a manual approach to achieve the same result but requires more code.
+
+---
+
+# 154. **The reduce Method**
+
+---
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// the Reduce method
+const balance = movements.reduce(function (sum, cur, i) {
+  // Sum, current number, iterator
+  console.log(`${i}- Sum: ${cur} (${sum})`);
+  return sum + cur; // Sum and current number stacking up
+}, 0); // Initial value at the start
+console.log(balance);
+```
+
+With DOM Manipulation
+
+```js
+const labelBalance = document.querySelector('.balance__value');
+```
+
+```js
+const calcPrintBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcPrintBalance(account1.movements);
+```
+
+```js
+// Maximum value
+const maximumValue = movements.reduce(function (accumulator, movement) {
+  console.log('Comparing:', accumulator, 'and', movement); // Log comparisons
+  return accumulator > movement ? accumulator : movement; // Return if accumulator is higher than movement, return accumulator, if not then movement
+}, movements[0]);
+```
