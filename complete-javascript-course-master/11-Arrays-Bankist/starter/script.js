@@ -62,9 +62,7 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-
+////////////////////////////////////////////////
 /////////////////////////////////////////////////
 const diplayMovements = function (movements) {
   // Empty the existing container
@@ -75,13 +73,44 @@ const diplayMovements = function (movements) {
     const html = `<div class="movements__row">
           <div class="movements__type movements__type--${type}">
           ${i + 1} ${type}</div>
-          <div class="movements__value">${mov}</div>
+          <div class="movements__value">${mov}€</div>
         </div>`;
     containerMovements.insertAdjacentHTML('afterbegin', html);
     //https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
   });
 };
 diplayMovements(account1.movements); // 200, 450, -400, 3000, -650
+
+const calcPrintBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcPrintBalance(account1.movements);
+
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}€`;
+
+  const outcomes = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(outcomes)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      return int >= 1;
+    })
+
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumInterest.textContent = `${interest}€`;
+};
+
+calcDisplaySummary(account1.movements);
 
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
@@ -95,21 +124,7 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts); // const accounts = [account1, account2, account3, account4];
 
-const calcPrintBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
-};
-calcPrintBalance(account1.movements);
-
 ///////////////////////////
-
-//
-////////////////
-//
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-// Maximum value
-const maximumValue = movements.reduce(function (accumulator, movement) {
-  console.log('Comparing:', accumulator, 'and', movement); // Log comparisons
-  return accumulator > movement ? accumulator : movement; // Return if accumulator is higher than movement, return accumulator, if not then movement
-}, movements[0]);
+/////////////////////
+////////////////////////
+//////////////////////////

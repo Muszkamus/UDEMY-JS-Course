@@ -4323,3 +4323,101 @@ const maximumValue = movements.reduce(function (accumulator, movement) {
   return accumulator > movement ? accumulator : movement; // Return if accumulator is higher than movement, return accumulator, if not then movement
 }, movements[0]);
 ```
+
+---
+
+# 155. **Challenge #2**
+
+---
+
+```js
+const dogYears = [5, 2, 4, 1, 15, 8, 3];
+const dogYears2 = [16, 6, 10, 5, 6, 1, 4];
+
+const calcAverageHumanAge = function (age) {
+  const humanYears = [];
+  for (let i = 0; i < age.length; i++) {
+    if (age[i] <= 2) {
+      humanYears.push(age[i] * 2);
+    } else {
+      humanYears.push(16 + age[i] * 4);
+    }
+  }
+  const adultDogs = humanYears.filter(function (i) {
+    return i > 18;
+  });
+  console.log(humanYears);
+  console.log(adultDogs);
+
+  const averageHumanYears = adultDogs.reduce(function (sum, cur) {
+    return sum + cur / adultDogs.length;
+  }, 0);
+  console.log(averageHumanYears);
+};
+j;
+calcAverageHumanAge(dogYears);
+console.log('-----------');
+calcAverageHumanAge(dogYears2);
+```
+
+---
+
+# 156. **The Magic of Chaining Methods**
+
+---
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
+const totalDepositUSD = movements
+  .filter(mov => mov > 0) // Only filter the amounts above 0
+  .map(mov => mov * eurToUsd) // Now multiply all the amounts
+  .reduce((acc, mov) => acc + mov, 0); // Get the sum of all of the amounts
+console.log(totalDepositUSD);
+```
+
+IN DOM
+
+```js
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}€`;
+
+  const outcomes = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(outcomes)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1;
+    })
+
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumInterest.textContent = `${interest}€`;
+};
+
+calcDisplaySummary(account1.movements);
+```
+
+---
+
+# 158. **The find Method**
+
+---
+
+```js
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account); // Prints the whole object
+```
