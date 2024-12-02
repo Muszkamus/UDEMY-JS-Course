@@ -124,6 +124,27 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts); // const accounts = [account1, account2, account3, account4];
 
+// Event Handlers
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  e.preventDefault(); // Prevent form from submitting
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and welcome message
+
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+    // Summary and movements
+    containerApp.style.opacity = 100;
+  }
+});
+
 ///////////////////////////
 /////////////////////
 ////////////////////////
