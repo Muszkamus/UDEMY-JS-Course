@@ -81,9 +81,10 @@ const diplayMovements = function (movements) {
 };
 diplayMovements(account1.movements); // 200, 450, -400, 3000, -650
 
-const calcPrintBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+
+  labelBalance.textContent = `${acc.balance} EUR`;
 };
 
 const calcDisplaySummary = function (acc) {
@@ -127,6 +128,7 @@ let currentAccount;
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault(); // Prevent form from submitting
   currentAccount = accounts.find(
+    // This function get the job done
     acc => acc.username === inputLoginUsername.value
   );
   console.log(currentAccount);
@@ -148,11 +150,22 @@ btnLogin.addEventListener('click', function (e) {
     diplayMovements(currentAccount.movements);
 
     // Display balance
-    calcPrintBalance(currentAccount.movements);
+    calcDisplayBalance(currentAccount);
 
     // Display summary
     calcDisplaySummary(currentAccount);
   }
+});
+
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+  console.log(amount, receiverAcc);
+
+  if (amount > 0 &&)
 });
 
 ///////////////////////////
