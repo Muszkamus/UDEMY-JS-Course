@@ -4421,3 +4421,60 @@ console.log(firstWithdrawal);
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account); // Prints the whole object
 ```
+
+---
+
+# 160. **Implementing Login**
+
+---
+
+````js
+The `find` method in JavaScript is used to search for an element in an array that meets a certain condition. Once it finds the first match, it stops searching and returns that element. If no match is found, it returns `undefined`.
+
+## How It Works
+1. You provide a callback function to the `find` method.
+2. The callback is called for each element in the array.
+3. If the callback returns `true` for an element, that element is returned by the `find` method.
+
+## Example
+```js
+currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+````
+
+### Step-by-Step Explanation
+
+1. `accounts`: This is an array, probably containing user objects (e.g., `{ username: 'johnDoe', password: '1234' }`).
+2. `.find`: Searches the `accounts` array.
+3. Callback (`acc => acc.username === inputLoginUsername.value`):
+   - For each `acc` (account object) in the `accounts` array, it checks if the `username` property matches `inputLoginUsername.value` (the username input by the user).
+4. Result:
+   - If a match is found (i.e., an account object with a username matching the input), it is stored in `currentAccount`.
+   - If no match is found, `currentAccount` will be `undefined`.
+
+## Example in Practice
+
+```javascript
+const accounts = [
+  { username: 'johnDoe', password: '1234' },
+  { username: 'janeDoe', password: '5678' },
+];
+
+// Simulate user input
+const inputLoginUsername = { value: 'janeDoe' };
+
+// Find the account with the matching username
+const currentAccount = accounts.find(
+  acc => acc.username === inputLoginUsername.value
+);
+
+console.log(currentAccount);
+// Output: { username: 'janeDoe', password: '5678' }
+```
+
+## Use Case for Logging In
+
+The `find` method helps locate the user object based on their username. Once you have the `currentAccount`, you can check if the `password` entered matches the stored `password`.
+
+```
+
+```
