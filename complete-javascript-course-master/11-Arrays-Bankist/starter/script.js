@@ -161,7 +161,7 @@ btnLogin.addEventListener('click', function (e) {
     updateUI(currentAccount);
   }
 });
-
+// Transfer Money
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
@@ -179,6 +179,37 @@ btnTransfer.addEventListener('click', function (e) {
     receiverAcc.movements.push(amount); // Add the amount to the receiver's account
     updateUI(currentAccount); // Refresh the UI to reflect the updated account details
   }
+});
+
+// Add an event listener to the 'btnClose' button to handle the click event
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault(); // Prevents the default form submission behavior
+
+  // Check if the entered username and PIN match the current account's credentials
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    // Find the index of the account in the 'accounts' array
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    // Explanation of findIndex:
+    // - Iterates through each account in the 'accounts' array
+    // - Returns the index of the first account where the username matches 'currentAccount.username'
+    // - If no match is found, it returns -1
+
+    console.log(index); // Log the found index for debugging purposes
+
+    // Remove the account at the found index from the 'accounts' array
+    accounts.splice(index, 1);
+
+    // Hide the application interface (simulate account closure)
+    containerApp.style.opacity = 0;
+  }
+
+  // Clear the input fields for username and PIN
+  inputCloseUsername.value = inputClosePin.value = '';
 });
 
 ///////////////////////////

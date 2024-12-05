@@ -4424,7 +4424,7 @@ console.log(account); // Prints the whole object
 
 ---
 
-# 160. **Implementing Login**
+# 159. **Implementing Login**
 
 ---
 
@@ -4475,6 +4475,75 @@ console.log(currentAccount);
 
 The `find` method helps locate the user object based on their username. Once you have the `currentAccount`, you can check if the `password` entered matches the stored `password`.
 
+---
+
+# 160. **Imprementing Transfers**
+
+---
+
+```js
+// Transfer Money
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+  inputTransferAmount.value = inputTransferTo.value = '';
+
+  if (
+    amount > 0 && // Check if the transfer amount is positive
+    currentAccount.balance >= amount && // Ensure the sender has enough balance
+    receiverAcc?.username !== currentAccount.username // Verify the receiver is not the sender
+  ) {
+    currentAccount.movements.push(-amount); // Deduct the amount from the sender's account
+    receiverAcc.movements.push(amount); // Add the amount to the receiver's account
+    updateUI(currentAccount); // Refresh the UI to reflect the updated account details
+  }
+});
 ```
 
+---
+
+# 161. The findIndex Method
+
+---
+
+```js
+// Add an event listener to the 'btnClose' button to handle the click event
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault(); // Prevents the default form submission behavior
+
+  // Check if the entered username and PIN match the current account's credentials
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    // Find the index of the account in the 'accounts' array
+    const index = accounts.findIndex(
+      acc => acc.username === currentAccount.username
+    );
+    // Explanation of findIndex:
+    // - Iterates through each account in the 'accounts' array
+    // - Returns the index of the first account where the username matches 'currentAccount.username'
+    // - If no match is found, it returns -1
+
+    console.log(index); // Log the found index for debugging purposes
+
+    // Remove the account at the found index from the 'accounts' array
+    accounts.splice(index, 1);
+
+    // Hide the application interface (simulate account closure)
+    containerApp.style.opacity = 0;
+  }
+
+  // Clear the input fields for username and PIN
+  inputCloseUsername.value = inputClosePin.value = '';
+});
 ```
+
+---
+
+# 162. **some and every**
+
+---
