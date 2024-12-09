@@ -4639,6 +4639,8 @@ console.log(a++); // 11,  because ++ is after, so it update immediately
 
 ---
 
+# 207. **What is OOP?**
+
 **OOP** is a programming paradigm based on the concept of **objects**.
 
 We use **objects** to **model (describe) real-world or abstract features**.
@@ -4682,5 +4684,21 @@ Interactions happen through a **public interface (API)**: methods that the code 
 - It helps **organize code** better.
 - It allows for **reuse** and **modularity**.
 - It makes applications **flexible** and **maintainable**.
+
+---
+
+# 208. **OOP in JavaScript**
+
+---
+
+OOP in JS: Prototypes
+
+Objects are linked to a prototype object/
+Prototypal inheritance: The prototype contains methods (behaviour) that are accessible to all objects linked to that prototype.
+Behaviour is delegated to the linked prototype object.
+
+---
+
+# 209. **Constructor Functions and the new Operator**
 
 ---

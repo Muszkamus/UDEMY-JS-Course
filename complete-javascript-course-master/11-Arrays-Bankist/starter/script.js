@@ -181,6 +181,20 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add movement
+    currentAccount.movements.push(amount);
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
 // Add an event listener to the 'btnClose' button to handle the click event
 btnClose.addEventListener('click', function (e) {
   e.preventDefault(); // Prevents the default form submission behavior
@@ -215,4 +229,24 @@ btnClose.addEventListener('click', function (e) {
 ///////////////////////////
 /////////////////////
 ////////////////////////
-//////////////////////////
+///////////////////////////
+
+// 1.
+const bankDepositsSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDepositsSum);
+
+// Calculate how many deposits there are over 1000
+const numDeposit1000 = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov >= 1000).length;
+console.log(numDeposit1000);
+
+///
+///
+let a = 10;
+console.log(++a); // 11,  because ++ is before, but will update after.
+console.log(a++); // 11,  because ++ is after, so it update immediately
