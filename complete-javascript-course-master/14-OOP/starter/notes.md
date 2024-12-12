@@ -4639,7 +4639,7 @@ console.log(a++); // 11,  because ++ is after, so it update immediately
 
 ---
 
-# 207. **What is OOP?**
+# 217. **What is OOP?**
 
 **OOP** is a programming paradigm based on the concept of **objects**.
 
@@ -4687,7 +4687,7 @@ Interactions happen through a **public interface (API)**: methods that the code 
 
 ---
 
-# 208. **OOP in JavaScript**
+# 218. **OOP in JavaScript**
 
 ---
 
@@ -4699,7 +4699,7 @@ Behaviour is delegated to the linked prototype object.
 
 ---
 
-# 209. **Constructor Functions and the new Operator**
+# 219. **Constructor Functions and the new Operator**
 
 ---
 
@@ -4725,7 +4725,7 @@ console.log(radek instanceof Person); // true,
 
 ---
 
-# 210. **Prototypes**
+# 220. **Prototypes**
 
 ---
 
@@ -4745,3 +4745,83 @@ Person.prototype.species = 'Homo Sapiens';
 console.log(radek); // It adds species and Homosapiens as value
 console.log(radek.hasOwnProperty('species')); // False, as it is added through prototype, not in a class
 ```
+
+---
+
+# 221. **Prototypal Inheritance and The Prototype Chain**
+
+---
+
+JavaScript uses a prototype-based inheritance system, and two key components of this system are **`prototype`** and **`__proto__`**. Here's a concise explanation of both:
+
+---
+
+## **1. `prototype`**
+
+- **What it is:**
+
+  - A property of **constructor functions** (functions used to create objects).
+  - It is an object that acts as a blueprint for all objects created by the constructor.
+
+- **Purpose:**
+
+  - To define properties and methods that should be shared across all instances of the constructor.
+
+- **Example:**
+
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+// Add a method to the prototype
+Person.prototype.sayHello = function () {
+  return `Hello, my name is ${this.name}`;
+};
+
+const alice = new Person('Alice');
+console.log(alice.sayHello()); // Output: "Hello, my name is Alice"
+```
+
+In this example:
+
+- `Person.prototype` is the shared prototype object for all instances of `Person`.
+- The `sayHello` method is accessible to all instances created with `Person`.
+
+---
+
+## 2. **Proto**
+
+- **What it is:**
+
+  - A property found on **every JavaScript object** (except those created with `Object.create(null)`).
+  - It points to the prototype object from which the object inherits, effectively linking the object to its prototype chain.
+
+- **Purpose:**
+
+  - To access the prototype object of an instance.
+
+- **Example:**
+
+```javascript
+const obj = {};
+console.log(obj.__proto__ === Object.prototype); // Output: true
+```
+
+In this example:
+
+- The `__proto__` of `obj` links it to `Object.prototype`, meaning `obj` can access methods like `toString` defined on `Object.prototype`.
+
+---
+
+## **Key Differences**
+
+| Feature        | `prototype`                       | `__proto__`                      |
+| -------------- | --------------------------------- | -------------------------------- |
+| **Definition** | Property of constructor functions | Property of all objects          |
+| **Purpose**    | Blueprint for instances           | Links an object to its prototype |
+| **Use Case**   | Define shared methods/properties  | Access the prototype chain       |
+
+---
+
+By understanding the relationship between `prototype` and `__proto__`, you can unlock the power of JavaScript's inheritance system and write more efficient, reusable code!

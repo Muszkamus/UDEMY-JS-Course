@@ -1,37 +1,13 @@
 'use strict';
+/* 
+1. Use a constructor function to implement a Car. A car has a make and a speed property. The speed property is the current speed of the car in km/h;
+2. Implement an 'accelerate' method that will increase the car's speed by 10, and log the new speed to the console;
+3. Implement a 'brake' method that will decrease the car's speed by 5, and log the new speed to the console;
+4. Create 2 car objects and experiment with calling 'accelerate' and 'brake' multiple times on each of them.
 
-// 209. Constructor Functions and the new Operator
-const Person = function (firstName, birthYear) {
-  // Instance properties
-  this.firstName = firstName;
-  this.birthYear = birthYear;
-  // Grayed out as it unsufficient to run a lot of functions within objects.
-  // this.calcAge = function () {
-  //   console.log(2024 - this.birthYear);
-  // };
-};
-const radek = new Person('Radek', 1997);
-console.log(radek);
+DATA CAR 1: 'BMW' going at 120 km/h
+DATA CAR 2: 'Mercedes' going at 95 km/h
 
-// 1. New {} is created
-// 2. Function is called, this = {}
-// 3. {} linked to prorotype
-// 4. function automatically return {}
-console.log(radek instanceof Person); // true,
-
-/// 210. Prototypes
-// Objects that are created through the constructor function here, will inherit all methods and properties that are defined on this prototype property.
-console.log(Person.prototype);
-Person.prototype.calcAge = function () {
-  console.log(2024 - this.birthYear);
-};
-radek.calcAge(); // 27
-console.log(radek.__proto__); // Shows the prototype property
-console.log(radek.__proto__ === Person.prototype); //true
-console.log(Person.prototype.isPrototypeOf(radek));
-
-Person.prototype.species = 'Homo Sapiens';
-console.log(radek); // It adds species and Homosapiens as value
-console.log(radek.hasOwnProperty('species')); // False, as it is added through prototype, not in a class
-
-//
+GOOD LUCK 😀
+*/
+ const Car 
