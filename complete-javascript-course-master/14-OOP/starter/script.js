@@ -10,4 +10,22 @@ DATA CAR 2: 'Mercedes' going at 95 km/h
 
 GOOD LUCK 😀
 */
- const Car 
+class Car {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+  state() {
+    console.log(`${this.make} going at ${this.speed} km/h`);
+  }
+  accelerate() {
+    console.log(`${this.name} accelerated, now its going ${this.speed}`);
+  }
+}
+
+const bmw = new Car('BMW', 120);
+const merc = new Car('Mercedes', 95);
+
+bmw.state();
+merc.state();
+bmw.accelerate();
