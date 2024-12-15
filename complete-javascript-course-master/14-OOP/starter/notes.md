@@ -4825,3 +4825,153 @@ In this example:
 ---
 
 By understanding the relationship between `prototype` and `__proto__`, you can unlock the power of JavaScript's inheritance system and write more efficient, reusable code!
+
+---
+
+# Challenge
+
+---
+
+first, chat gpt approach
+
+```js
+class Car {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+  state() {
+    console.log(`${this.make} going at ${this.speed} km/h`);
+  }
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} accelerated, now its going ${this.speed} km/h`);
+  }
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} breaks, now its going ${this.speed} km/h`);
+  }
+}
+
+const bmw = new Car('BMW', 120);
+const merc = new Car('Mercedes', 95);
+
+bmw.state();
+merc.state();
+bmw.accelerate();
+bmw.brake();
+bmw.state();
+```
+
+second, udemu approach
+
+```js
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(`${this.make} is going at ${this.speed} km/h`);
+};
+
+Car.prototype.brake = function () {
+  this.speed -= 5;
+  console.log(`${this.make} is going at ${this.speed} km/h`);
+};
+
+const bmw = new Car('BMW', 120);
+bmw.accelerate();
+bmw.accelerate();
+bmw.accelerate();
+bmw.brake();
+```
+
+---
+
+# 224. **ES6 Classes**
+
+---
+
+```js
+//Class Expression
+//const PersonCl = class{}
+
+// Class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+  // Methods will be added to .prototype property
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  }
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1996);
+console.log(jessica);
+jessica.calcAge();
+
+jessica.greet();
+
+// 1. Classes are not hoisted
+// 2. Class are first-class citizens
+// 3. Classes are executed in strict mode
+// 4. Functions automatically return {}
+```
+
+---
+
+# 225. **Setters and Getters**
+
+---
+
+```js
+const account = {
+  owner: 'Radek',
+  movements: [200, 530, 120, 300],
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+console.log(account.latest);
+
+account.latest = 50;
+console.log(account.movements);
+```
+
+---
+
+# 227. **Object.create**
+
+---
+
+```js
+const PersonProto = {
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  },
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.name = 'Steven';
+steven.birthYear = 1967;
+steven.calcAge();
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1978);
+sarah.calcAge();
+```
