@@ -1,12 +1,11 @@
 'use strict';
 
-function evenOrOdd(number) {
-  for (let i = 0; i < number.length; i++)
-    if (number[i] % 2 === 0) {
-      console.log('lol');
-    } else {
-      console.log(i);
-    }
+function highAndLow(numbers) {
+  const numArray = numbers.split(' ').map(Number);
+  const max = Math.max(...numArray);
+  const min = Math.min(...numArray);
+  return `${max} ${min}`;
 }
 
-evenOrOdd(2, 5, 1, 6, 7, 8, 9);
+// Test cases
+console.log(highAndLow('1 2 3 4 5')); // Output: "5 1"
