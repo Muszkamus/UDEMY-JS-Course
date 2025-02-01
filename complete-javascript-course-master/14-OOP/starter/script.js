@@ -1,4 +1,5 @@
 'use strict';
+<<<<<<< HEAD
 
 /* 
 1. Re-create challenge 1, but this time using an ES6 class;
@@ -18,3 +19,5 @@ Car.prototype.brake = function () {
   this.speed -= 5;
   console.log(`${this.make} is going at ${this.speed} km/h`);
 };
+=======
+>>>>>>> 64b59d393b3baaece9a23c50dc8f4dd6a03dde63
