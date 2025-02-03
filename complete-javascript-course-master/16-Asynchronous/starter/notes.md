@@ -5046,11 +5046,11 @@ GetCountryData('united kingdom');
 
 ---
 
-# 259. [OPTIONAL] How the Web Works: Requests and Responses
+# 259. **[OPTIONAL] How the Web Works: Requests and Responses**
 
 ---
 
-# Steps in Loading a Webpage
+# **Steps in Loading a Webpage**
 
 1. **DNS Lookup**
 
@@ -5075,7 +5075,7 @@ GetCountryData('united kingdom');
 
 ---
 
-# 260. Welcome to Callback Hell
+# 260. **Welcome to Callback Hell**
 
 ---
 
@@ -5133,7 +5133,7 @@ getCountryAndNeighbour('spain');
 
 ---
 
-# 261. Promises and the Fetch API (New way)
+# 261. **Promises and the Fetch API (New way)**
 
 ---
 
@@ -5146,7 +5146,7 @@ console.log(request);
 
 ---
 
-# 263. Chaning promises
+# 263. **Chaning promises**
 
 ---
 
@@ -5169,3 +5169,191 @@ const getCountryData = function (country) {
 // Call the function to get data for Japan
 getCountryData('poland');
 ```
+
+---
+
+# 265. Throwing Errors Manually
+
+```js
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok)
+      throw new Error(`${errorMsg} ${response.status} Try again!`); // If response is not OK, throw an error
+    return response.json(); // Convert response to JSON
+  });
+};
+
+const getCountryData = function (country) {
+  // Fetch country data from the API using the given country name
+
+  getJSON(`https://restcountries.com/v2/name/${country}`, 'country not found')
+    .then(data => {
+      renderCountry(data[0]);
+      console.log(data); // Display the country details
+      const neighbour = data[0].borders[0];
+
+      if (!neighbour) throw new Error('No neighbour found');
+      // Fetch data for the neighboring country
+      return getJSON(`https://restcountries.com/v2/alpha/${neighbour}`);
+    })
+    .then(data => renderCountry(data, 'neighbour')) // Display neighbor country details
+    .catch(err => console.error(err)); // Catch and log any errors
+};
+
+// When the button is clicked, fetch data for 'kdkd' (which is not a real country)
+btn.addEventListener('click', function () {
+  getCountryData('japan');
+});
+```
+
+---
+
+# NOTES. **Core Notes on Promises and API Handling in JavaScript**
+
+## **1. Understanding Promises**
+
+- A **Promise** is an object that represents the eventual completion (or failure) of an asynchronous operation.
+- Promises can have three states:
+  - **Pending** – Initial state, operation not completed yet.
+  - **Fulfilled** – The operation was successful.
+  - **Rejected** – The operation failed.
+
+### **Creating and Handling Promises**
+
+```js
+const myPromise = new Promise((resolve, reject) => {
+  let success = true;
+  if (success) {
+    resolve('Operation Successful'); // When the operation is successful
+  } else {
+    reject('Operation Failed'); // When the operation fails
+  }
+});
+
+myPromise
+  .then(result => console.log(result)) // Handling success
+  .catch(error => console.error(error)); // Handling errors
+```
+
+---
+
+## **2. Fetching Data from an API using Promises**
+
+### **Fetching Data using `fetch()`**
+
+- `fetch()` returns a **Promise** that resolves to the response object.
+- `response.json()` is also a **Promise**, converting the response to JSON.
+
+```js
+fetch('https://api.example.com/data')
+  .then(response => {
+    if (!response.ok) throw new Error('Failed to fetch data');
+    return response.json();
+  })
+  .then(data => console.log(data)) // Handling the JSON data
+  .catch(err => console.error(err)); // Handling errors
+```
+
+---
+
+## **3. Writing a Reusable Function for Fetch Requests**
+
+- **Encapsulating Fetch in a Function (`getJSON`)**
+- Uses `.then()` to handle responses and `.catch()` for errors.
+
+```js
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok)
+      throw new Error(`${errorMsg} ${response.status} Try again!`);
+    return response.json();
+  });
+};
+```
+
+---
+
+## **4. Fetching Country Data and Handling Errors**
+
+### **Fetching Data for a Specific Country and its Neighbour**
+
+- Uses `getJSON()` function to fetch country data.
+- If no neighboring country is found, an error is thrown.
+
+```js
+const getCountryData = function (country) {
+  getJSON(`https://restcountries.com/v2/name/${country}`, 'Country not found')
+    .then(data => {
+      console.log(data); // Log country data
+      renderCountry(data[0]); // Render country details
+
+      const neighbour = data[0].borders?.[0]; // Get first neighbor
+      if (!neighbour) throw new Error('No neighbour found');
+
+      return getJSON(`https://restcountries.com/v2/alpha/${neighbour}`);
+    })
+    .then(data => renderCountry(data, 'neighbour')) // Render neighbour data
+    .catch(err => console.error(err)); // Handle errors
+};
+```
+
+---
+
+## **5. Error Handling with `.catch()`**
+
+- If any `.then()` fails, `.catch()` will handle the error.
+- It ensures the app doesn’t break due to failed requests.
+
+```js
+fetch('https://api.example.com/wrong-url')
+  .then(response => response.json())
+  .catch(err => console.error('Something went wrong:', err));
+```
+
+---
+
+## **6. Handling Errors Using `throw new Error()`**
+
+- If the response status is not `ok`, an error is thrown.
+- `throw new Error()` stops execution and moves to `.catch()`.
+
+```js
+const fetchData = function (url) {
+  return fetch(url)
+    .then(response => {
+      if (!response.ok) throw new Error('Request failed!');
+      return response.json();
+    })
+    .catch(error => console.error('Error:', error));
+};
+```
+
+---
+
+## **7. Using Event Listeners to Trigger API Calls**
+
+- `getCountryData('japan')` is triggered when a button is clicked.
+
+```js
+btn.addEventListener('click', function () {
+  getCountryData('japan');
+});
+```
+
+---
+
+## **8. Summary of Best Practices**
+
+✔ **Use `.catch()` to handle API errors gracefully.**  
+✔ **Throw errors using `throw new Error()` when needed.**  
+✔ **Use a reusable function like `getJSON()` for fetching data.**  
+✔ **Chain `.then()` properly to handle responses.**  
+✔ **Check if API data exists before accessing it (`?.` operator).**
+
+---
+
+### **Next Steps:**
+
+- Try modifying the function to accept user input.
+- Implement async/await for better readability.
+- Display errors in the UI instead of just logging them.
