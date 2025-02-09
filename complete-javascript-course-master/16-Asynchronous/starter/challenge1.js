@@ -14,7 +14,7 @@ PART 1
 
 
 
-2. Do 'reverse geocoding' of the provided coordinates. Reverse geocoding means to convert coordinates to a meaningful location, 
+**** 2. Do 'reverse geocoding' of the provided coordinates. Reverse geocoding means to convert coordinates to a meaningful location, 
 like a city and country name. Use this API to do reverse geocoding: https://geocode.xyz/api.
 The AJAX call will be done to a URL with this format: https://geocode.xyz/52.508,13.381?geoit=json. 
 // Use the fetch API and promises to get the data. Do NOT use the getJSON function we created, that is cheating 😉
@@ -40,10 +40,18 @@ GOOD LUCK 😀
 const btn = document.querySelector('.btn-country');
 
 const whereAmI = function (lat, lng) {
-  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
-    .then(response => response.json()) // Convert response to JSON
-    .then(data => console.log(data)) // Now log the actual data
-    .catch(err => console.error('Something went wrong:', err)); // Handle errors
+  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=YOUR_API_KEY`)
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Problem with geocoding: ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      if (data.error)
+        throw new Error(`Geocode error: ${data.error.description}`);
+      console.log(data);
+    })
+    .catch(err => console.error('Something went wrong:', err));
 };
 
 btn.addEventListener('click', function () {

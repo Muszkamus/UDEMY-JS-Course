@@ -5357,3 +5357,51 @@ btn.addEventListener('click', function () {
 - Try modifying the function to accept user input.
 - Implement async/await for better readability.
 - Display errors in the UI instead of just logging them.
+
+# 266. **Challenge 1**
+
+```js
+const btn = document.querySelector('.btn-country');
+
+const whereAmI = function (lat, lng) {
+  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=YOUR_API_KEY`)
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Problem with geocoding: ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      if (data.error)
+        throw new Error(`Geocode error: ${data.error.description}`);
+      console.log(data);
+    })
+    .catch(err => console.error('Something went wrong:', err));
+};
+
+btn.addEventListener('click', function () {
+  whereAmI(19.037, 72.873);
+});
+```
+
+---
+
+# 267. **Asynchronous Behind the Scenes: The Event Loop**
+
+---
+
+# 268. **The event loop in practice**
+
+```js
+console.log('Test start'); // (1) Synchronous code runs first
+
+setTimeout(() => console.log('0 sec timer'), 0); // (5) Timer callback goes to the callback queue
+
+Promise.resolve('Resolved promise 1').then(res => console.log(res)); // (3) Microtask queue runs after sync code
+
+Promise.resolve('Resolved promise 2').then(res => {
+  for (let i = 0; i < 1333333333; i++) {} // (Blocking) Synchronous long loop before logging
+  console.log(res); // (4) This executes after the loop finishes
+});
+
+console.log('Test end'); // (2) Next synchronous line runs
+```
