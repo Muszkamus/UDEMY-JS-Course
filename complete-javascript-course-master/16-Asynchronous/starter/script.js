@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; // Enforces strict mode to catch common errors
 
 // Creating a new Promise that simulates a lottery
 const lotteryPromise = new Promise(function (resolve, reject) {
