@@ -5408,7 +5408,7 @@ console.log('Test end'); // (2) Next synchronous line runs
 
 ---
 
-# 269. **Sample**
+# 269. **Building a Simple Promise**
 
 ---
 
@@ -5449,4 +5449,48 @@ wait(2) // Calls `wait` function to create a delay of 2 seconds
     return wait(1); // Returns a new promise that resolves after 1 more second
   })
   .then(() => console.log('I waited for 1 second')); // Logs after an additional second
+```
+
+---
+
+# 270. **Promisifying the Geolocation API**
+
+```js
+'use strict';
+
+const btn = document.querySelector('.btn-country');
+let isFetching = false; // Prevent multiple requests
+
+const whereAmI = function () {
+  if (isFetching) return; // Prevent multiple simultaneous requests
+  isFetching = true;
+
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    })
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Problem with geocoding: ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      if (data.error)
+        throw new Error(`Geocode error: ${data.error.description}`);
+      console.log(`You are in ${data.city}, ${data.country}`);
+    })
+    .catch(err => console.error('Something went wrong:', err))
+    .finally(() => {
+      isFetching = false; // Reset flag after request completes
+    });
+};
+
+const getPosition = function () {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+btn.addEventListener('click', whereAmI);
 ```
