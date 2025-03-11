@@ -15,6 +15,8 @@ If this part is too tricky for you, just watch the first part of the solution.
 
 PART 2
 2. Comsume the promise using .then and also add an error handler;
+
+
 3. After the image has loaded, pause execution for 2 seconds using the wait function we created earlier;
 4. After the 2 seconds have passed, hide the current image (set display to 'none'), 
 and load a second image (HINT: Use the image element returned by the createImage promise to hide the current image. 
@@ -28,6 +30,31 @@ Set the network speed to 'Fast 3G' in the dev tools Network tab, otherwise image
 GOOD LUCK 😀
 */
 
-const createImage = function (imgPath) {
-  const randomNumber = Math.floor(Math.random() * 3 + 1);
+const imagesBox = document.querySelector('.images');
+
+const createImage = function () {
+  return new Promise((resolve, reject) => {
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
+    const imagePath = `img/img-${randomNumber}.jpg`;
+
+    const img = document.createElement('img');
+    img.src = imagePath;
+
+    img.onload = () => {
+      imagesBox.appendChild(img); // Append the image once it's loaded
+      resolve(img); // Resolve the promise with the image element
+    };
+
+    img.onerror = () => reject(new Error('Failed to load image'));
+  });
 };
+
+// Example usage
+createImage()
+  .then(img =>
+    setTimeout(() => {
+      createImage();
+      console.log('Image loaded', img);
+    }, 2000)
+  )
+  .catch(err => console.log(err));
