@@ -31,30 +31,53 @@ GOOD LUCK 😀
 */
 
 const imagesBox = document.querySelector('.images');
+let currentImg = document.createElement('img'); // Create an image element
+let isLocked = false;
+
+imagesBox.appendChild(currentImg); // Add it to the page
 
 const createImage = function () {
   return new Promise((resolve, reject) => {
     const randomNumber = Math.floor(Math.random() * 3) + 1;
     const imagePath = `img/img-${randomNumber}.jpg`;
 
-    const img = document.createElement('img');
-    img.src = imagePath;
-
-    img.onload = () => {
-      imagesBox.appendChild(img); // Append the image once it's loaded
-      resolve(img); // Resolve the promise with the image element
+    currentImg.onload = () => {
+      resolve(currentImg); // Resolve with the updated image
     };
 
-    img.onerror = () => reject(new Error('Failed to load image'));
+    currentImg.onerror = () => {
+      console.log('Failed to load image');
+      reject(new Error('Failed to load image'));
+    };
+
+    currentImg.src = imagePath; // Change image source
   });
 };
 
-// Example usage
-createImage()
-  .then(img =>
-    setTimeout(() => {
-      createImage();
-      console.log('Image loaded', img);
-    }, 2000)
-  )
-  .catch(err => console.log(err));
+// Load first image
+createImage();
+
+// Change image when clicked
+imagesBox.addEventListener('click', function () {
+  if (isLocked === true) {
+    console.log('Locked');
+    // If locked, do nothing
+    return;
+  } else {
+    // If not locked, proceed
+    isLocked = true; // Lock immediately
+    createImage()
+      .then(img => {
+        // Image loaded successfully
+        setTimeout(() => {
+          isLocked = false; // Unlock after 2 seconds
+          console.log('unlocked');
+        }, 2000);
+      })
+      .catch(err => {
+        // If there was an error loading the image
+        console.log(err);
+        isLocked = false; // Unlock immediately so the user can try again
+      });
+  }
+});
