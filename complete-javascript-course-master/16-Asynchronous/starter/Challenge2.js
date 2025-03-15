@@ -6,7 +6,7 @@ Tasks are not super-descriptive this time, so that you can figure out some stuff
  Pretend you're working on your own 😉
 
 PART 1
-1. Create a function 'createImage' which receives imgPath as an input. 
+*** 1. Create a function 'createImage' which receives imgPath as an input. 
 This function returns a promise which creates a new image (use document.createElement('img')) and sets the .src attribute to the provided image path.
  When the image is done loading, append it to the DOM element with the 'images' class, and resolve the promise. 
  The fulfilled value should be the image element itself. In case there is an error loading the image ('error' event), reject the promise.
@@ -14,10 +14,10 @@ This function returns a promise which creates a new image (use document.createEl
 If this part is too tricky for you, just watch the first part of the solution.
 
 PART 2
-2. Comsume the promise using .then and also add an error handler;
+*** 2. Comsume the promise using .then and also add an error handler;
 
 
-3. After the image has loaded, pause execution for 2 seconds using the wait function we created earlier;
+*** 3. After the image has loaded, pause execution for 2 seconds using the wait function we created earlier;
 4. After the 2 seconds have passed, hide the current image (set display to 'none'), 
 and load a second image (HINT: Use the image element returned by the createImage promise to hide the current image. 
 You will need a global variable for that 😉);
@@ -35,6 +35,12 @@ let currentImg = document.createElement('img'); // Create an image element
 let isLocked = false;
 
 imagesBox.appendChild(currentImg); // Add it to the page
+
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000); // Waits for the specified time before resolving
+  });
+};
 
 const createImage = function () {
   return new Promise((resolve, reject) => {
@@ -64,20 +70,19 @@ imagesBox.addEventListener('click', function () {
     // If locked, do nothing
     return;
   } else {
-    // If not locked, proceed
-    isLocked = true; // Lock immediately
-    createImage()
-      .then(img => {
-        // Image loaded successfully
-        setTimeout(() => {
-          isLocked = false; // Unlock after 2 seconds
-          console.log('unlocked');
-        }, 2000);
+    // If not locked,        isLocked = true; // Lock immediately
+    createImage();
+    console.log(`${currentImg.src} loaded succesfully`);
+    isLocked = true;
+    wait(2)
+      .then(() => {
+        isLocked = false;
+        console.log('unlocked');
       })
       .catch(err => {
         // If there was an error loading the image
         console.log(err);
-        isLocked = false; // Unlock immediately so the user can try again
+        isLocked = false; // Unl       createImage();ock immediately so the user can try again
       });
   }
 });
