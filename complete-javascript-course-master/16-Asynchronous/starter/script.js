@@ -56,3 +56,5 @@ const WhereAmI = async function (country) {
 
 WhereAmI('portugal'); // Start with Portugal
 console.log('First'); // Logs immediately, shows async behavior
+
+console.log('change');
