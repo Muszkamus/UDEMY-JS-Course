@@ -5689,6 +5689,46 @@ console.log('1: Getting location...');
 
 ---
 
+# 277. **Running Promises in Parallel**
+
+---
+
+```js
+'use strict'; // Enables strict mode for better error-checking and safer JavaScript
+
+// Helper function to fetch JSON data from a URL
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok)
+      throw new Error(`${errorMsg} ${response.status} Try again!`); // If response fails, throw an error
+    return response.json(); // Otherwise, convert response body to JSON
+  });
+};
+
+// Async function to fetch data for 3 countries
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    // Fetch all three countries in parallel using Promise.all
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v2/name/${c1}`), // Fetch first country
+      getJSON(`https://restcountries.com/v2/name/${c2}`), // Fetch second country
+      getJSON(`https://restcountries.com/v2/name/${c3}`), // Fetch third country
+    ]);
+
+    // Map over the fetched data to get the capital of each country
+    console.log(data.map(d => d[0].capital)); // Log capitals of the three countries
+  } catch (err) {
+    // If any fetch fails, catch the error and log it
+    console.error(`Oopsie: ${err}`);
+  }
+};
+
+// Call the function with 3 country names
+get3Countries('portugal', 'canada', 'poland');
+```
+
+---
+
 # <center>**Section 17 - Modern Javascrip Development** </center>
 
 ---
