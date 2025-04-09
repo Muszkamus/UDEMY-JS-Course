@@ -1,29 +1,31 @@
-'use strict'; // Enables strict mode for cleaner, error-checked JS
-
+'use strict'; // Enables strict mode for better error-checking and safer JavaScript
 const getJSON = function (url, errorMsg = 'Something went wrong') {
   return fetch(url).then(response => {
     if (!response.ok)
-      throw new Error(`${errorMsg} ${response.status} Try again!`); // If response is not OK, throw an error
-    return response.json(); // Convert response to JSON
+      throw new Error(`${errorMsg} ${response.status} Try again!`); // If response fails, throw an error
+    return response.json(); // Otherwise, convert response body to JSON
   });
 };
 
-const get3Countries = async function (c1, c2, c3) {
-  try {
-    // const [data1] = await getJSON(`https://restcountries.com/v2/name/${c1}`);
-    // const [data2] = await getJSON(`https://restcountries.com/v2/name/${c2}`);
-    // const [data3] = await getJSON(`https://restcountries.com/v2/name/${c3}`);
+// Promise.race
 
-    const data = await Promise.all([
-      getJSON(`https://restcountries.com/v2/name/${c1}`),
-      getJSON(`https://restcountries.com/v2/name/${c2}`),
-      getJSON(`https://restcountries.com/v2/name/${c3}`),
-    ]);
-
-    console.log(data.map(d => d[0].capital));
-  } catch (err) {
-    console.error(`Oopsie: ${err}`);
-  }
+(async function () {
+  const res = await Promise.race([
+    getJSON(`https://restcountries.com/v2/name/italy`),
+    getJSON(`https://restcountries.com/v2/name/poland`),
+    getJSON(`https://restcountries.com/v2/name/mexico`),
+  ]);
+})();
+const timeout = function (sec) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error(`Request took too long!`));
+    }, sec * 1000);
+  });
 };
 
-get3Countries('portugal', 'canada', 'poland');
+Promise.race([getJSON(`https://restcountries.com/v2/name/italy`), timeout(1)])
+  .then(res => console.log(res[0]))
+  .catch(err => console.log(err));
+
+// Promise.allSettled
