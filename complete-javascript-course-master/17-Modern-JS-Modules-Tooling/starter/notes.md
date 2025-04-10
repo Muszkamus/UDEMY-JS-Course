@@ -5174,6 +5174,8 @@ getCountryData('poland');
 
 # 265. Throwing Errors Manually
 
+---
+
 ```js
 const getJSON = function (url, errorMsg = 'Something went wrong') {
   return fetch(url).then(response => {
@@ -5209,6 +5211,8 @@ btn.addEventListener('click', function () {
 ---
 
 # NOTES. **Core Notes on Promises and API Handling in JavaScript**
+
+---
 
 ## **1. Understanding Promises**
 
@@ -5358,7 +5362,11 @@ btn.addEventListener('click', function () {
 - Implement async/await for better readability.
 - Display errors in the UI instead of just logging them.
 
+---
+
 # 266. **Challenge 1**
+
+---
 
 ```js
 const btn = document.querySelector('.btn-country');
@@ -5390,6 +5398,8 @@ btn.addEventListener('click', function () {
 ---
 
 # 268. **The event loop in practice**
+
+---
 
 ```js
 console.log('Test start'); // (1) Synchronous code runs first
@@ -5455,6 +5465,8 @@ wait(2) // Calls `wait` function to create a delay of 2 seconds
 
 # 270. **Promisifying the Geolocation API**
 
+---
+
 ```js
 'use strict';
 
@@ -5497,8 +5509,324 @@ btn.addEventListener('click', whereAmI);
 
 ---
 
+# 272. **Consuming promises Async/Await**
+
+---
+
+```js
+'use strict'; // Enables strict mode for cleaner, error-checked JS
+
+const btn = document.querySelector('.btn-country'); // Selects the button element
+const countriesContainer = document.querySelector('.countries'); // Selects the container to display countries
+
+// Function to render country info to the DOM
+const renderCountry = function (data, className = '') {
+  const html = `
+    <article class="country ${className}">
+      <img class="country__img" src="${data.flags.png}" />
+      <div class="country__data">
+        <h3 class="country__name">${data.name.common}</h3>
+        <h4 class="country__region">${data.region}</h4>
+        <p class="country__row"><span>👫</span>${(
+          +data.population / 1000000
+        ).toFixed(1)} people</p> <!-- Population in millions -->
+        <p class="country__row"><span>🗣️</span>${
+          Object.values(data.languages)[0]
+        }</p> <!-- First language -->
+        <p class="country__row"><span>💰</span>${
+          Object.values(data.currencies)[0].name
+        }</p> <!-- Currency name -->
+      </div>
+    </article>
+    `;
+  countriesContainer.insertAdjacentHTML('beforeend', html); // Insert HTML into DOM
+  countriesContainer.style.opacity = 1; // Make container visible
+};
+
+// Returns a Promise for geolocation
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+// Async function to get user location and fetch country data
+const WhereAmI = async function (country) {
+  const pos = await getPosition(); // Wait for geolocation
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  // Calls geocoding API (not awaited, result unused)
+  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+
+  // Fetch country data from REST Countries API
+  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+  const data = await res.json();
+  console.log(data); // Log data to console
+  renderCountry(data[0]); // Render the first result
+};
+
+WhereAmI('portugal'); // Start with Portugal
+console.log('First'); // Logs immediately, shows async behavior
+```
+
+---
+
+# 275. **Error handling with try...catch**
+
+---
+
+```js
+try {
+  let y = 1;
+  const x = 2;
+  x = 3; // This will be an error in this instance
+} catch (err) {
+  //This will have access to any error that occurred in the try block
+  console.error(`Error occured! > ${err}`);
+  renderError(`${err.message}`);
+}
+```
+
+---
+
+# 276. **Returning Values from Async Functions**
+
+---
+
+```js
+'use strict'; // Enables strict mode for cleaner, error-checked JS
+
+const btn = document.querySelector('.btn-country'); // Selects the button element
+const countriesContainer = document.querySelector('.countries'); // Selects the container to display countries
+
+// Function to render country info to the DOM
+const renderCountry = function (data, className = '') {
+  const html = `
+    <article class="country ${className}">
+      <img class="country__img" src="${data.flags.png}" />
+      <div class="country__data">
+        <h3 class="country__name">${data.name}</h3>
+        <h4 class="country__region">${data.region}</h4>
+        <p class="country__row"><span>👫</span>${
+          (+data.population / 1000000).toFixed(1) + 'm'
+        } people</p> <!-- Population in millions -->
+        <p class="country__row"><span>🗣️</span>${
+          data.languages[0].name
+        }</p> <!-- First language -->
+        <p class="country__row"><span>💰</span>${
+          Object.values(data.currencies)[0].name
+        }</p> <!-- Currency name -->
+      </div>
+    </article>
+    `;
+  countriesContainer.insertAdjacentHTML('beforeend', html); // Insert HTML into DOM
+  countriesContainer.style.opacity = 1; // Make container visible
+};
+
+// Returns a Promise for geolocation
+const getPosition = function () {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+// Async function to get user location and fetch country data
+const WhereAmI = async function () {
+  try {
+    const pos = await getPosition(); // Wait for geolocation
+    const { latitude: lat, longitude: lng } = pos.coords;
+
+    // Calls geocoding API (not awaited, result unused)
+    const resGeo = await fetch(
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`
+    );
+    if (!resGeo.ok) {
+      throw new Error('Something went wrong with getting the location');
+    }
+
+    const dataGeo = await resGeo.json();
+    console.log(dataGeo);
+
+    // Fetch country data from REST Countries API
+    const res = await fetch(
+      `https://restcountries.com/v2/name/${dataGeo.countryCode}`
+    );
+    if (!res.ok) {
+      throw new Error('Something went wrong with getting the country');
+    }
+    const data = await res.json();
+    //console.log(data); // Log data to console
+    renderCountry(data[0]); // Render the first result
+
+    return `You are in ${dataGeo.countryName}, ${dataGeo.locality}`;
+  } catch (err) {
+    console.error(`Error occured! > ${err}`);
+    renderError(`${err.message}`);
+
+    // Reject promise returned from async function
+    throw err;
+  }
+};
+console.log('1: Getting location...');
+// const city = WhereAmI();
+// console.log(city);
+
+// WhereAmI()
+//   .then(city => console.log(city)) // Waits for WhereAmI() to finish, then logs the returned location string
+//   .catch(err => console.log(`2: ${err.message}`))
+//   .finally(() => console.log(`3: Finished`)); // Finally is always at the end
+
+(async function () {
+  try {
+    const city = await WhereAmI(); // Waits for location and country info
+    console.log(`2: ${city}`); // Logs returned location string
+  } catch (err) {
+    console.error(`2: ${err.message}`); // Logs error message if something fails
+  }
+  console.log(`3: Finished`); // Always runs after try/catch
+})(); // IIFE (Immediately Invoked Function Expression)
+```
+
+---
+
+# 277. **Running Promises in Parallel**
+
+---
+
+```js
+'use strict'; // Enables strict mode for better error-checking and safer JavaScript
+
+// Helper function to fetch JSON data from a URL
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok)
+      throw new Error(`${errorMsg} ${response.status} Try again!`); // If response fails, throw an error
+    return response.json(); // Otherwise, convert response body to JSON
+  });
+};
+
+// Async function to fetch data for 3 countries
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    // Fetch all three countries in parallel using Promise.all
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v2/name/${c1}`), // Fetch first country
+      getJSON(`https://restcountries.com/v2/name/${c2}`), // Fetch second country
+      getJSON(`https://restcountries.com/v2/name/${c3}`), // Fetch third country
+    ]);
+
+    // Map over the fetched data to get the capital of each country
+    console.log(data.map(d => d[0].capital)); // Log capitals of the three countries
+  } catch (err) {
+    // If any fetch fails, catch the error and log it
+    console.error(`Oopsie: ${err}`);
+  }
+};
+
+// Call the function with 3 country names
+get3Countries('portugal', 'canada', 'poland');
+```
+
+---
+
+# 278. **Other Promise Combinators: race, allSettled and any**
+
+---
+
+```js
+'use strict'; // Enables strict mode for better error-checking and safer JavaScript
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok)
+      throw new Error(`${errorMsg} ${response.status} Try again!`); // If response fails, throw an error
+    return response.json(); // Otherwise, convert response body to JSON
+  });
+};
+
+// Promise.race
+
+(async function () {
+  const res = await Promise.race([
+    getJSON(`https://restcountries.com/v2/name/italy`),
+    getJSON(`https://restcountries.com/v2/name/poland`),
+    getJSON(`https://restcountries.com/v2/name/mexico`),
+  ]);
+})();
+const timeout = function (sec) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error(`Request took too long!`));
+    }, sec * 1000);
+  });
+};
+
+Promise.race([getJSON(`https://restcountries.com/v2/name/italy`), timeout(1)])
+  .then(res => console.log(res[0]))
+  .catch(err => console.log(err));
+
+// Promise.allSettled
+Promise.allSettled([
+  Promise.resolve('Success'),
+  Promise.reject('Error'),
+  Promise.resolve('Another Success'),
+]).then(res => console.log(res));
+```
+
+---
+
 # <center>**Section 17 - Modern Javascrip Development** </center>
 
 ---
 
-# 280. **An overview of Modern Javascript Development**
+# 284. **Exporting and Importing in ES6 Modules**
+
+---
+
+```js
+'use strict';
+
+// Importing module
+
+// import {
+//   addToCart,
+//   totalPrice as price,
+//   totalQuantity as quantity,
+// } from './shoppingCart.js';
+
+// addToCart('bread', 5);
+// console.log(price, quantity);
+
+console.log('Importing module');
+
+// import * as ShoppingCart from './shoppingCart.js';
+// ShoppingCart.addToCart('bread', 5);
+// console.log(ShoppingCart.totalPrice); // Bad practice
+
+import add from './shoppingCart.js';
+add('pizza', 2);
+add('bread', 5);
+add('apples', 3);
+
+('use strict');
+//Exporting module
+console.log('Exporting module');
+
+const shippingCost = 10;
+export const cart = [];
+
+export const addToCart = function (product, quantity) {
+  cart.push({ product, quantity });
+  console.log(`${quantity} ${product} added to the cart`);
+};
+
+const totalPrice = 237;
+const totalQuantity = 23;
+
+export { totalPrice, totalQuantity };
+
+export default function (product, quantity) {
+  //Default is not advisable unless 1 default is used per module
+  cart.push({ product, quantity });
+  console.log(`${quantity} ${product} added to the cart`);
+}
+```
