@@ -5830,3 +5830,107 @@ export default function (product, quantity) {
   console.log(`${quantity} ${product} added to the cart`);
 }
 ```
+
+---
+
+# 289. **Introduction to NPM**
+
+---
+
+- npm -v (check the version)
+- npm init (initialise npm)
+- Leaflet = Lightweight JS library for interactive maps. Uses OpenStreetMap. Great for adding markers, popups, etc.
+
+- Lodash = Utility library with helpful functions for arrays, objects, and more. Makes JS code simpler and cleaner.
+- npm i (install) lodash-es
+- -clone deep
+
+If you delete the node_modules folder, you don’t lose your project setup.
+Just run: `npm install`
+
+This reads your package.json file and reinstalls all dependencies listed there. It’s a quick way to restore your full setup without needing to remember or reinstall each package manually.
+
+---
+
+# 290. **Bundling with Parcel and NPM Scripts**
+
+---
+
+# ✅ Modern Front-End Project Setup with Parcel
+
+## 1. Create Project Folder
+
+```bash
+mkdir my-app && cd my-app
+```
+
+## 2. Initialize NPM
+
+```bash
+npm init -y
+```
+
+## 3. Install Parcel (Dev Dependency)
+
+```bash
+npm install --save-dev parcel
+```
+
+## 4. Create Project Files
+
+```bash
+touch index.html script.js style.css
+```
+
+## 5. Basic `index.html`
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
+```
+
+## 6. Update `package.json` Scripts
+
+```json
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
+```
+
+> 🔸 Make sure there's **no `"main"` field** in `package.json`.
+
+## 7. (Optional) Install Libraries
+
+```bash
+npm install lodash-es leaflet
+```
+
+## 8. Start Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+# 291. **Configuring Babel and Polyfilling**
+
+---
+
+---
