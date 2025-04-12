@@ -1,10 +1,10 @@
 4906
 163C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\caniuse-lite\data\regions\PA.js133888656994196982 0
 130C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\.prettierrc133742652416905362 0
-127C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\clean.js133742652417765465 0
+127C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\clean.js133889514663544800 0
 182C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\transformer-babel\lib\remapAstLocations.js133888656975684431 0
 154C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\cloneWith.js133888656986479764 0
-131C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\package.json133888672885283705 0
+131C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\package.json133888897198821377 0
 155C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\escalade\dist\index.mjs133888656972588125 0
 156C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\flatMapDeep.js133888656987619351 0
 171C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\_\_iterable_to_array_limit133888656986067388 1
@@ -17,7 +17,7 @@
 195C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\posthtml\node_modules\entities\lib\generated\decode-data-xml.js133888656972421944 0
 153C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\uniqWith.js133888656993792395 0
 163C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\caniuse-lite\data\regions\KR.js133888656990401385 0
-123C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\dist133888664302172107 1
+123C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\dist133889514674244289 1
 149C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\has-flag\index.js133888656970068590 0
 171C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\caniuse-lite\data\features\dommatrix.js133888656986479764 0
 176C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\posthtml\node_modules\entities\lib\decode.js133888656972912458 0
@@ -28,7 +28,7 @@
 156C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\_baseForOwn.js133888656978870582 0
 152C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\type-fest\index.d.ts133888656975892822 0
 186C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\react-refresh\cjs\react-refresh-runtime.development.js133888656972298935 0
-129C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\index.html133888663917322217 0
+129C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\index.html133889514669688418 0
 131C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules133888657009284396 1
 150C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\maxBy.js133888656989663051 0
 162C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\type-fest\source\value-of.d.ts133888656978546986 0
@@ -38,14 +38,14 @@
 160C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\transformer-posthtml133888656972526092 1
 138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\dotenv133888656974218548 1
 163C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\source-map\dist\node.js133888656974218548 0
-127C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\notes.md133888661550585128 0
+127C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\notes.md133888896965133440 0
 181C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\utils\test\input\sourcemap\source-root.js133888656980265326 0
 160C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\posthtml\types\posthtml.d.ts133888656972668284 0
 156C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\domhandler\lib\node.d.ts133888656975892822 0
 153C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\react-refresh\LICENSE133888656968676123 0
 143C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\detect-libc133888656972341508 1
 150C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\lodash-es\clone.js133888656986397101 0
-128C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\script.js133888667457277481 0
+128C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\script.js133889514614746245 0
 171C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@parcel\transformer-babel\lib\babel7.js133888656969514810 0
 134C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\shoppingCart.js133887933470383816 0
 171C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\cjs\_wrap_native_super.cjs133888656981243744 0
@@ -4113,7 +4113,7 @@
 173C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\cjs\_array_without_holes.cjs133888656972588125 0
 178C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\cjs\_async_generator_delegate.cjs133888656973401870 0
 172C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\cjs\_async_to_generator.cjs133888656974424242 0
-143C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\dist\starter.3c14d121.js133888667668534623 0
+143C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\dist\starter.3c14d121.js133889514674141377 0
 164C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\cjs\_call_super.cjs133888656975193081 0
 188C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\cjs\_class_apply_descriptor_destructure.cjs133888656975603824 0
 174C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\@swc\helpers\cjs\_class_name_tdz_error.cjs133888656976657287 0
@@ -4903,5 +4903,5 @@
 147C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\.bin\semver.ps1133888657003149693 0
 159C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\.bin\update-browserslist-db133888657003149693 0
 163C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\node_modules\.bin\update-browserslist-db.ps1133888657003149693 0
-134C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\dist\index.html133888663929450318 0
-147C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\dist\starter.3c14d121.js.map133888664302146580 0
+134C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\dist\index.html133889427742004371 0
+147C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\17-Modern-JS-Modules-Tooling\starter\dist\starter.3c14d121.js.map133889514674210788 0
