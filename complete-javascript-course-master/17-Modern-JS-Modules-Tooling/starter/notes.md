@@ -5933,4 +5933,360 @@ npm run dev
 
 ---
 
+# 🔧 Using Babel with Parcel – Quick Tutorial
+
+## ✅ 1. Parcel already uses Babel internally
+
+- No manual Babel setup required.
+- Transpiles modern JavaScript automatically.
+
 ---
+
+## 📝 2. (Optional) Add `.babelrc` for custom config
+
+Create a `.babelrc` file in your project root:
+
+```json
+{
+  "presets": ["@babel/preset-env"]
+}
+```
+
+Then install the preset:
+
+```bash
+npm install --save-dev @babel/preset-env
+```
+
+---
+
+## 🌐 3. (Optional) Add `.browserslistrc` for environment targeting
+
+Create `.browserslistrc` file in root:
+
+```
+> 0.5%
+last 2 versions
+not dead
+```
+
+Parcel uses this to decide which browsers to support and how far to transpile back.
+
+---
+
+## ✅ 4. Run Parcel Normally
+
+Parcel auto-detects your Babel and Browserslist configs.
+
+```bash
+npm run dev     # Development mode
+npm run build   # Production build
+```
+
+---
+
+## 🧠 TL;DR
+
+- Parcel uses Babel by default.
+- Add `.babelrc` to customize.
+- Use `.browserslistrc` to control browser support level.
+
+---
+
+# 292. **Review: Writing Clean and Modern JavaScript**
+
+---
+
+## 🥇 Most Crucial Practices
+
+### 1. **Readable code with descriptive naming**
+
+**Bad:**
+
+```js
+function x(a, b) {
+  return a + b;
+}
+```
+
+**Good:**
+
+```js
+function sumPrices(price1, price2) {
+  return price1 + price2;
+}
+```
+
+---
+
+### 2. **Avoid `var`, use `const` and `let`**
+
+**Bad:**
+
+```js
+var name = 'Jonas';
+```
+
+**Good:**
+
+```js
+const name = 'Jonas';
+```
+
+---
+
+### 3. **Use `===` instead of `==`**
+
+**Bad:**
+
+```js
+if (age == '18') {
+  // true even if age is a string
+}
+```
+
+**Good:**
+
+```js
+if (age === 18) {
+  // true only if type and value match
+}
+```
+
+---
+
+### 4. **Encapsulate logic (avoid global scope pollution)**
+
+**Bad:**
+
+```js
+let count = 0;
+function increase() {
+  count++;
+}
+```
+
+**Good:**
+
+```js
+const counter = (function () {
+  let count = 0;
+  return {
+    increase() {
+      count++;
+    },
+  };
+})();
+```
+
+---
+
+### 5. **Avoid deeply nested code (use guard clauses)**
+
+**Bad:**
+
+```js
+function login(user) {
+  if (user) {
+    if (user.isActive) {
+      console.log('Welcome back!');
+    }
+  }
+}
+```
+
+**Good:**
+
+```js
+function login(user) {
+  if (!user || !user.isActive) return;
+  console.log('Welcome back!');
+}
+```
+
+---
+
+## 🥈 Very Important Practices
+
+### 6. **DRY Principle**
+
+**Bad:**
+
+```js
+console.log('Welcome ' + name);
+console.log('Welcome ' + surname);
+```
+
+**Good:**
+
+```js
+function greet(person) {
+  console.log('Welcome ' + person);
+}
+
+greet(name);
+greet(surname);
+```
+
+---
+
+### 7. **Use arrow functions for callbacks**
+
+**Bad:**
+
+```js
+const doubled = numbers.map(function (n) {
+  return n * 2;
+});
+```
+
+**Good:**
+
+```js
+const doubled = numbers.map(n => n * 2);
+```
+
+---
+
+### 8. **Use async/await**
+
+**Bad:**
+
+```js
+fetch(url)
+  .then(res => res.json())
+  .then(data => console.log(data));
+```
+
+**Good:**
+
+```js
+const res = await fetch(url);
+const data = await res.json();
+console.log(data);
+```
+
+---
+
+### 9. **Handle async errors**
+
+**Good:**
+
+```js
+try {
+  const res = await fetch(url);
+  const data = await res.json();
+} catch (err) {
+  console.error('Failed to fetch data');
+}
+```
+
+---
+
+### 10. **Run Promises in parallel with Promise.all**
+
+**Good:**
+
+```js
+const [data1, data2] = await Promise.all([fetch(url1), fetch(url2)]);
+```
+
+---
+
+## 🥉 Good Practice (Situational)
+
+### 11. **Limit function parameters**
+
+**Good:**
+
+```js
+function createUser({ name, age }) {
+  // 1 parameter object instead of 3+ args
+}
+```
+
+---
+
+### 12. **Return same type as input**
+
+**Good:**
+
+```js
+function multiply(a, b) {
+  return a * b; // receives numbers, returns number
+}
+```
+
+---
+
+### 13. **Prefer array methods over loops**
+
+**Bad:**
+
+```js
+for (let i = 0; i < items.length; i++) {
+  console.log(items[i]);
+}
+```
+
+**Good:**
+
+```js
+items.forEach(item => console.log(item));
+```
+
+---
+
+### 14. **Method chaining**
+
+**Good:**
+
+```js
+class Counter {
+  count = 0;
+  inc() {
+    this.count++;
+    return this;
+  }
+  log() {
+    console.log(this.count);
+    return this;
+  }
+}
+
+new Counter().inc().inc().log();
+```
+
+---
+
+### 15. **Avoid arrow functions in object methods**
+
+**Bad:**
+
+```js
+const obj = {
+  value: 10,
+  getValue: () => this.value, // undefined
+};
+```
+
+**Good:**
+
+```js
+const obj = {
+  value: 10,
+  getValue() {
+    return this.value;
+  },
+};
+```
+
+---
+
+## ✅ TL;DR Summary
+
+| Priority       | Practice                                                   |
+| -------------- | ---------------------------------------------------------- |
+| 🥇 Essential   | Readable code, `const`/`let`, `===`, avoid global vars     |
+| 🥈 Important   | DRY, async/await, error handling, arrow functions          |
+| 🥉 Situational | Method chaining, array methods, return types, param limits |
