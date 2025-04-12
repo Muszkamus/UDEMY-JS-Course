@@ -21,13 +21,28 @@ document.addEventListener('keydown', function(e) {
 });
 ////////
 ///////
-console.log(document.documentElement);
-console.log(document.head);
-console.log(document.body);
-document.querySelector('.header');
-const allSections = document.querySelector('.section');
-console.log(allSections);
-const lolo = document.getElementById('section--1');
-console.log(lolo);
+// 🔍 Selecting specific elements from the DOM
+const header = document.querySelector('.header');
+const firstSection = document.querySelector('.section');
+const section1 = document.getElementById('section--1');
+const allButtons = document.getElementsByTagName('button');
+const btns = document.getElementsByClassName('btn');
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.innerHTML = `
+  We use cookies for improved functionality and analytics. 
+  <button class="btn btn--close-cookie">Got it!</button>
+`;
+header.append(message);
+document.querySelector('.btn--close-cookie').addEventListener('click', function() {
+    message.remove();
+});
+// New lecture
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width;
+console.log(message.style.backgroundColor);
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
 
 //# sourceMappingURL=starter.672d4772.js.map

@@ -4639,9 +4639,113 @@ console.log(a++); // 11,  because ++ is after, so it update immediately
 
 ---
 
----
+# 198. **Selecting, Creating and Deleting Elements**
+
+```js
+// 🌐 Selecting the core HTML structure
+console.log(document.documentElement); // Logs the entire <html> element
+console.log(document.head); // Logs the <head> element
+console.log(document.body); // Logs the <body> element
+
+// 🔍 Selecting specific elements from the DOM
+const header = document.querySelector('.header'); // Selects the first element with class 'header'
+const firstSection = document.querySelector('.section'); // Selects the first element with class 'section'
+
+const section1 = document.getElementById('section--1'); // Selects the element with ID 'section--1'
+
+const allButtons = document.getElementsByTagName('button'); // Selects all <button> elements (HTMLCollection)
+
+const btns = document.getElementsByClassName('btn'); // Selects all elements in the document that have the class btn
+
+// 🧱 Creating and inserting elements dynamically
+const message = document.createElement('div'); // Creates a new <div> element
+message.classList.add('cookie-message'); // Adds class 'cookie-message' to it
+
+// Sets HTML inside the element (replaces any existing textContent)
+message.innerHTML = `
+  We use cookies for improved functionality and analytics. 
+  <button class="btn btn--close-cookie">Got it!</button>
+`;
+
+// 🧩 Insert the message element into the DOM
+// header.prepend(message); // Inserts message as the first child of header
+header.append(message); // Inserts as the last child (moves it if already in DOM)
+// header.append(message.cloneNode(true)); // Clone to insert without moving original
+
+// header.before(message); // Inserts before the header element
+// header.after(message);  // Inserts after the header element
+
+// ❌ Deleting the message when the button is clicked
+document
+  .querySelector('.btn--close-cookie') // Selects the close button inside the message
+  .addEventListener('click', function () {
+    message.remove(); // Removes the entire message element from the DOM
+  });
+```
 
 ---
+
+# 199. **Styles, Attributes and Classes**
+
+---
+
+```js
+// 🆕 Lecture: Styling, Attributes, and Classes
+
+// 🎨 Inline styles
+message.style.backgroundColor = '#37383d'; // Sets inline background color of the element
+message.style.width - '120%'; // ❌ Has no effect — should use '=' not '-'
+
+// 🕵️‍♂️ Reading inline and computed styles
+console.log(message.style.backgroundColor); // Logs inline background color (only if set via JS or HTML style)
+console.log(getComputedStyle(message).color); // Logs final computed color (includes external CSS)
+console.log(getComputedStyle(message).height); // Logs computed height (e.g., "50px")
+
+// 📏 Modify height based on current computed height
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height) + 30 + 'px';
+// Parses pixel height (as number), adds 30px, then sets new height
+
+// 🎨 Modify a CSS custom property (variable)
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+// Changes CSS variable value (e.g., used in :root { --color-primary: ... })
+
+// 🔤 Working with attributes
+const logo = document.querySelector('.nav__logo'); // Selects the logo image
+
+console.log(logo.alt); // Logs current 'alt' attribute value of the logo
+logo.alt = 'New logo name'; // Sets a new value for the alt text
+console.log(logo.alt); // Logs the updated alt text
+
+// ❌ Accessing non-standard attribute (fails)
+console.log(logo.designer); // undefined — not a known property
+console.log(logo.getAttribute('designer')); // null — not yet defined
+
+// ✅ Set custom attribute
+logo.setAttribute('company', 'Bankist'); // Adds custom attribute: company="Bankist"
+
+console.log(logo.src); // Logs absolute image URL (full path)
+console.log(logo.getAttribute('src')); // Logs relative src attribute from HTML
+
+const link = document.querySelector('.nav__link--btn'); // Selects nav button link
+
+console.log(link.href); // Logs absolute URL (full path)
+console.log(link.getAttribute('href')); // Logs relative URL value from HTML
+
+// 📦 Data attributes
+console.log(logo.dataset.versionNumber);
+// Logs value of data-version-number="3.0" (converted to camelCase)
+// These attributes are prefixed with 'data-' in HTML, accessed via `dataset`
+
+// 🎯 Manipulating classes
+logo.classList.add('c'); // Adds class 'c'
+logo.classList.remove('c'); // Removes class 'c'
+logo.classList.toggle('c'); // Toggles class 'c' on/off
+logo.classList.contains('c'); // Checks if class 'c' exists (returns true/false)
+
+// ❌ Avoid overwriting all classes
+// logo.className = 'New classname'; // Replaces ALL existing classes — bad practice
+```
 
 ---
 
@@ -5490,7 +5594,7 @@ const btn = document.querySelector('.btn-country');
 let isFetching = false; // Prevent multiple requests
 
 const whereAmI = function () {
-  if (isFetching) return; // Prevent multiple simultaneous requests
+  if (isFetching) return; // Prevent multiple  requests
   isFetching = true;
 
   getPosition()
@@ -5530,10 +5634,10 @@ btn.addEventListener('click', whereAmI);
 ---
 
 ```js
-'use strict'; // Enables strict mode for cleaner, error-checked JS
+'use strict';
 
-const btn = document.querySelector('.btn-country'); // Selects the button element
-const countriesContainer = document.querySelector('.countries'); // Selects the container to display countries
+const btn = document.querySelector('.btn-country');
+const countriesContainer = document.querySelector('.countries');
 
 // Function to render country info to the DOM
 const renderCountry = function (data, className = '') {
@@ -5610,10 +5714,10 @@ try {
 ---
 
 ```js
-'use strict'; // Enables strict mode for cleaner, error-checked JS
+'use strict';
 
-const btn = document.querySelector('.btn-country'); // Selects the button element
-const countriesContainer = document.querySelector('.countries'); // Selects the container to display countries
+const btn = document.querySelector('.btn-country');
+const countriesContainer = document.querySelector('.countries');
 
 // Function to render country info to the DOM
 const renderCountry = function (data, className = '') {
