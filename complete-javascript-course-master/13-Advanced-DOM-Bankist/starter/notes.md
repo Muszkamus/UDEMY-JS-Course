@@ -4749,6 +4749,116 @@ logo.classList.contains('c'); // Checks if class 'c' exists (returns true/false)
 
 ---
 
+# 200. Implementing smooth scrolling
+
+---
+
+```js
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  //const s1coords = section1.getBoundingClientRect();
+  // console.log(s1coords);
+
+  // console.log(e.target.getBoundingClientRect());
+
+  // console.log('Current scroll(X/Y)', window.scrollX, window.scrollY);
+
+  // Scroll To
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  // Modern way // Literally just this code
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+```
+
+---
+
+# 291. **Types of Events and Event Handlers**
+
+---
+
+```js
+const h1 = document.querySelector('h1');
+
+// Define a named function so we can remove it later
+const alertH1 = function (e) {
+  alert('You hovered');
+  // Optional: Remove immediately after first trigger (one-time use)
+  // h1.removeEventListener('mouseenter', alertH1);
+};
+
+// Add event listener to trigger on mouse enter (like hover)
+h1.addEventListener('mouseenter', alertH1);
+
+// Remove the event listener after 3 seconds
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+
+// ✅ Modern and preferred way
+// h1.addEventListener('mouseenter', function (e) {
+//   console.log('hovered again');
+// });
+
+// ❌ Old-school and less flexible (overwrites previous handlers)
+// h1.onmouseenter = function (e) {
+//   console.log('another one');
+// };
+```
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
 ---
 
 ---
