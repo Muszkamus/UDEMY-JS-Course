@@ -4749,7 +4749,7 @@ logo.classList.contains('c'); // Checks if class 'c' exists (returns true/false)
 
 ---
 
-# 200. Implementing smooth scrolling
+# 200. **Implementing smooth scrolling**
 
 ---
 
@@ -4784,7 +4784,7 @@ btnScrollTo.addEventListener('click', function (e) {
 
 ---
 
-# 291. **Types of Events and Event Handlers**
+# 201. **Types of Events and Event Handlers**
 
 ---
 
@@ -4817,11 +4817,82 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 
 ---
 
----
+# 203. **Event Propagation in Practice**
 
 ---
 
+```js
+// Event propagation
+// rgb(255,255,255)
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('Container', e.target, e.currentTarget);
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('Container', e.target, e.currentTarget);
+});
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('Container', e.target, e.currentTarget);
+});
+```
+
 ---
+
+# 204. **Event Delegation: Implementing Page Navigation**
+
+---
+
+```js
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+// Event Delegation: Implementing Page Navigation
+
+//Bad way
+
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault(); //Prevents html behaviour
+//     const id = this.getAttribute('href'); // simply puts a selector, makes life easier to point things
+//     console.log(id);
+//     //document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+// Good way
+// 1. Add event listener to common parent element
+// 2. Determine what element originated the event
+
+// ✅ Event Delegation: Better way to handle nav links
+
+// Attach one event listener to the parent container of all nav links
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault(); // Prevent default link jump behavior (handled manually below)
+
+  // 🔍 Only handle clicks that originated from actual nav links (not empty space or container)
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href'); // Extract the section ID from href (e.g., #section--2)
+
+    // 🔽 Scroll to the corresponding section smoothly
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+```
+
+---
+
+# 205. **DOM Traversing**
 
 ---
 
