@@ -4896,7 +4896,41 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 ---
 
+```js
+// Selecting an element
+const h1 = document.querySelector('h1'); // Selects the first <h1> element
+
+// --- Going Downwards (Children) ---
+console.log(h1.querySelectorAll('.highlight')); // Finds all elements with class "highlight" inside <h1>
+console.log(h1.children); // Returns only element children (HTMLCollection)
+h1.firstElementChild.style.color = 'red'; // Changes color of the first element child
+h1.lastElementChild.style.color = 'black'; // Changes color of the last element child
+
+// --- Going Upwards (Parents) ---
+console.log(h1.parentElement); // Gets the parent element of <h1>
+h1.closest('.header').style.background = 'var(--gradient-secondary)'; // Finds closest parent with class "header"
+h1.closest('h1').style.background = 'var(--gradient-primary)'; // Finds the closest ancestor that's an <h1>
+
+// --- Going Sideways (Siblings) ---
+console.log(h1.previousElementSibling); // Gets the previous sibling element
+console.log(h1.nextElementSibling); // Gets the next sibling element
+
+// --- Looping through siblings (excluding the current element) ---
+console.log(h1.parentElement.children); // Gets all siblings including <h1>
+[...h1.parentElement.children].forEach(function (e) {
+  if (e !== h1) e.style.transform = 'scale(0.5)'; // Scales down all siblings except <h1>
+});
+
+// Less important
+console.log(h1.childNodes); // Includes all node types (text, comment, elements) — not usually needed
+console.log(h1.parentNode); // Similar to parentElement, but includes all node types
+console.log(h1.previousSibling); // Gets previous **node** (could be whitespace, not just elements)
+console.log(h1.nextSibling); // Gets next **node** (could also be whitespace or comment)
+```
+
 ---
+
+# 206. **Building a Tabbed Content**
 
 ---
 
