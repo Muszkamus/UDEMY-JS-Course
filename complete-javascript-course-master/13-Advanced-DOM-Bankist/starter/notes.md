@@ -4934,9 +4934,39 @@ console.log(h1.nextSibling); // Gets next **node** (could also be whitespace or 
 
 ---
 
----
+# 207. **Passing Arguments to Event Handlers**
 
 ---
+
+```js
+// Menu fade animation
+// PAssing Arguments to Event Handlers
+
+const hoveringNavEffect = function (e, opacity) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = opacity;
+    });
+    logo.style.opacity = opacity;
+  }
+};
+
+nav.addEventListener('mouseover', function (e) {
+  hoveringNavEffect(e, 0.5);
+});
+nav.addEventListener('mouseout', function (e) {
+  // mouse out works everytime, while mouseleave works only once
+  hoveringNavEffect(e, 1);
+});
+```
+
+---
+
+# 208. **Implementing a Sticky Navigation: The scroll Event**
 
 ---
 

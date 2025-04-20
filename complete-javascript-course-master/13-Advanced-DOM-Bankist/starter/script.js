@@ -5,6 +5,11 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+const nav = document.querySelector('.nav');
+
 const openModal = function () {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -38,23 +43,6 @@ btnScrollTo.addEventListener('click', function (e) {
 });
 // Event Delegation: Implementing Page Navigation
 
-//Bad way
-
-// document.querySelectorAll('.nav__link').forEach(function (el) {
-//   el.addEventListener('click', function (e) {
-//     e.preventDefault(); //Prevents html behaviour
-//     const id = this.getAttribute('href'); // simply puts a selector, makes life easier to point things
-//     console.log(id);
-//     //document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-//   });
-// });
-
-// Good way
-// 1. Add event listener to common parent element
-// 2. Determine what element originated the event
-
-// ✅ Event Delegation: Better way to handle nav links
-
 // Attach one event listener to the parent container of all nav links
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault(); // Prevent default link jump behavior (handled manually below)
@@ -69,9 +57,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 });
 
 // Building a Tabbed content
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
 
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
@@ -89,4 +74,34 @@ tabsContainer.addEventListener('click', function (e) {
   document
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add('operations__content--active');
+});
+
+// Menu fade animation
+// PAssing Arguments to Event Handlers
+
+const hoveringNavEffect = function (e, opacity) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = opacity;
+    });
+    logo.style.opacity = opacity;
+  }
+};
+
+nav.addEventListener('mouseover', function (e) {
+  hoveringNavEffect(e, 0.5);
+});
+nav.addEventListener('mouseout', function (e) {
+  // mouse out works everytime, while mouseleave works only once
+  hoveringNavEffect(e, 1);
+});
+
+// Sticky Navigation
+window.addEventListener('scroll', function (e) {
+  //Scroll is used everytime we scroll (to be avoided)
+  console.log(window.scrollY);
 });
