@@ -745,11 +745,30 @@ nav.addEventListener('mouseout', function(e) {
     // mouse out works everytime, while mouseleave works only once
     hoveringNavEffect(e, 1);
 });
-// Sticky Navigation
-window.addEventListener('scroll', function(e) {
-    //Scroll is used everytime we scroll (to be avoided)
-    console.log(window.scrollY);
+const initialCoords = section1.getBoundingClientRect();
+console.log(initialCoords);
+// Sticky navigation: Intersection Observer API
+// const obsCallback = function (entries, observer) {
+//   entries.forEach(entry => {
+//     console.log(entry);
+//   });
+// };
+// const obsOptions = {
+//   root: null,
+//   threshold: [0, 0.2],
+// };
+// const observer = new IntersectionObserver(obsCallback, obsOptions);
+// observer.observe(section1);
+const header = document.querySelector('.header');
+const stickyNav = function(entries) {
+    const [entry] = entries;
+    console.log(entry);
+};
+const headerObserver = new IntersectionObserver(stickyNav, {
+    root: null,
+    threshold: 0
 });
+headerObserver.observe(header);
 
 },{}]},["n0fw4","kTBnD"], "kTBnD", "parcelRequire2bed", {})
 

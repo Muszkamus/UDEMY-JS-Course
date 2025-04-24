@@ -4970,7 +4970,24 @@ nav.addEventListener('mouseout', function (e) {
 
 ---
 
+```js
+// Sticky Navigation
+window.addEventListener('scroll', function (e) {
+  //Scroll is used everytime we scroll (to be avoided)
+  console.log(window.scrollY);
+});
+
+if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+else nav.classList.remove('sticky');
+```
+
+# 209. **A better way: The Intersection Observer API**
+
 ---
+
+```js
+
+```
 
 ---
 
