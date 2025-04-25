@@ -4986,7 +4986,35 @@ else nav.classList.remove('sticky');
 ---
 
 ```js
+// Select the header element
+const header = document.querySelector('.header');
 
+// Get the height of the navigation bar
+const navHeight = nav.getBoundingClientRect().height;
+console.log(navHeight); // Debug: log nav height
+
+// Callback function for the Intersection Observer
+const stickyNav = function (entries) {
+  const [entry] = entries; // Destructure the first entry
+  console.log(entry); // Debug: log the intersection entry
+
+  // If header is not intersecting, add sticky class to nav
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  // If header is intersecting again, remove sticky class
+  else {
+    nav.classList.remove('sticky');
+  }
+};
+
+// Create an Intersection Observer to observe the header
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null, // Observe relative to the viewport
+  threshold: 0, // Trigger when even a pixel is out of view
+  rootMargin: `-${navHeight}px`, // Adjust margin so nav becomes sticky before header scrolls out
+});
+
+// Start observing the header element
+headerObserver.observe(header);
 ```
 
 ---
