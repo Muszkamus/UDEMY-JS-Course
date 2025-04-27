@@ -100,7 +100,6 @@ nav.addEventListener('mouseout', function (e) {
   hoveringNavEffect(e, 1);
 });
 const initialCoords = section1.getBoundingClientRect();
-console.log(initialCoords);
 
 // Sticky navigation: Intersection Observer API
 
@@ -120,11 +119,9 @@ console.log(initialCoords);
 
 const header = document.querySelector('.header');
 const navHeight = nav.getBoundingClientRect().height;
-console.log(navHeight);
 
 const stickyNav = function (entries) {
   const [entry] = entries;
-  console.log(entry);
 
   if (!entry.isIntersecting) nav.classList.add('sticky');
   else {
@@ -160,3 +157,5 @@ allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add('section--hidden');
 });
+
+// Implementing slider

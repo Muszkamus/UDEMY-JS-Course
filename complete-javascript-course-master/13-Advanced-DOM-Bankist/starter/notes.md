@@ -5070,11 +5070,41 @@ allSections.forEach(function (section) {
 
 ---
 
----
+```js
+// Lazy loading images DIDNT WORK
+const imgTargets = document.querySelectorAll('img[data-src]');
+
+const loadImg = function (entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    entry.target.src = entry.target.dataset.src;
+
+    entry.target.addEventListener('load', function () {
+      entry.target.classList.remove('lazy-img');
+    });
+  });
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+});
+
+imgTargets.forEach(img => imgObserver.observe(img));
+```
 
 ---
 
 ---
+
+# 213. **Building a Slider Component Part 1**
+
+---
+
+```js
+
+```
 
 ---
 

@@ -746,7 +746,6 @@ nav.addEventListener('mouseout', function(e) {
     hoveringNavEffect(e, 1);
 });
 const initialCoords = section1.getBoundingClientRect();
-console.log(initialCoords);
 // Sticky navigation: Intersection Observer API
 // const obsCallback = function (entries, observer) {
 //   entries.forEach(entry => {
@@ -761,10 +760,8 @@ console.log(initialCoords);
 // observer.observe(section1);
 const header = document.querySelector('.header');
 const navHeight = nav.getBoundingClientRect().height;
-console.log(navHeight);
 const stickyNav = function(entries) {
     const [entry] = entries;
-    console.log(entry);
     if (!entry.isIntersecting) nav.classList.add('sticky');
     else nav.classList.remove('sticky');
 };
@@ -790,7 +787,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 allSections.forEach(function(section) {
     sectionObserver.observe(section);
     section.classList.add('section--hidden');
-});
+}); // Implementing slider
 
 },{}]},["n0fw4","kTBnD"], "kTBnD", "parcelRequire2bed", {})
 

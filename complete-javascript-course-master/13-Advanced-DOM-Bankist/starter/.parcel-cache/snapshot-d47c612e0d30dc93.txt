@@ -29,7 +29,7 @@
 136C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@mischnic133889518186094586 1
 171C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\posthtml\node_modules\dom-serializer\lib\esm133889518212110517 1
 155C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\workers\lib\index.js133889518213349181 0
-118C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist133893025968773562 1
+118C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist133901697487532978 1
 143C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\semver\range.bnf133889518205891416 0
 161C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features\hevc.js133889518231644951 0
 135C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\has-flag133889518207809028 1
@@ -71,7 +71,7 @@
 165C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\utility-types\dist\mapped-types.js.map133889518210926869 0
 171C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\utility-types\dist\aliases-and-guards.js.map133889518209927212 0
 170C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features\queryselector.js133889518237581402 0
-122C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\notes.md133893017596633615 0
+122C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\notes.md133901396882485320 0
 176C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest6.c133889518221316526 0
 166C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\packager-raw\lib\RawPackager.js133889518206113574 0
 168C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\type-fest\source\require-exactly-one.d.ts133889518214824340 0
@@ -82,7 +82,7 @@
 172C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features\getrandomvalues.js133889518231232503 0
 195C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\posthtml\node_modules\dom-serializer\node_modules\entities\readme.md133889518212130697 0
 173C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features\css-text-spacing.js133889518228133844 0
-123C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\script.js133893026593921478 0
+123C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\script.js133901698344689009 0
 173C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lmdb\node_modules\node-addon-api\noexcept.gypi133889518208051420 0
 185C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\runtime-service-worker\src\ServiceWorkerRuntime.js133889518206983236 0
 147C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lightningcss\LICENSE133889518204984075 0
@@ -308,7 +308,7 @@
 167C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\posthtml\node_modules\domhandler\LICENSE133889518205181087 0
 173C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\posthtml\node_modules\domutils\lib\querying.js133889518209582526 0
 165C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lmdb\node_modules\node-addon-api\tools133889518213429738 1
-143C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3a01df49.css.map133893012914425591 0
+143C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3a01df49.css.map133901693186057649 0
 155C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\resolver-default\lib133889518205911537 1
 136C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\is-number133889518207084009 1
 147C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\type-fest\index.d.ts133889518212457273 0
@@ -830,7 +830,7 @@
 177C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\posthtml\node_modules\domhandler\lib\node.d.ts.map133889518209261773 0
 149C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\timsort\src\timsort.js133889518210303856 0
 151C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\timsort\build\timsort.js133889518209193660 0
-137C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\icons.c78699a6.svg133893012914263371 0
+137C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\icons.c78699a6.svg133901693185067266 0
 155C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\timsort\build\timsort.min.js133889518209602666 0
 165C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\json-parse-even-better-errors\index.js133889518204815650 0
 150C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\import-fresh\index.d.ts133889518208051420 0
@@ -1800,14 +1800,14 @@
 179C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest_enc.c133889518220377197 0
 161C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\domutils\lib\manipulation.d.ts.map133889518215367692 0
 181C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest_remap.c133889518220538531 0
-136C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\hero.846f04ad.png133893012914536754 0
+136C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\hero.846f04ad.png133901693186057649 0
 144C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\is-json\README.md133889518206516433 0
 180C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features\css-repeating-gradients.js133889518227727943 0
 175C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\tooltag133889518213213273 0
 146C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\htmlnano\index.d.ts133889518222527015 0
 154C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lines-and-columns\README.md133889518207485130 0
 176C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features\css-filter-function.js133889518226245428 0
-138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\user-3.453e9048.jpg133893012913776492 0
+138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\user-3.453e9048.jpg133901693184997249 0
 165C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features\bloburls.js133889518220654537 0
 172C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\optimizer-htmlnano\src\svgMappings.js133889518208662275 0
 161C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\lines-and-columns\build\index.d.ts133889518208233575 0
@@ -1845,7 +1845,7 @@
 158C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\regions\BO.js133889518220814404 0
 137C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\json5\dist133889518212379312 1
 145C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\json5\package.json133889518211554113 0
-136C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\icon.ce3409d1.png133893012914104876 0
+136C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\icon.ce3409d1.png133901693185078949 0
 143C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\json5\lib\cli.js133889518205221391 0
 166C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@swc\helpers\cjs\_wrap_native_super.cjs133889518221888901 0
 156C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features.js133889518230328832 0
@@ -1890,7 +1890,7 @@
 159C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\htmlparser2\lib\esm\index.js.map133889518212088040 0
 150C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\js-yaml\lib\type\map.js133889518213409620 0
 160C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@swc\helpers\src\_await_value.mjs133889518230736376 0
-142C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3c14d121.js.map133893025968733264 0
+142C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3c14d121.js.map133901697487503043 0
 164C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\caniuse-lite\data\features\svg-css.js133889518239146614 0
 151C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\js-yaml\lib\type\null.js133889518213693297 0
 169C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\utils\test\input\config\config.cjs133889518207245753 0
@@ -3698,7 +3698,7 @@
 148C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\utils\LICENSE133889518206516433 0
 164C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\utils\test\DefaultMap.test.js133889518212619497 0
 166C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\utils\test\prettifyTime.test.js133889518219917202 0
-138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\user-2.642b35ad.jpg133893012914455600 0
+138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\user-2.642b35ad.jpg133901693185297164 0
 163C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\utils\test\sourcemap.test.js133889518220731289 0
 162C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\utils\test\throttle.test.js133889518221016534 0
 158C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\utils\test\input\config133889518222467131 1
@@ -3954,7 +3954,7 @@
 159C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\packager-js\lib\utils.js133889518212926399 0
 152C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\packager-html\lib133889518205931676 1
 168C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\packager-html\src\HTMLPackager.js133889518207245753 0
-144C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\digital-lazy.6e6ca8d9.jpg133893012913776492 0
+144C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\digital-lazy.6e6ca8d9.jpg133901693185007253 0
 168C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\packager-html\lib\HTMLPackager.js133889518206133705 0
 160C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\packager-css\package.json133889518207970480 0
 166C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\node_modules\@parcel\packager-css\src\CSSPackager.js133889518207245753 0
@@ -4278,12 +4278,12 @@
 126C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\img\logo.png133742652356711617 0
 128C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\img\user-2.jpg133742652358482624 0
 128C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\img\user-3.jpg133742652359346494 0
-141C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\card-lazy.ef51d6bf.jpg133893012913776492 0
-141C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\grow-lazy.18d92473.jpg133893012914465609 0
-129C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\index.html133893012914445585 0
-136C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\logo.b82d6c7c.png133893012914263371 0
+141C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\card-lazy.ef51d6bf.jpg133901693185067266 0
+141C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\grow-lazy.18d92473.jpg133901693185297164 0
+129C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\index.html133901693185067266 0
+136C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\logo.b82d6c7c.png133901693185078949 0
 142C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3464ddca.js.map133889560347633461 0
-139C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3a01df49.css133893012914294070 0
-138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3c14d121.js133893025968692963 0
+139C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3a01df49.css133901693185067266 0
+138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.3c14d121.js133901697487438788 0
 142C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\starter.672d4772.js.map133889638632679342 0
-138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\user-1.94b0db33.jpg133893012914223389 0
+138C:\Users\balic\Documents\GitHub\UDEMY-JS-Course\complete-javascript-course-master\13-Advanced-DOM-Bankist\starter\dist\user-1.94b0db33.jpg133901693185078949 0
