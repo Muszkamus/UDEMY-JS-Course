@@ -787,7 +787,10 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 allSections.forEach(function(section) {
     sectionObserver.observe(section);
     section.classList.add('section--hidden');
-}); // Implementing slider
+});
+// Implementing slider
+const slides = document.querySelectorAll('slide');
+slides.forEach((s, i)=>s.style.transform = `translateX(${100 * i})`);
 
 },{}]},["n0fw4","kTBnD"], "kTBnD", "parcelRequire2bed", {})
 

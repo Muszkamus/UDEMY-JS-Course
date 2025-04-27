@@ -5098,13 +5098,15 @@ imgTargets.forEach(img => imgObserver.observe(img));
 
 ---
 
-# 213. **Building a Slider Component Part 1**
+# 216. **Efficient Script Loading: defer and async**
 
 ---
 
-```js
+Scripts that touch DOM (buttons, forms, etc.) → always defer.
 
-```
+Small scripts for security/analytics → regular loading.
+
+If you use modules (type="module"), they are deferred by default (no need to add defer).
 
 ---
 

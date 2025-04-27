@@ -158,4 +158,9 @@ allSections.forEach(function (section) {
   section.classList.add('section--hidden');
 });
 
-// Implementing slider
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = ''; // Although custom message won't work,
+  // this will do pop up when user wants to leave (useful when filling out a form)
+});
