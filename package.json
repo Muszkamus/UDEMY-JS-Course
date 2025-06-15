@@ -4,6 +4,7 @@
   "main": "Challenges.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "author": "Radek",
   "license": "ISC",
@@ -16,4 +17,5 @@
   "devDependencies": {
     "parcel": "^2.14.4"
   }
+  
 }

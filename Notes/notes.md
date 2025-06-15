@@ -1,3 +1,18 @@
+<!-- markdownlint-disable MD013 MD033 -->
+<!-- markdownlint-disable MD025 MD025 -->
+<!-- markdownlint-disable MD036 MD036 -->
+<!-- markdownlint-disable MD037 MD037 -->
+<!-- markdownlint-disable MD031 MD031 -->
+<!-- markdownlint-disable MD010 MD010 -->
+<!-- markdownlint-disable MD001 MD001 -->
+<!-- markdownlint-disable MD029 MD029 -->
+<!-- markdownlint-disable MD026 MD026 -->
+<!-- markdownlint-disable MD024 MD024 -->
+<!-- markdownlint-disable MD030 MD030 -->
+<!-- markdownlint-disable MD038 MD038 -->
+<!-- markdownlint-disable MD034 MD034 -->
+<!-- markdownlint-disable MD040 MD040 -->
+
 # <center>**Section 2 - Fundamentals pt.1** </center>
 
 ---
@@ -61,13 +76,13 @@ console.log(ageJonas, ageSarah, averageage);
 # 17. **Template literals**
 
 ```js
-const firstName = 'Radek';
-const job = 'Teacher';
+const firstName = "Radek";
+const job = "Teacher";
 const birthYear = 1997;
 const year = 2024;
 
 const radek =
-  "I'm " + firstName + ', a  ' + (year - birthYear) + ' years old ' + job; //this one is crap tho
+  "I'm " + firstName + ", a  " + (year - birthYear) + " years old " + job; //this one is crap tho
 console.log(radek);
 
 const radekNew = `I'm ${firstName} , a ${year - birthYear} year old ${job}`; //use backticks to use template string, above tab key
@@ -105,7 +120,7 @@ console.log("23" - "10" - 3); //The numbers(strings) get converted to number due
 # 21. **Falsy values**
 
 ```js
-0, '', undefined, null, NaN;
+0, "", undefined, null, NaN;
 
 const money = 0; // Value here is false. It would work the same if it would be empty(Undefined)
 if (money) {
@@ -118,15 +133,15 @@ if (money) {
 # 22. **Equality operators**
 
 ```js
-const age = '18';
+const age = "18";
 if (age === 18) console.log(`you just became an adult! (strict)`); //(Strict will only match the same type )In this case, 18 === 18 is true, anything else will be false
 if (age == 18) console.log(`you just became an adult! (loose)`); //(Loose)In this case, 18 == 18 for number and string is true, anything else will be false
 
-const favourite = Number(prompt('whats your fav number?')); //shows prompt window on the webpage
+const favourite = Number(prompt("whats your fav number?")); //shows prompt window on the webpage
 console.log(favourite);
 console.log(typeof favourite);
 if (favourite === 23) {
-  console.log('WOWZA 23!');
+  console.log("WOWZA 23!");
 } else if (favourite === 7) {
   console.log(`Wowza 7`);
 } else {
@@ -166,28 +181,28 @@ if (shouldDrive) {
 # 26. **Switch statetements**
 
 ```js
-const day = 'monday';
+const day = "monday";
 
 switch (day) {
-  case 'monday': // day === 'monday'
-    console.log('MONDAAAY');
+  case "monday": // day === 'monday'
+    console.log("MONDAAAY");
     break;
-  case 'tuesday':
-    console.log('TUESDAYYY');
+  case "tuesday":
+    console.log("TUESDAYYY");
     break;
-  case 'wednesday':
-  case 'thursday':
-    console.log('THUERSSSDAYY');
+  case "wednesday":
+  case "thursday":
+    console.log("THUERSSSDAYY");
     break;
-  case 'Friday':
-    console.log('FRIDAAY FRIDAAY');
+  case "Friday":
+    console.log("FRIDAAY FRIDAAY");
     break;
-  case ' saturday':
-  case 'sunday':
-    console.log('Enjoy your SUNDAAAY');
+  case " saturday":
+  case "sunday":
+    console.log("Enjoy your SUNDAAAY");
     break;
   default:
-    console.log('Not a valid day');
+    console.log("Not a valid day");
 }
 ```
 
@@ -210,7 +225,7 @@ const age = 28;
 // Use a ternary operator to determine the value of 'drink' based on 'age'
 // If 'age' is 18 or older, 'drink' will be set to "Wine"
 // Otherwise, 'drink' will be set to "Water"
-const drink = age >= 18 ? 'Wine' : 'Water';
+const drink = age >= 18 ? "Wine" : "Water";
 
 // Print the value of 'drink' to the console
 // In this case, since age is 28 (which is greater than 18), it will output "Wine"
@@ -228,7 +243,7 @@ console.log(drink);
 ---
 
 ```js
-'use strict'; // Enforces strict mode, which catches common errors and enforces stricter syntax rules
+"use strict"; // Enforces strict mode, which catches common errors and enforces stricter syntax rules
 
 // Declares a variable 'hasDriverLicense' and initializes it as false
 let hasDriverLicense = false;
@@ -239,11 +254,11 @@ const passTest = true;
 if (passTest) hasDriverLicense = true;
 
 // Checks if 'hasDriverLicense' is true, and if so, logs "I can drive" to the console
-if (hasDriverLicense) console.log('I can drive');
+if (hasDriverLicense) console.log("I can drive");
 
 // Tries to declare two constants with names 'interface' and 'private'
 // In strict mode, using 'interface' and 'private' as variable names will cause an error
-const interface = 'Audio'; // Error: 'interface' is a reserved word
+const interface = "Audio"; // Error: 'interface' is a reserved word
 const private = 534; // Error: 'private' is a reserved word
 ```
 
@@ -256,7 +271,7 @@ const private = 534; // Error: 'private' is a reserved word
 ```js
 // Declares a function named 'logger' with no parameters
 function logger() {
-  console.log('My name is Radek'); // Logs "My name is Radek" to the console
+  console.log("My name is Radek"); // Logs "My name is Radek" to the console
 }
 
 // Calling (or "invoking") the 'logger' function, which will execute its code
@@ -325,7 +340,7 @@ const calcAge2 = function (birthYear) {
 
 // Arrow function
 // Defines a function named `calcAge3` using arrow function syntax
-const calcAge3 = birthYear => 2024 - birthYear; // Calculates the age by subtracting birth year from 2024
+const calcAge3 = (birthYear) => 2024 - birthYear; // Calculates the age by subtracting birth year from 2024
 
 // Calls `calcAge3` function with `1997` as the birth year and stores result in `age3`
 const age3 = calcAge3(1997);
@@ -342,7 +357,7 @@ const yearsToRetirement = (birthYear, firstName) => {
 };
 
 // Calls `yearsToRetirement` with `1997` and `"Radek"` and logs the result to the console
-console.log(yearsToRetirement(1997, 'Radek'));
+console.log(yearsToRetirement(1997, "Radek"));
 ```
 
 ---
@@ -396,8 +411,8 @@ const yearsToRetirement = function (birthYear, firstName) {
   }
 };
 // Calls yearsToRetirement for two different cases
-yearsToRetirement(1940, 'Radek'); // Radek born in 1940, likely already retired
-yearsToRetirement(2002, 'Amy'); // Amy born in 2002, has years left until retirement
+yearsToRetirement(1940, "Radek"); // Radek born in 1940, likely already retired
+yearsToRetirement(2002, "Amy"); // Amy born in 2002, has years left until retirement
 
 // Function declaration - Functions that can be used before they’re declared in the code
 // Function expression - Functions stored in variables, useful for one-line or quick functions
@@ -411,18 +426,18 @@ yearsToRetirement(2002, 'Amy'); // Amy born in 2002, has years left until retire
 ---
 
 ```js
-const friends = ['Michael', 'Steven', 'Peter']; //literal syntax
+const friends = ["Michael", "Steven", "Peter"]; //literal syntax
 console.log(friends);
 
 console.log(friends[0]); //prints fir object in the array
 console.log(friends.length); //prints the length of the array
 console.log(friends[friends.length - 1]); //prints last object, javascript expects expresion not a statement
-friends[2] = 'Jay'; //Third array gets changed
+friends[2] = "Jay"; //Third array gets changed
 
 console.log(friends);
 
-const firstname = 'John';
-const radek = [firstname, 'Smith', 2024 - 1991, 'Teacher', friends];
+const firstname = "John";
+const radek = [firstname, "Smith", 2024 - 1991, "Teacher", friends];
 console.log(radek);
 
 //Exercise
@@ -448,12 +463,12 @@ console.log(ages);
 ```js
 //Add elements
 
-const friends = ['Michael', 'Steven', 'Peter'];
-const newLength = friends.push('Jay'); //adds at the end
+const friends = ["Michael", "Steven", "Peter"];
+const newLength = friends.push("Jay"); //adds at the end
 console.log(friends);
 console.log(newLength);
 
-friends.unshift('John'); //adds at the beginning
+friends.unshift("John"); //adds at the beginning
 console.log(friends);
 
 //Remove elements
@@ -466,11 +481,11 @@ console.log(friends);
 friends.shift(); //removes first one
 console.log(friends);
 
-console.log(friends.indexOf('Steven')); //shows the position /index
-console.log(friends.indexOf('Bob')); //It will pop -1 as it is not in the array
+console.log(friends.indexOf("Steven")); //shows the position /index
+console.log(friends.indexOf("Bob")); //It will pop -1 as it is not in the array
 
-console.log(friends.includes('Steven')); //True as is it in the array
-console.log(friends.includes('Bob')); //False as it is not in the array
+console.log(friends.includes("Steven")); //True as is it in the array
+console.log(friends.includes("Bob")); //False as it is not in the array
 ```
 
 ---
@@ -487,11 +502,11 @@ Objects are used for unordered or unstructured data. In objects, data is organiz
 
 ```js
 const objects = {
-  firstName: 'Jon',
-  lastName: 'Snow',
+  firstName: "Jon",
+  lastName: "Snow",
   age: 2024 - 1978,
-  job: 'Killa',
-  friends: ['Michael', 'Peter', 'Steven'],
+  job: "Killa",
+  friends: ["Michael", "Peter", "Steven"],
 };
 ```
 
@@ -505,11 +520,11 @@ This person object organizes information by descriptive keys, making it easy to 
 
 ```js
 const objects = {
-  firstName: 'Jon',
-  lastName: 'Snow',
+  firstName: "Jon",
+  lastName: "Snow",
   age: 2024 - 1978,
-  job: 'Killa',
-  friends: ['Michael', 'Peter', 'Steven'],
+  job: "Killa",
+  friends: ["Michael", "Peter", "Steven"],
 };
 ```
 
@@ -517,7 +532,7 @@ Here, an object objects is defined with properties such as firstName, lastName, 
 
 ```js
 console.log(objects.firstName); // dot notation
-console.log(objects['firstName']); // bracket notation
+console.log(objects["firstName"]); // bracket notation
 ```
 
 Both lines here retrieve the firstName property of the object in two different ways:
@@ -526,9 +541,9 @@ Dot notation (e.g., objects.firstName) directly accesses the property.
 Bracket notation (e.g., objects["firstName"]) accesses the property by providing a string key, which can be particularly useful for dynamic keys.
 
 ```js
-const nameKey = 'Name';
-console.log(objects['first' + nameKey]); // prints 'Jon'
-console.log(objects['last' + nameKey]); // causes an error
+const nameKey = "Name";
+console.log(objects["first" + nameKey]); // prints 'Jon'
+console.log(objects["last" + nameKey]); // causes an error
 ```
 
 nameKey is a variable with the value "Name".
@@ -536,7 +551,7 @@ The expression 'first' + nameKey becomes "firstName", so objects["firstName"] re
 
 ```js
 const interestedIn = prompt(
-  'What do you want to know?- firstName, lastName, age, job and friends'
+  "What do you want to know?- firstName, lastName, age, job and friends"
 );
 ```
 
@@ -546,7 +561,7 @@ The code prompts the user to enter a key (e.g., firstName, lastName, etc.). The 
 if (objects[interestedIn]) {
   console.log(objects[interestedIn]);
 } else {
-  console.log('not on the list, wrong request');
+  console.log("not on the list, wrong request");
 }
 ```
 
@@ -557,8 +572,8 @@ If not, it displays "not on the list, wrong request".
 This is a way to handle user errors gracefully by checking if the input corresponds to a valid key.
 
 ```js
-objects.location = 'Spain';
-objects['Twitter'] = '@TWITTIEEE';
+objects.location = "Spain";
+objects["Twitter"] = "@TWITTIEEE";
 console.log(objects);
 ```
 
@@ -660,11 +675,11 @@ console.log(`lifting weight repetition ${rep}`);
 
 ```js
 const objects = [
-  'Jon',
-  'Snow',
+  "Jon",
+  "Snow",
   2024 - 1978, // This calculates the number 46 (2024 - 1978)
-  'Killa',
-  ['Michael', 'Peter', 'Steven'], // An array of strings
+  "Killa",
+  ["Michael", "Peter", "Steven"], // An array of strings
   true, // A boolean value
 ];
 ```
@@ -752,11 +767,11 @@ Once it finds a number, break exits the loop, so any elements after the first nu
 
 ```js
 const objects = [
-  'Jon',
-  'Snow',
+  "Jon",
+  "Snow",
   2024 - 1978, // This calculates the number 46 (2024 - 1978)
-  'Killa',
-  ['Michael', 'Peter', 'Steven'], // An array of strings
+  "Killa",
+  ["Michael", "Peter", "Steven"], // An array of strings
   true, // A boolean value
 ];
 //first part= putting things backwards of the array
@@ -806,7 +821,7 @@ let dice = Math.trunc(Math.random() * 6) + 1;
 while (dice !== 6) {
   console.log(`You rolled a ${dice}`);
   dice = Math.trunc(Math.random() * 6) + 1;
-  if (dice == 6) console.log('Loops finished');
+  if (dice == 6) console.log("Loops finished");
 }
 ```
 
@@ -876,7 +891,7 @@ Keep in mind that sometimes theer might be a sensor error"
 
 \*/
 
-const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
 
 // Understanding the problem --
 // What is the amplitude? :Between the highest and lowest temp
@@ -898,7 +913,7 @@ const calcTempAmplitude = function (t1, t2) {
   let min = temps[0];
   for (let i = 0; i < temps.length; i++) {
     const curTemp = temps[i];
-    if (typeof curTemp !== 'number') continue;
+    if (typeof curTemp !== "number") continue;
     if (curTemp > max) max = curTemp; //if the number is above , then it becomes new ma number, and it goes to the next numebr in array
     if (curTemp < min) min = curTemp; //same here but lowest
   }
@@ -951,9 +966,9 @@ console.log(amplitude);
 //Main issue was not using Number, and number that was put in the measureKelvin- Value was a string
 const measureKelvin = function () {
   const measurement = {
-    type: 'temp',
-    unit: 'cels',
-    value: Number(prompt('Degrees celsius:')),
+    type: "temp",
+    unit: "cels",
+    value: Number(prompt("Degrees celsius:")),
   };
 
   console.log(measurement);
@@ -1122,8 +1137,8 @@ Difference between classes and Ids
 ---
 
 ```js
-console.log(document.querySelector('.message').outerHTML); // <p class="message">Start guessing...</p>
-console.log(document.querySelector('.message').textContent); //Start guessing...
+console.log(document.querySelector(".message").outerHTML); // <p class="message">Start guessing...</p>
+console.log(document.querySelector(".message").textContent); //Start guessing...
 ```
 
 ---
@@ -1146,13 +1161,13 @@ DOM is not a part of JS language but WEB API's
 ---
 
 ```js
-console.log(document.querySelector('.message').textContent); //Start guessing...
+console.log(document.querySelector(".message").textContent); //Start guessing...
 
-document.querySelector('.message').textContent = 'Correct Number!';
-document.querySelector('.number').textContent = 13; //Changing text to 13
-document.querySelector('.score').textContent = 1;
+document.querySelector(".message").textContent = "Correct Number!";
+document.querySelector(".number").textContent = 13; //Changing text to 13
+document.querySelector(".score").textContent = 1;
 
-document.querySelector('.guess').value = 0; // sets 0 in input
+document.querySelector(".guess").value = 0; // sets 0 in input
 ```
 
 ---
@@ -1164,12 +1179,12 @@ document.querySelector('.guess').value = 0; // sets 0 in input
 ```js
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
-document.querySelector('.check').addEventListener('click', function () {
-  const guess = Number(document.querySelector('.guess').value); //Number is added as input is as a string by default
+document.querySelector(".check").addEventListener("click", function () {
+  const guess = Number(document.querySelector(".guess").value); //Number is added as input is as a string by default
   console.log(guess, typeof guess);
 
   if (!guess) {
-    document.querySelector('.message').textContent = 'No Input';
+    document.querySelector(".message").textContent = "No Input";
   }
 });
 ```
@@ -1187,32 +1202,32 @@ const secretNumber = Math.trunc(Math.random() * 20) + 1; //as the number would b
 
 let score = 20;
 
-document.querySelector('.check').addEventListener('click', function () {
-  const guess = Number(document.querySelector('.guess').value); //Number is added as input is as a string by default
+document.querySelector(".check").addEventListener("click", function () {
+  const guess = Number(document.querySelector(".guess").value); //Number is added as input is as a string by default
   console.log(guess, typeof guess);
 
   if (!guess) {
-    document.querySelector('.message').textContent = 'No Input';
+    document.querySelector(".message").textContent = "No Input";
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = 'Correct Number!';
-    document.querySelector('.number').textContent = secretNumber; //Changing text to secretNumber
+    document.querySelector(".message").textContent = "Correct Number!";
+    document.querySelector(".number").textContent = secretNumber; //Changing text to secretNumber
   } else if (guess > secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = 'Too high!';
+      document.querySelector(".message").textContent = "Too high!";
       score--;
-      document.querySelector('.score').textContent -= 1;
+      document.querySelector(".score").textContent -= 1;
     } else {
-      document.querySelector('.message').textContent = 'You lost!!!';
-      document.querySelector('.score').textContent = 0;
+      document.querySelector(".message").textContent = "You lost!!!";
+      document.querySelector(".score").textContent = 0;
     }
   } else if (guess < secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = 'Too low!';
+      document.querySelector(".message").textContent = "Too low!";
       score--;
-      document.querySelector('.score').textContent -= 1;
+      document.querySelector(".score").textContent -= 1;
     } else {
-      document.querySelector('.message').textContent = 'You lost!!!';
-      document.querySelector('.score').textContent = 0;
+      document.querySelector(".message").textContent = "You lost!!!";
+      document.querySelector(".score").textContent = 0;
     }
   }
 });
@@ -1225,8 +1240,8 @@ document.querySelector('.check').addEventListener('click', function () {
 ---
 
 ```js
-document.querySelector('body').style.backgroundColor = '#60b347'; //CSS Manipulation can only be in String format
-document.querySelector('.number').style.width = '30rem'; //CSS Manipulation can only be in String format
+document.querySelector("body").style.backgroundColor = "#60b347"; //CSS Manipulation can only be in String format
+document.querySelector(".number").style.width = "30rem"; //CSS Manipulation can only be in String format
 ```
 
 ---
@@ -1323,48 +1338,48 @@ let score = 20;
 let highscore = 0;
 
 const displayMessage = function (message) {
-  document.querySelector('.message').textContent = message; //Cretaed Function for easier code thats used for later
+  document.querySelector(".message").textContent = message; //Cretaed Function for easier code thats used for later
 };
 //Again button
-document.querySelector('.btn.again').addEventListener('click', function () {
-  document.querySelector('body').style.backgroundColor = '#222';
-  displayMessage('Start guessing...');
-  document.querySelector('.score').textContent = 20;
-  document.querySelector('.number').textContent = '?';
-  document.querySelector('.guess').value = '';
-  document.querySelector('.number').style.width = '15rem';
+document.querySelector(".btn.again").addEventListener("click", function () {
+  document.querySelector("body").style.backgroundColor = "#222";
+  displayMessage("Start guessing...");
+  document.querySelector(".score").textContent = 20;
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".guess").value = "";
+  document.querySelector(".number").style.width = "15rem";
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
   console.log(`Secret number is: ${secretNumber}`);
 });
 //Check the correct number
-document.querySelector('.check').addEventListener('click', function () {
-  const guess = Number(document.querySelector('.guess').value);
+document.querySelector(".check").addEventListener("click", function () {
+  const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
 
   if (!guess) {
     //No Input
-    displayMessage('No Number!!!');
+    displayMessage("No Number!!!");
     //Win
   } else if (guess === secretNumber) {
-    displayMessage('Correct Number!');
-    document.querySelector('.number').textContent = secretNumber;
-    document.querySelector('body').style.backgroundColor = '#60b347'; //CSS Manipulation can only be in String format
-    document.querySelector('.number').style.width = '30rem'; //CSS Manipulation can only be in String format
+    displayMessage("Correct Number!");
+    document.querySelector(".number").textContent = secretNumber;
+    document.querySelector("body").style.backgroundColor = "#60b347"; //CSS Manipulation can only be in String format
+    document.querySelector(".number").style.width = "30rem"; //CSS Manipulation can only be in String format
     if (score > highscore) highscore = score; //
-    document.querySelector('.highscore').textContent = highscore;
+    document.querySelector(".highscore").textContent = highscore;
   }
 
   //When guess is wrong
   else if (guess !== secretNumber) {
     if (score > 1) {
-      displayMessage(guess > secretNumber ? 'Too high!' : 'Too Low!'); //Used Ternary operator to cut half of the code.
+      displayMessage(guess > secretNumber ? "Too high!" : "Too Low!"); //Used Ternary operator to cut half of the code.
 
       score--;
-      document.querySelector('.score').textContent -= 1;
+      document.querySelector(".score").textContent -= 1;
     } else {
-      displayMessage('You Lost!!!');
-      document.querySelector('.score').textContent = 0;
+      displayMessage("You Lost!!!");
+      document.querySelector(".score").textContent = 0;
     }
   }
 });
@@ -1381,28 +1396,28 @@ document.querySelector('.check').addEventListener('click', function () {
 ---
 
 ```js
-'use strict';
+"use strict";
 //defining buttons and areas int variables
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.close-modal');
-const btnsOpenModal = document.querySelectorAll('.show-modal');
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnsOpenModal = document.querySelectorAll(".show-modal");
 
 const openModal = function () {
   console.log(1);
-  modal.classList.remove('hidden'); //removes modal class from css (hidden is  display: none;)
-  overlay.classList.remove('hidden'); //rmoves  modal class from css (hidden is  display: none;)
+  modal.classList.remove("hidden"); //removes modal class from css (hidden is  display: none;)
+  overlay.classList.remove("hidden"); //rmoves  modal class from css (hidden is  display: none;)
 };
 
 const closeModal = function () {
-  modal.classList.add('hidden'); // adds modal class from css (hidden is  display: none;)
-  overlay.classList.add('hidden'); //adds modal class from css (hidden is  display: none;)
+  modal.classList.add("hidden"); // adds modal class from css (hidden is  display: none;)
+  overlay.classList.add("hidden"); //adds modal class from css (hidden is  display: none;)
 
   for (let i = 0; i < btnsOpenModal.length; i++)
-    btnsOpenModal[i].addEventListener('click', openModal);
+    btnsOpenModal[i].addEventListener("click", openModal);
 };
-btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
 ```
 
 ---
@@ -1412,37 +1427,37 @@ overlay.addEventListener('click', closeModal);
 ---
 
 ```js
-'use strict';
+"use strict";
 // Selecting modal elements
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.close-modal');
-const btnsOpenModal = document.querySelectorAll('.show-modal');
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnsOpenModal = document.querySelectorAll(".show-modal");
 
 // Function to open the modal
 const openModal = function () {
-  modal.classList.remove('hidden'); // Show modal by removing 'hidden' class
-  overlay.classList.remove('hidden'); // Show overlay by removing 'hidden' class
+  modal.classList.remove("hidden"); // Show modal by removing 'hidden' class
+  overlay.classList.remove("hidden"); // Show overlay by removing 'hidden' class
 };
 
 // Function to close the modal
 const closeModal = function () {
-  modal.classList.add('hidden'); // Hide modal by adding 'hidden' class
-  overlay.classList.add('hidden'); // Hide overlay by adding 'hidden' class
+  modal.classList.add("hidden"); // Hide modal by adding 'hidden' class
+  overlay.classList.add("hidden"); // Hide overlay by adding 'hidden' class
 };
 
 // Adding event listeners to open modal buttons
 for (let i = 0; i < btnsOpenModal.length; i++) {
-  btnsOpenModal[i].addEventListener('click', openModal);
+  btnsOpenModal[i].addEventListener("click", openModal);
 }
 
 // Event listeners for closing the modal
-btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
 
 // Close modal when pressing the Escape key
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
     closeModal();
   }
 });
@@ -1455,15 +1470,15 @@ document.addEventListener('keydown', function (event) {
 ---
 
 ```js
-'use strict';
+"use strict";
 // Selecting elements
-const score0El = document.querySelector('#score--0'); // Hash is used to select ID, . is used for classes. It is more versatile and can be used for everything
-const score1El = document.getElementById('score--1'); //This is a little bit faster, and only works with ID's
-const diceEl = document.querySelector('.dice');
+const score0El = document.querySelector("#score--0"); // Hash is used to select ID, . is used for classes. It is more versatile and can be used for everything
+const score1El = document.getElementById("score--1"); //This is a little bit faster, and only works with ID's
+const diceEl = document.querySelector(".dice");
 
 score0El.textContent = 0;
 score1El.textContent = 0;
-diceEl.classList.add('hidden');
+diceEl.classList.add("hidden");
 ```
 
 ---
@@ -1479,7 +1494,7 @@ const playAgain = function () {
   //Function to reset everything
   score0El.textContent = 0; // Sets player 0's score to 0
   score1El.textContent = 0; // Sets player 1's score to 0
-  diceEl.classList.add('hidden'); // Hides dice at the start
+  diceEl.classList.add("hidden"); // Hides dice at the start
   scores = [0, 0]; // Holds scores for both players
   currentScore = 0; // Tracks current round score
   activePlayer = 0; // Tracks which player is active
@@ -1488,17 +1503,17 @@ const playAgain = function () {
 
   currentScore = 0; // Reset current score
 
-  player0El.classList.add('player--active'); // Switch active styling
-  player1El.classList.remove('player--active');
+  player0El.classList.add("player--active"); // Switch active styling
+  player1El.classList.remove("player--active");
   document
     .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
+    .classList.remove("player--winner");
   document
     .querySelector(`.player--${activePlayer}`)
-    .classList.add('player--active');
+    .classList.add("player--active");
 };
 
-btnNew.addEventListener('click', playAgain);
+btnNew.addEventListener("click", playAgain);
 ```
 
 ---
@@ -1510,26 +1525,26 @@ btnNew.addEventListener('click', playAgain);
 Full code-
 
 ```js
-'use strict';
+"use strict";
 // Selecting elements
-const player0El = document.querySelector('.player--0'); // Selects player 0 container
-const player1El = document.querySelector('.player--1'); // Selects player 1 container
-const score0El = document.querySelector('#score--0'); // Selects player 0's total score display (ID-based)
-const score1El = document.getElementById('score--1'); // Selects player 1's total score display (ID-based, faster than querySelector)
-const current0El = document.getElementById('current--0'); // Selects player 0's current score display
-const current1El = document.getElementById('current--1'); // Selects player 1's current score display
+const player0El = document.querySelector(".player--0"); // Selects player 0 container
+const player1El = document.querySelector(".player--1"); // Selects player 1 container
+const score0El = document.querySelector("#score--0"); // Selects player 0's total score display (ID-based)
+const score1El = document.getElementById("score--1"); // Selects player 1's total score display (ID-based, faster than querySelector)
+const current0El = document.getElementById("current--0"); // Selects player 0's current score display
+const current1El = document.getElementById("current--1"); // Selects player 1's current score display
 
-const diceEl = document.querySelector('.dice'); // Dice image element
-const btnNew = document.querySelector('.btn--new'); // "New Game" button
-const btnRoll = document.querySelector('.btn--roll'); // "Roll Dice" button
-const btnHold = document.querySelector('.btn.btn--hold'); // "Hold" button
+const diceEl = document.querySelector(".dice"); // Dice image element
+const btnNew = document.querySelector(".btn--new"); // "New Game" button
+const btnRoll = document.querySelector(".btn--roll"); // "Roll Dice" button
+const btnHold = document.querySelector(".btn.btn--hold"); // "Hold" button
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   activePlayer = activePlayer === 0 ? 1 : 0; // Toggle active player
   currentScore = 0; // Reset current score
-  player0El.classList.toggle('player--active'); // Switch active styling
-  player1El.classList.toggle('player--active');
+  player0El.classList.toggle("player--active"); // Switch active styling
+  player1El.classList.toggle("player--active");
 };
 
 // Starting conditions
@@ -1537,13 +1552,13 @@ const switchPlayer = function () {
 let playing, activePlayer, currentScore, scores;
 
 // Rolling Dice functionality
-btnRoll.addEventListener('click', function () {
+btnRoll.addEventListener("click", function () {
   if (playing) {
     // 1. Generate random dice roll (1-6)
     let diceNumber = Math.trunc(Math.random() * 6) + 1;
 
     // 2. Display dice image for the rolled number
-    diceEl.classList.remove('hidden'); // Show the dice
+    diceEl.classList.remove("hidden"); // Show the dice
     diceEl.src = `dice-${diceNumber}.png`; // Update dice image to match roll
 
     // 3. Check for roll of 1
@@ -1559,7 +1574,7 @@ btnRoll.addEventListener('click', function () {
   }
 });
 // Holding
-btnHold.addEventListener('click', function () {
+btnHold.addEventListener("click", function () {
   if (playing) {
     //add current score to the main score to the active player
     scores[activePlayer] += currentScore;
@@ -1572,13 +1587,13 @@ btnHold.addEventListener('click', function () {
     if (scores[activePlayer] >= 100) {
       playing = false;
       //Finish the game
-      diceEl.classList.add('hidden'); // Hides dice
+      diceEl.classList.add("hidden"); // Hides dice
       document
         .querySelector(`.player--${activePlayer}`)
-        .classList.add('player--winner');
+        .classList.add("player--winner");
       document
         .querySelector(`.player--${activePlayer}`)
-        .classList.remove('player--active');
+        .classList.remove("player--active");
     } else {
       //Switch to the next player
       switchPlayer();
@@ -1591,7 +1606,7 @@ const init = function () {
   //Function to reset everything
   score0El.textContent = 0; // Sets player 0's score to 0
   score1El.textContent = 0; // Sets player 1's score to 0
-  diceEl.classList.add('hidden'); // Hides dice at the start
+  diceEl.classList.add("hidden"); // Hides dice at the start
   scores = [0, 0]; // Holds scores for both players
   currentScore = 0; // Tracks current round score
   activePlayer = 0; // Tracks which player is active
@@ -1604,18 +1619,18 @@ const init = function () {
 
   currentScore = 0; // Reset current score
 
-  player0El.classList.add('player--active'); // Switch active styling
-  player1El.classList.remove('player--active');
+  player0El.classList.add("player--active"); // Switch active styling
+  player1El.classList.remove("player--active");
 
   document
     .querySelector(`.player--${activePlayer}`)
-    .classList.add('player--active');
+    .classList.add("player--active");
 
-  document.querySelector(`.player--${0}`).classList.remove('player--winner');
-  document.querySelector(`.player--${1}`).classList.remove('player--winner');
+  document.querySelector(`.player--${0}`).classList.remove("player--winner");
+  document.querySelector(`.player--${1}`).classList.remove("player--winner");
 };
 
-btnNew.addEventListener('click', init);
+btnNew.addEventListener("click", init);
 
 init();
 ```
@@ -1734,7 +1749,7 @@ Variable Environment:
 ### **The Call Stack**
 
 ```js
-const name = 'Radek';
+const name = "Radek";
 
 const first = () => {
   let a = 1;
@@ -1784,8 +1799,8 @@ In this code, the Call Stack manages the sequence of function calls and returns 
 **Global scope** &rarr; Outside of **any** function or block, variables declared in global scope are accessible **everywhere**
 
 ```js
-const me = 'Radek';
-const job = 'Teacher';
+const me = "Radek";
+const job = "Teacher";
 const year = 1989;
 ```
 
@@ -1815,7 +1830,7 @@ console.log(millenial) //ReferenceError
 ### The scope chain
 
 ```js
-const myName = 'Radek'; //Global Scope
+const myName = "Radek"; //Global Scope
 
 function first() {
   //first() scope
@@ -1827,7 +1842,7 @@ function first() {
   }
   function second() {
     //second() scope (This scope has access all other scopes(as it is the last one))
-    const job = 'teacher';
+    const job = "teacher";
 
     console.log(`${myName} is a ${age}-old ${job}`);
   }
@@ -1896,7 +1911,7 @@ function calcAge(birthYear) {
   console.log(firstName); // firstName is available because "const firstName = "Radek""" is in global scope
   return age;
 }
-const firstName = 'Radek';
+const firstName = "Radek";
 calcAge(1997);
 ```
 
@@ -1910,7 +1925,7 @@ function calcAge(birthYear) {
 
     if (birthYear >= 1981 && birthYear <= 1996) {
       var millenial = true;
-      const firstName = 'John';
+      const firstName = "John";
       const str = `Oh, and you're a millenial ${firstName}`; //This will be John, instead of Radek (same/closest scope from global)
       console.log(str);
     } else {
@@ -1922,7 +1937,7 @@ function calcAge(birthYear) {
   printAge();
   return age;
 }
-const firstName = 'Radek';
+const firstName = "Radek";
 calcAge(1991);
 //console.log(age); //This is an error, as this is outer scope trying to reach inner scope
 ```
@@ -1963,7 +1978,7 @@ Scope: Available throughout its scope (global or function).
 // 1. Function Declaration - No error, can be called before declaration due to hoisting
 greet(); // ✅ Works
 function greet() {
-  console.log('Hello!');
+  console.log("Hello!");
 }
 ```
 
@@ -1987,7 +2002,7 @@ Redeclaration: Not allowed within the same scope.
 ```js
 // 3. let Declaration - Error if accessed before declaration (temporal dead zone)
 console.log(name); // ❌ ReferenceError: Cannot access 'name' before initialization
-let name = 'Alice';
+let name = "Alice";
 ```
 
 **const Declaration**
@@ -1999,7 +2014,7 @@ Reassignment: Not allowed (constant), but object properties/elements can still b
 ```js
 // 4. const Declaration - Error if accessed before declaration
 console.log(city); // ❌ ReferenceError: Cannot access 'city' before initialization
-const city = 'Paris';
+const city = "Paris";
 ```
 
 **Function Expression**
@@ -2012,7 +2027,7 @@ Calling Before Declaration: Results in error if called before its line of declar
 // 5. Function Expression with const - Error if accessed before declaration
 sayHello(); // ❌ TypeError: sayHello is not a function
 const sayHello = function () {
-  console.log('Hi there!');
+  console.log("Hi there!");
 };
 ```
 
@@ -2051,7 +2066,7 @@ showThis();
 ## Function (strict): this is undefined.
 
 ```js
-'use strict';
+"use strict";
 function showThisStrict() {
   console.log(this); // undefined
 }
@@ -2062,7 +2077,7 @@ showThisStrict();
 
 ```js
 const person = {
-  name: 'Alice',
+  name: "Alice",
   greet() {
     console.log(this.name); // "Alice"
   },
@@ -2074,7 +2089,7 @@ person.greet();
 
 ```js
 const person = {
-  name: 'Bob',
+  name: "Bob",
   greet: () => {
     console.log(this.name); // undefined or global object’s name (depends on context)
   },
@@ -2099,7 +2114,7 @@ class Animal {
     console.log(this.type); // refers to the instance's type
   }
 }
-const dog = new Animal('Dog');
+const dog = new Animal("Dog");
 dog.speak(); // "Dog"
 ```
 
@@ -2115,21 +2130,21 @@ console.log(this); //window
 
 const calcAge = function (birthYear) {
   console.log(2024 - birthYear);
-  console.log('calcAge', this); //undefined
+  console.log("calcAge", this); //undefined
 };
 calcAge(1997);
 
 //Arrow function
-const calcAgeArrow = birthYear => {
+const calcAgeArrow = (birthYear) => {
   console.log(2024 - birthYear);
-  console.log('calcAgeArrow', this); //Window
+  console.log("calcAgeArrow", this); //Window
 };
 calcAgeArrow(1998);
 
 const radek = {
   year: 1997,
   calcAge: function () {
-    console.log('Radek Object', this); //Prints Radek object (However, it will print wahetever calls calcAge as shown below)
+    console.log("Radek Object", this); //Prints Radek object (However, it will print wahetever calls calcAge as shown below)
     console.log(2024 - this.year);
   },
 };
@@ -2154,10 +2169,10 @@ const f = radek.calcAge; // f variable copies calcAge function
 ---
 
 ```js
-'use strict';
+"use strict";
 //var firstName = 'Matilda';
 const radek = {
-  firstName: 'Radek',
+  firstName: "Radek",
   year: 1997,
   calcAge: function () {
     //Regular Function declaration
@@ -2225,13 +2240,13 @@ console.log(oldAge);
 
 //Reference types
 const me = {
-  name: 'Radek',
+  name: "Radek",
   age: 30,
 };
 const friend = me;
 friend.age = 27;
-console.log('Friend', friend); // Friend {name: 'Radek', age: 27}
-console.log('Me', me); // Me {name: 'Radek', age: 27}
+console.log("Friend", friend); // Friend {name: 'Radek', age: 27}
+console.log("Me", me); // Me {name: 'Radek', age: 27}
 ```
 
 - Primitive Types are stored in the CallStack
@@ -2249,39 +2264,39 @@ console.log('Me', me); // Me {name: 'Radek', age: 27}
 // Primitives vs. Objects in Practice
 
 // Primitive types
-let lastName = 'Williams';
+let lastName = "Williams";
 let oldLastName = lastName;
-lastName = 'Davis';
+lastName = "Davis";
 console.log(lastName, oldLastName);
 
 // Reference types
 const jessica = {
-  firstName: 'Jessica',
-  lastName: 'Williams',
+  firstName: "Jessica",
+  lastName: "Williams",
   age: 27,
 };
 const marriedJessica = jessica;
-marriedJessica.lastName = 'Davis';
-console.log('Before marriage:', jessica);
-console.log('After marriage: ', marriedJessica);
+marriedJessica.lastName = "Davis";
+console.log("Before marriage:", jessica);
+console.log("After marriage: ", marriedJessica);
 // marriedJessica = {};
 
 // Copying objects
 const jessica2 = {
-  firstName: 'Jessica',
-  lastName: 'Williams',
+  firstName: "Jessica",
+  lastName: "Williams",
   age: 27,
-  family: ['Alice', 'Bob'],
+  family: ["Alice", "Bob"],
 };
 
 const jessicaCopy = Object.assign({}, jessica2);
-jessicaCopy.lastName = 'Davis';
+jessicaCopy.lastName = "Davis";
 
-jessicaCopy.family.push(['Mary']);
-jessicaCopy.family.push(['John']);
+jessicaCopy.family.push(["Mary"]);
+jessicaCopy.family.push(["John"]);
 
-console.log('NEW Before marriage:', jessica2);
-console.log('NEW After marriage: ', jessicaCopy);
+console.log("NEW Before marriage:", jessica2);
+console.log("NEW After marriage: ", jessicaCopy);
 ```
 
 ---
@@ -2297,19 +2312,19 @@ console.log('NEW After marriage: ', jessicaCopy);
 - Destructuring is a feature of unpacking values from and array/object into seperate variables.
 
 ```js
-'use strict';
+"use strict";
 
 // Data needed for a later exercise
 const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
 
 // Data needed for first part of the section
 const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
 
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
@@ -2422,7 +2437,7 @@ Basic properties like `name, location, categories, starterMenu, mainMenu, and op
 
 ```js
 restaurant.orderDelivery({
-  address: 'Via del Sole, 21',
+  address: "Via del Sole, 21",
   starterIndex: 2,
 });
 ```
@@ -2542,8 +2557,8 @@ console.log(menu);
 
 //Spread operator works also on all so-called "iterables"
 // Iterables: Strings, maps, arrays, sets but not objects
-const str = 'Radek';
-const letter = [...str, '', 'S.'];
+const str = "Radek";
+const letter = [...str, "", "S."];
 console.log(letter); // ['R', 'a', 'd', 'e', 'k', '', 'S.']
 console.log(...str); //Prints all individual letters = R a d e k
 ```
@@ -2571,7 +2586,7 @@ restaurant.orderPasta(...ingredients); //same but quicker
 ```
 
 ```js
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };
 console.log(newRestaurant); //{foundedIn: 1998, name: 'Classico Italiano', location: 'Via Angelo Tavanti 23, Firenze, Italy', categories: Array(4), starterMenu: Array(4), …}
 ```
 
@@ -2580,7 +2595,7 @@ console.log(newRestaurant); //{foundedIn: 1998, name: 'Classico Italiano', locat
 const restaurantcopy = { ...restaurant };
 
 // Change `name` in the original `restaurant` object.
-restaurant.name = 'Ristorante Roma';
+restaurant.name = "Ristorante Roma";
 
 // `restaurantcopy.name` still has the original name (shallow copy doesn't update it).
 console.log(restaurantcopy.name); // Original name
@@ -2609,7 +2624,7 @@ console.log(restOfItems); // [20, 30, 40]
 Example with an Object
 
 ```js
-const { name, ...otherDetails } = { name: 'Alice', age: 25, job: 'Developer' };
+const { name, ...otherDetails } = { name: "Alice", age: 25, job: "Developer" };
 console.log(name); // "Alice"
 console.log(otherDetails); // { age: 25, job: "Developer" }
 ```
@@ -2696,14 +2711,14 @@ Stops evaluating if a truthy value is found (short-circuiting).
 function accessPage(user) {
   // Allow access only if user is logged in AND has admin rights
   if (user.isLoggedIn && user.isAdmin) {
-    console.log('Access granted to admin page');
+    console.log("Access granted to admin page");
   } else {
-    console.log('Access denied');
+    console.log("Access denied");
   }
 }
 
 // Example with OR: Default value for user role if undefined
-const userRole = user.role || 'guest'; // If user.role is falsy, set to "guest"
+const userRole = user.role || "guest"; // If user.role is falsy, set to "guest"
 console.log(`User role is: ${userRole}`);
 ```
 
@@ -2716,9 +2731,9 @@ Inverts the truthiness of a value.
 ```js
 function submitForm(data) {
   if (!data.name || !data.email) {
-    console.log('Please fill out all required fields');
+    console.log("Please fill out all required fields");
   } else {
-    console.log('Form submitted successfully');
+    console.log("Form submitted successfully");
   }
 }
 ```
@@ -2730,7 +2745,7 @@ Useful for default values when null or undefined might appear.
 ```js
 function displayUserName(user) {
   // Display "Guest" only if user.name is null or undefined, not if it's empty string or false
-  const nameToDisplay = user.name ?? 'Guest';
+  const nameToDisplay = user.name ?? "Guest";
   console.log(`Hello, ${nameToDisplay}!`);
 }
 ```
@@ -2741,8 +2756,8 @@ Assigns the right value only if the left value is truthy.
 ```js
 function anonymizeUser(user) {
   // Anonymize only if user.email exists
-  user.email &&= 'anonymous@example.com';
-  console.log('User email:', user.email);
+  user.email &&= "anonymous@example.com";
+  console.log("User email:", user.email);
 }
 ```
 
@@ -2752,8 +2767,8 @@ Assigns the right value only if the left value is falsy.
 ```js
 function setUserCountry(user) {
   // If user.country is falsy (e.g., undefined, null, or empty), default to "USA"
-  user.country ||= 'USA';
-  console.log('User country:', user.country);
+  user.country ||= "USA";
+  console.log("User country:", user.country);
 }
 ```
 
@@ -2763,8 +2778,8 @@ Assigns the right value only if the left value is null or undefined.
 ```js
 function setProfilePicture(user) {
   // Only set a default picture if user.profilePic is null or undefined
-  user.profilePic ??= 'default-avatar.png';
-  console.log('Profile picture:', user.profilePic);
+  user.profilePic ??= "default-avatar.png";
+  console.log("Profile picture:", user.profilePic);
 }
 ```
 
@@ -2773,8 +2788,8 @@ function setProfilePicture(user) {
 //Use any data type, return ANY data type, short-circuiting
 //Basically, AND and OR statements
 
-console.log(3 || 'Radek'); //If the first value is truthy value, it will print it
-console.log('' || 'Radek'); //Radek
+console.log(3 || "Radek"); //If the first value is truthy value, it will print it
+console.log("" || "Radek"); //Radek
 console.log(true || 0); // true
 console.log(undefined || null); //null
 ```
@@ -2812,15 +2827,15 @@ Ternary Operator:
 
 ```js
 console.log(`---AND---`);
-console.log(0 && 'Radek'); // =0, Opposite of || (OR), it prints first falsy value
-console.log(7 && 'Radek'); // =Radek, If all are truthy, then last value gets printed
+console.log(0 && "Radek"); // =0, Opposite of || (OR), it prints first falsy value
+console.log(7 && "Radek"); // =Radek, If all are truthy, then last value gets printed
 ```
 
 ```js
 if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach'); // Prints first falsy value, (It doesn't eists)
+  restaurant.orderPizza("mushrooms", "spinach"); // Prints first falsy value, (It doesn't eists)
 }
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach'); //Spinach
+restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach"); //Spinach
 ```
 
 ---
@@ -2853,14 +2868,14 @@ It’s useful when you want to allow "falsy" values like 0 or "" without default
 ```js
 // Goal- Set default numGuests for objects that do not have this property
 const rest1 = {
-  name: 'Capri',
+  name: "Capri",
   //numGuests: 20,
   numGuests: 0, // As 0 is falsy number, it will print what is set as default
 };
 
 const rest2 = {
-  name: 'La Piazza',
-  owner: 'Giovanni Rossi',
+  name: "La Piazza",
+  owner: "Giovanni Rossi",
 };
 //OR assignment operator, setting default value if not existent.
 //rest1.numGuests = rest1.numGuests || 10;
@@ -2874,8 +2889,8 @@ rest2.numGuests ||= 10;
 rest1.numGuests ??= 10;
 rest2.numGuests ??= 10;
 
-rest1.owner = rest1.owner && '<ANONYMOUS>'; // This will throw an undefined, as there is not owner in rest1
-rest2.owner &&= '<ANONYMOUS>'; // rest2.owner = rest2.owner && "<ANONYMOUS>"; (even without like above, it will avoid undefined)
+rest1.owner = rest1.owner && "<ANONYMOUS>"; // This will throw an undefined, as there is not owner in rest1
+rest2.owner &&= "<ANONYMOUS>"; // rest2.owner = rest2.owner && "<ANONYMOUS>"; (even without like above, it will avoid undefined)
 
 console.log(rest1);
 console.log(rest2);
@@ -2974,7 +2989,7 @@ console.log(restaurant.openingHours.mon?.open);
 // Checks if 'openingHours' exists, then if 'mon' exists within it, and finally logs 'open'
 console.log(restaurant.openingHours?.mon?.open);
 
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 // Array of all days in a week
 
 // Loop through each day in the 'days' array
@@ -2982,7 +2997,7 @@ for (const day of days) {
   // Dynamically access the opening time of the current day using optional chaining
   // If the day doesn't exist in 'openingHours', 'open' will be 'undefined'
   // Use nullish coalescing (??) to set 'closed' as the fallback value
-  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  const open = restaurant.openingHours[day]?.open ?? "closed";
 
   // Log the day's opening time or 'closed' if the property doesn't exist
   console.log(`On ${day}, we open at ${open}`);
@@ -2990,11 +3005,11 @@ for (const day of days) {
 
 // Check if the 'order' method exists in the 'restaurant' object
 // If it exists, call it with arguments (0, 1); if not, log 'Method does not exist'
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
 
 // Check if the 'orderRisotto' method exists in the 'restaurant' object
 // If it exists, call it; otherwise, log 'Method does not exist'
-console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
 
 // Arrays
 
@@ -3005,7 +3020,7 @@ const users = [];
 
 // Check if the first user in the 'users' array exists and has a 'name' property
 // If not, use nullish coalescing (??) to provide a fallback value ('Array is empty')
-console.log(users[0]?.name ?? 'Array is empty');
+console.log(users[0]?.name ?? "Array is empty");
 ```
 
 ---
@@ -3050,18 +3065,18 @@ for (const [day, { open, close }] of entries) {
 
 ```js
 console.log(orderSet); // {'Pasta', 'Pizza', 'Risotto'}
-console.log(new Set('Radek')); // {'R', 'a', 'd', 'e', 'k'}
+console.log(new Set("Radek")); // {'R', 'a', 'd', 'e', 'k'}
 console.log(orderSet.size); // Counts unique values
-console.log(orderSet.has('Pizza')); // Checks for the value...True
-console.log(orderSet.has('Bread')); // False
-orderSet.add('Garlic Bread'); // Adds Garlic Bread
-orderSet.add('Garlic Bread'); // Ignores as there is one already
-orderSet.delete('Risotto');
+console.log(orderSet.has("Pizza")); // Checks for the value...True
+console.log(orderSet.has("Bread")); // False
+orderSet.add("Garlic Bread"); // Adds Garlic Bread
+orderSet.add("Garlic Bread"); // Ignores as there is one already
+orderSet.delete("Risotto");
 console.log(orderSet); //{'Pasta', 'Pizza', 'Garlic Bread'}
 //orderSet.clear();
 
 for (const order of orderSet) console.log(order);
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
 const positions = [...new Set(staff)]; //
 console.log(staff);
 console.log(positions);
@@ -3090,24 +3105,24 @@ console.log(positions);
 const rest = new Map();
 
 // Using the .set() method to add key-value pairs to the Map
-rest.set('name', 'Classico Italiano'); // Key: 'name', Value: 'Classico Italiano'
-rest.set(1, 'Firenze, Italy'); // Key: 1 (number), Value: 'Firenze, Italy'
-console.log(rest.set(2, 'Lisbon, Portugal')); // Key: 2 (number), Value: 'Lisbon, Portugal', outputs the updated Map
+rest.set("name", "Classico Italiano"); // Key: 'name', Value: 'Classico Italiano'
+rest.set(1, "Firenze, Italy"); // Key: 1 (number), Value: 'Firenze, Italy'
+console.log(rest.set(2, "Lisbon, Portugal")); // Key: 2 (number), Value: 'Lisbon, Portugal', outputs the updated Map
 
 // Chaining .set() calls to add multiple key-value pairs in one statement
 rest
-  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']) // Key: 'categories', Value: an array of strings
-  .set('Open', 11) // Key: 'Open', Value: 11
-  .set('Close', 23) // Key: 'Close', Value: 23
-  .set(true, 'We are open') // Key: true (boolean), Value: 'We are open'
-  .set(false, 'We are closed'); // Key: false (boolean), Value: 'We are closed'
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"]) // Key: 'categories', Value: an array of strings
+  .set("Open", 11) // Key: 'Open', Value: 11
+  .set("Close", 23) // Key: 'Close', Value: 23
+  .set(true, "We are open") // Key: true (boolean), Value: 'We are open'
+  .set(false, "We are closed"); // Key: false (boolean), Value: 'We are closed'
 
 // Retrieving values from the Map using the .get() method
-console.log(rest.get('name')); // Outputs the value associated with key 'name': 'Classico Italiano'
+console.log(rest.get("name")); // Outputs the value associated with key 'name': 'Classico Italiano'
 console.log(rest.get(true)); // Outputs the value associated with key true: 'We are open'
 
 // Checking if a specific key exists in the Map using the .has() method
-console.log(rest.has('categories')); // Outputs true, as the key 'categories' exists
+console.log(rest.has("categories")); // Outputs true, as the key 'categories' exists
 
 // Removing a key-value pair from the Map using the .delete() method
 rest.delete(2); // Deletes the key-value pair with key 2 ('Lisbon, Portugal')
@@ -3117,10 +3132,10 @@ rest.delete(2); // Deletes the key-value pair with key 2 ('Lisbon, Portugal')
 
 // Adding a unique key that is an array
 const arr = [1, 2]; // Creating an array [1, 2]
-rest.set(arr, 'Test'); // Using the array as a key and setting its value to 'Test'
+rest.set(arr, "Test"); // Using the array as a key and setting its value to 'Test'
 
 // Adding a key that references a DOM element (e.g., an <h1> element)
-rest.set(document.querySelector('h1'), 'Heading'); // Key: the <h1> element, Value: 'Heading'
+rest.set(document.querySelector("h1"), "Heading"); // Key: the <h1> element, Value: 'Heading'
 
 // Logging the entire Map object to the console
 console.log(rest);
@@ -3142,13 +3157,13 @@ console.log(rest.get(arr)); // Outputs 'Test', as the array [1, 2] is a valid ke
 // 119. Maps: Iteration
 
 const question = new Map([
-  ['Question', 'What is the best programming language in the world?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'JavaScript'],
-  ['Correct', 3],
-  [true, 'Correct!'],
-  [false, 'Try again!'],
+  ["Question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["Correct", 3],
+  [true, "Correct!"],
+  [false, "Try again!"],
 ]);
 
 console.log(question);
@@ -3158,20 +3173,20 @@ console.log(Object.entries(openingHours));
 const hoursMap = new Map(Object.entries(openingHours));
 console.log(hoursMap);
 // Quiz app
-console.log(question.get('Question'));
+console.log(question.get("Question"));
 for (const [key, value] of question) {
-  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+  if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
 }
-const answer = Number(prompt('Your answer'));
+const answer = Number(prompt("Your answer"));
 console.log(answer);
 
-if (answer === question.get('Correct')) {
+if (answer === question.get("Correct")) {
   console.log(question.get(true));
 } else {
   console.log(question.get(false));
 }
 
-console.log(question.get(question.get('Correct') === answer)); // Same as above but shorter
+console.log(question.get(question.get("Correct") === answer)); // Same as above but shorter
 
 // Convert map to array
 console.log(question.entries());
@@ -3233,42 +3248,42 @@ In this scenario, `Objects` and `Maps` are the best if we want to get specific i
 ---
 
 ```js
-const airLine = 'TAP Air Portugal';
-const plane = 'A320';
+const airLine = "TAP Air Portugal";
+const plane = "A320";
 
 console.log(plane[0]); // A
 console.log(plane[1]); // 3
 console.log(plane[2]); // 2
 
 console.log(airLine.length); // 16
-console.log('B737'.length); // 4
+console.log("B737".length); // 4
 
-console.log(airLine.indexOf('r')); // 6 as this is thep osition of the character (Even the space counts)
-console.log(airLine.lastIndexOf('r')); // space 10 but tfrom the right to left
-console.log(airLine.indexOf('Portugal')); // -1 if not found, and 8 if found (position of the first letter)
+console.log(airLine.indexOf("r")); // 6 as this is thep osition of the character (Even the space counts)
+console.log(airLine.lastIndexOf("r")); // space 10 but tfrom the right to left
+console.log(airLine.indexOf("Portugal")); // -1 if not found, and 8 if found (position of the first letter)
 
 console.log(airLine.slice(4)); // Slices first 4 characters
 console.log(airLine.slice(4, 7)); // Slices first 4 characters and starts again at 7 (7-4) = 4 characters
 
-console.log(airLine.slice(0, airLine.indexOf(' '))); // Prints first word
-console.log(airLine.slice(airLine.lastIndexOf(' ') + 1)); //Prints last word and add +1 to get rid of the space at the beginning
+console.log(airLine.slice(0, airLine.indexOf(" "))); // Prints first word
+console.log(airLine.slice(airLine.lastIndexOf(" ") + 1)); //Prints last word and add +1 to get rid of the space at the beginning
 
 console.log(airLine.slice(-2)); // Shows the last 2 characters
 console.log(airLine.slice(1, -1)); //Cuts first and last character of the string
-console.log('-------------------------');
+console.log("-------------------------");
 
 const checkMiddleSeat = function (seat) {
   // B and E and middle seats
   const s = seat.slice(-1);
-  if (s === 'B' || s === 'E') {
+  if (s === "B" || s === "E") {
     console.log("It's a middle seat!");
-  } else console.log('');
+  } else console.log("");
 };
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
-checkMiddleSeat('3E');
+checkMiddleSeat("11B");
+checkMiddleSeat("23C");
+checkMiddleSeat("3E");
 
-console.log(new String('radek')); //It's an object
+console.log(new String("radek")); //It's an object
 ```
 
 ---
@@ -3278,7 +3293,7 @@ console.log(new String('radek')); //It's an object
 ---
 
 ```js
-const airLine = 'TAP Air Portugal';
+const airLine = "TAP Air Portugal";
 
 console.log(airLine.toLowerCase());
 console.log(airLine.toUpperCase());
@@ -3291,11 +3306,11 @@ const changing = function (name) {
     passengerLower[0].toUpperCase() + passengerLower.slice(1);
   console.log(passengetCorrect);
 };
-changing('RaDoSlaw');
+changing("RaDoSlaw");
 
 // Comparing email
-const email = 'hello@radek.io';
-const loginEmail = '   Hello@Radek.Io \n';
+const email = "hello@radek.io";
+const loginEmail = "   Hello@Radek.Io \n";
 
 // const lowerEmail = loginEmail.toLowerCase();
 // const trimmedEmail = lowerEmail.trim();
@@ -3307,25 +3322,25 @@ console.log(email === normalizedEmail);
 
 // replacing
 
-const priceGB = '288,97£';
-const priceUS = priceGB.replace('£', '$').replace(',', '.'); // First one is what we want to change, second is what we are changing it to
+const priceGB = "288,97£";
+const priceUS = priceGB.replace("£", "$").replace(",", "."); // First one is what we want to change, second is what we are changing it to
 console.log(priceUS);
 
 const announcement =
-  'All Passengers come to barding door 23. Boarding door 23!';
-console.log(announcement.replace('door', 'gate')); //Only works on the first occurence
+  "All Passengers come to barding door 23. Boarding door 23!";
+console.log(announcement.replace("door", "gate")); //Only works on the first occurence
 
-console.log(announcement.replace(/door/g, 'gate')); // /door/g means it will be global change (close to replaceALL)
+console.log(announcement.replace(/door/g, "gate")); // /door/g means it will be global change (close to replaceALL)
 
 // Booleans
-const plane = 'Airbus A320neo';
-console.log(plane.includes('A32')); // Gives true when string is shown
-console.log(plane.startsWith('')); // Gives true if given strign starts with it
+const plane = "Airbus A320neo";
+console.log(plane.includes("A32")); // Gives true when string is shown
+console.log(plane.startsWith("")); // Gives true if given strign starts with it
 
-if (plane.startsWith('Air') && plane.endsWith('neo')) {
-  console.log('Part of the NEW Airbus family!');
+if (plane.startsWith("Air") && plane.endsWith("neo")) {
+  console.log("Part of the NEW Airbus family!");
 } else {
-  ('Not a family');
+  ("Not a family");
 }
 ```
 
@@ -3336,16 +3351,16 @@ if (plane.startsWith('Air') && plane.endsWith('neo')) {
 ---
 
 ```js
-console.log('a+very+nice+string'.split('+'));
-console.log('Radek Balicki'.split(' '));
-const [firstName, lastName] = 'Radek Balicki'.split(' ');
+console.log("a+very+nice+string".split("+"));
+console.log("Radek Balicki".split(" "));
+const [firstName, lastName] = "Radek Balicki".split(" ");
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
 console.log(newName);
 
 // Function to capitalize the first letter of each word
 const capitalizedName = function (name) {
-  const names = name.split(' '); // Split the input string into an array of words
+  const names = name.split(" "); // Split the input string into an array of words
   const namesUpper = []; // Create an empty array to store capitalized words
 
   for (const word of names) {
@@ -3353,30 +3368,30 @@ const capitalizedName = function (name) {
     namesUpper.push(word[0].toUpperCase() + word.slice(1)); // Capitalize the first letter and add the rest of the word
   }
 
-  console.log(namesUpper.join(' ')); // Join the capitalized words into a single string and print it
+  console.log(namesUpper.join(" ")); // Join the capitalized words into a single string and print it
 };
 
-capitalizedName('Jessica ann smith davis');
-capitalizedName('radoslaw jan balicki');
+capitalizedName("Jessica ann smith davis");
+capitalizedName("radoslaw jan balicki");
 
 // Padding
-const message = 'Go to gate 23!';
-console.log(message.padStart(25, '+')); // Makes sure the string is 25 characters long
-console.log(message.padEnd(35, '-')); // Adds 10.... 35 - 25
+const message = "Go to gate 23!";
+console.log(message.padStart(25, "+")); // Makes sure the string is 25 characters long
+console.log(message.padEnd(35, "-")); // Adds 10.... 35 - 25
 
 const maskCreditCard = function (number) {
-  const str = number + ''; // Convert the input number to a string
+  const str = number + ""; // Convert the input number to a string
   const last = str.slice(-4); // Extract the last 4 characters of the string
-  return console.log(last.padStart(str.length, '*')); // Pad the rest of the string with '*' and keep the last 4 visible
+  return console.log(last.padStart(str.length, "*")); // Pad the rest of the string with '*' and keep the last 4 visible
 };
 maskCreditCard(1234123412341234); // Output: "************1234"
 
 //Repeat
-const message2 = 'Bad weather! All Departures Delayed...\n';
+const message2 = "Bad weather! All Departures Delayed...\n";
 console.log(message2.repeat(5));
 
 const planesInLine = function (n) {
-  console.log(`there are ${n} planes in the line: ${'✈️'.repeat(n)}`);
+  console.log(`there are ${n} planes in the line: ${"✈️".repeat(n)}`);
 };
 planesInLine(7);
 planesInLine(4);
@@ -3390,27 +3405,27 @@ planesInLine(4);
 
 ```js
 const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
 
 // A long string containing flight information. Each flight is separated by a '+' sign.
 // Each flight's details include a type (e.g., Delayed Departure), a 'from' location, a 'to' location, and a time.
 
 // Loop through each flight by splitting the string into an array of flights using the '+' delimiter.
-for (const flight of flights.split('+')) {
+for (const flight of flights.split("+")) {
   // Split each flight string into its components: type, from, to, and time.
-  const [type, from, to, time] = flight.split(';');
+  const [type, from, to, time] = flight.split(";");
 
   // Create a formatted output string:
   // - Add a red dot emoji (🔴) at the start if the flight type starts with "_Delayed".
   // - Replace all underscores ('_') in the type with spaces (' ').
   // - Extract the first three characters from 'from' and 'to' (representing airport codes) and convert to uppercase.
   // - Format the time by replacing ':' with 'h'.
-  const output = `${type.startsWith('_Delayed') ? '🔴' : ''} ${type.replaceAll(
-    '_',
-    ' '
+  const output = `${type.startsWith("_Delayed") ? "🔴" : ""} ${type.replaceAll(
+    "_",
+    " "
   )} ${from.slice(0, 3).toUpperCase()} to ${to
     .slice(0, 3)
-    .toUpperCase()} (${time.replace(':', 'h')})`.padStart(36);
+    .toUpperCase()} (${time.replace(":", "h")})`.padStart(36);
 
   // Print the formatted flight information, padded to align it to the right.
   console.log(output);
@@ -3426,7 +3441,7 @@ for (const flight of flights.split('+')) {
 # 129. **Default Parameters**
 
 ```js
-'use strict';
+"use strict";
 
 // Default parameters
 
@@ -3448,10 +3463,10 @@ const createBooking = function (
   console.log(booking);
   bookings.push(booking);
 };
-createBooking('LH123');
-createBooking('LH123', 2);
-createBooking('LH123', 5);
-createBooking('LH123', undefined, 500); // Skips second value
+createBooking("LH123");
+createBooking("LH123", 2);
+createBooking("LH123", 5);
+createBooking("LH123", undefined, 500); // Skips second value
 ```
 
 ---
@@ -3463,19 +3478,19 @@ createBooking('LH123', undefined, 500); // Skips second value
 Javascript is not passing by reference but by value (EXPLAIN)
 
 ```js
-const flight = 'LH234';
+const flight = "LH234";
 const radek = {
-  name: 'Radek Balicki',
+  name: "Radek Balicki",
   passport: 242354322,
 };
 
 const checkIn = function (flightNumber, passenger) {
-  flightNumber = 'LH999';
-  passenger.name = 'Mr.' + passenger.name;
+  flightNumber = "LH999";
+  passenger.name = "Mr." + passenger.name;
   if (passenger.passport === 242354322) {
-    alert('Check in!');
+    alert("Check in!");
   } else {
-    console.log('Wrong passport number');
+    console.log("Wrong passport number");
   }
 };
 checkIn(flight, radek);
@@ -3518,11 +3533,11 @@ Source: Excerpts from provided text
 
 ```js
 const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
+  return str.replace(/ /g, "").toLowerCase();
 };
 const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
+  const [first, ...others] = str.split(" ");
+  return [first.toUpperCase(), ...others].join(" ");
 };
 // Higher-order function
 const transformer = function (str, fn) {
@@ -3530,7 +3545,7 @@ const transformer = function (str, fn) {
   console.log(`Transformed string: ${fn(str)}`);
   console.log(`Transformed by: ${fn.name}`);
 };
-transformer('Javascript is the best', upperFirstWord);
+transformer("Javascript is the best", upperFirstWord);
 ```
 
 ---
@@ -3547,21 +3562,21 @@ const greet = function (greeting) {
   };
 };
 //Closures
-const greeterHey = greet('Hey');
-greeterHey('Radek');
-greeterHey('Jonas');
+const greeterHey = greet("Hey");
+greeterHey("Radek");
+greeterHey("Jonas");
 
-greet('Hello')('Radek');
+greet("Hello")("Radek");
 
 //Change the above to the arrow function
 
-const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+const greet2 = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
-const greetHey2 = greet2('Hey');
-greetHey2('Radek2');
-greetHey2('Lol');
+const greetHey2 = greet2("Hey");
+greetHey2("Radek2");
+greetHey2("Lol");
 
-greet2('Hello2')('Radek2');
+greet2("Hello2")("Radek2");
 ```
 
 ---
@@ -3573,11 +3588,11 @@ greet2('Hello2')('Radek2');
 ### Code Breakdown: Understanding `this`, `call`, and `apply`
 
 ```js
-'use strict';
+"use strict";
 
 const lufthansa = {
-  airLine: 'Lufthansa', // Airline name
-  iataCode: 'LH', // Airline code
+  airLine: "Lufthansa", // Airline name
+  iataCode: "LH", // Airline code
   bookings: [], // Array to store bookings
   // book: function(){}, // Slightly longer method syntax
   book(flightNum, name) {
@@ -3589,13 +3604,13 @@ const lufthansa = {
   },
 };
 
-lufthansa.book(239, 'Radek Balicki'); // Booking on Lufthansa
-lufthansa.book(673, 'Jon Doe'); // Another booking
+lufthansa.book(239, "Radek Balicki"); // Booking on Lufthansa
+lufthansa.book(673, "Jon Doe"); // Another booking
 console.log(lufthansa); // Check bookings for Lufthansa
 
 const eurowings = {
-  airLine: 'Eurowings', // Another airline
-  iataCode: 'EW',
+  airLine: "Eurowings", // Another airline
+  iataCode: "EW",
   bookings: [],
 };
 
@@ -3604,24 +3619,24 @@ const book = lufthansa.book; // Assign the `book` method to a variable (loses `t
 // Does not work because `this` is undefined
 // book(23, "Sarah Williams");
 
-book.call(eurowings, 23, 'Sarah Williams'); // Use `call` to set `this` to eurowings
+book.call(eurowings, 23, "Sarah Williams"); // Use `call` to set `this` to eurowings
 console.log(eurowings); // Check bookings for Eurowings
 
-book.call(lufthansa, 239, 'Mary Cooper'); // `this` set to Lufthansa
+book.call(lufthansa, 239, "Mary Cooper"); // `this` set to Lufthansa
 console.log(lufthansa); // Check updated bookings for Lufthansa
 
 const swiss = {
-  airLine: 'Swiss Air Lines', // A third airline
-  iataCode: 'LX',
+  airLine: "Swiss Air Lines", // A third airline
+  iataCode: "LX",
   bookings: [],
 };
-book.call(swiss, 583, 'Mary Cooper'); // `this` set to Swiss
+book.call(swiss, 583, "Mary Cooper"); // `this` set to Swiss
 console.log(swiss); // Check bookings for Swiss
 
-console.log('------------------');
+console.log("------------------");
 
 // Apply method (OLD)
-const flightData = [583, 'George Cooper'];
+const flightData = [583, "George Cooper"];
 book.apply(swiss, flightData); // `apply` works like `call` but with an array of arguments
 console.log(swiss); // Check updated bookings for Swiss
 
@@ -3635,7 +3650,7 @@ book.call(swiss, ...flightData); // Modern spread syntax achieves the same resul
 - The `book` method allows you to book a flight and logs the booking details using `this` to refer to the current object (`lufthansa`).
 - Example:
   ```javascript
-  lufthansa.book(239, 'Radek Balicki');
+  lufthansa.book(239, "Radek Balicki");
   ```
   This directly calls the `book` method on the `lufthansa` object.
 
@@ -3663,7 +3678,7 @@ book.call(swiss, ...flightData); // Modern spread syntax achieves the same resul
 - The `call` method explicitly sets what `this` refers to in a function.
 - Example:
   ```javascript
-  book.call(eurowings, 23, 'Sarah Williams');
+  book.call(eurowings, 23, "Sarah Williams");
   ```
   - The first argument is the object (`eurowings`) that `this` should refer to.
   - This allows you to reuse the `book` method for other objects.
@@ -3675,7 +3690,7 @@ book.call(swiss, ...flightData); // Modern spread syntax achieves the same resul
 - The `apply` method is similar to `call` but expects arguments as an array.
 - Example:
   ```javascript
-  const flightData = [583, 'George Cooper'];
+  const flightData = [583, "George Cooper"];
   book.apply(swiss, flightData);
   ```
 
@@ -3706,19 +3721,19 @@ book.call(swiss, ...flightData); // Modern spread syntax achieves the same resul
 **Code Example:**
 
 ```javascript
-'use strict';
+"use strict";
 
 const runOnce = function () {};
 runOnce();
 
 // Transforming function to function expression (Immediately Invoked Function Expression - IIFE)
 (function () {
-  console.log('this will never run again');
+  console.log("this will never run again");
   const isPrivate = 23;
 })();
 
 // Same thing but using an arrow function
-(() => console.log('this will ALSO never run again'))();
+(() => console.log("this will ALSO never run again"))();
 
 // Functions create a scope
 {
@@ -3745,7 +3760,7 @@ console.log(notPrivate); // Outputs: 46
    - Example:
      ```javascript
      (function () {
-       console.log('IIFE is executed!');
+       console.log("IIFE is executed!");
      })();
      ```
 
@@ -3784,7 +3799,7 @@ What’s inside the backpack? In this case, the backpack holds the passengerCoun
 Why does this matter? It means the function can "remember" things, even after the place where it was created has disappeared. This is what we call a closure—the function "closes over" the variables it needs to keep.
 
 ```js
-'use strict';
+"use strict";
 
 // Closures
 // They happen automatically, we just need to recognise them
@@ -3856,7 +3871,7 @@ Memory Management ensures passengerCount isn’t deleted as long as the closure 
 ---
 
 ```js
-'use strict';
+"use strict";
 
 let f; // Declare a variable `f` that will later hold a function
 const g = function () {
@@ -3880,7 +3895,7 @@ h(); // Call `h`, reassigning `f` to a new function with access to `b`
 f(); // Execute the new `f`, logging `1554` (b * 2) because of closure over `b`
 
 console.dir(f); // Inspect `f` to see its closure details and what variables it has access to
-console.log('-------------------');
+console.log("-------------------");
 
 const boardPassengers = function (n, wait) {
   const perGroup = n / 3; // `perGroup` is calculated based on the total passengers `n`
@@ -3908,7 +3923,7 @@ boardPassengers(180, 3); // `n` = 180 passengers, `wait` = 3 seconds
 ---
 
 ```js
-let arr = ['a', 'b', 'c', 'd', 'e'];
+let arr = ["a", "b", "c", "d", "e"];
 
 // Slice - creates a shallow copy of the array, DOES NOT mutate the original array.
 console.log(arr.slice(2)); // ['c', 'd', 'e'] - Creates a new array starting from index 2 to the end of the array.
@@ -3922,8 +3937,8 @@ console.log(arr.splice(1, 2)); // ['b', 'c'] - Removes 2 elements starting at in
 console.log(arr); // ['a', 'd', 'e'] - The original array is mutated to include only the remaining elements.
 
 // Reverse - mutates the original array by reversing its elements.
-arr = ['a', 'b', 'c', 'd', 'e']; // Reset the array for demonstration.
-const arr2 = ['j', 'i', 'h', 'g', 'f'];
+arr = ["a", "b", "c", "d", "e"]; // Reset the array for demonstration.
+const arr2 = ["j", "i", "h", "g", "f"];
 console.log(arr2.reverse()); // ['f', 'g', 'h', 'i', 'j'] - Reverses the elements of the array and mutates `arr2`.
 console.log(arr2); // ['f', 'g', 'h', 'i', 'j'] - The mutated array after reversing.
 
@@ -3933,7 +3948,7 @@ console.log(letters); // Logs the merged array created by `concat`.
 console.log([...arr, ...arr2]); // ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'] - Same result using the spread operator instead of `concat`.
 
 // Join - combines all array elements into a string with a specified separator.
-console.log(letters.join('-')); // 'a-b-c-d-e-f-g-h-i-j' - Joins all elements of `letters` into a single string, separated by a `-`.
+console.log(letters.join("-")); // 'a-b-c-d-e-f-g-h-i-j' - Joins all elements of `letters` into a single string, separated by a `-`.
 ```
 
 ---
@@ -3973,7 +3988,7 @@ for (const [i, movement] of movements.entries()) {
   }
 }
 
-console.log('---------------');
+console.log("---------------");
 
 // Approach 2 with Callback
 movements.forEach(function (movement, i) {
@@ -4000,18 +4015,18 @@ movements.forEach(function (movement, i) {
 ```js
 // Map
 const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
+  ["USD", "United States dollar"],
+  ["EUR", "Euro"],
+  ["GBP", "Pound sterling"],
 ]);
 
 currencies.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
 });
 
-console.log('--------------');
+console.log("--------------");
 // Set
-const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+const currenciesUnique = new Set(["USD", "GBP", "USD", "EUR", "EUR"]);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value}: ${value}`);
 });
@@ -4026,16 +4041,16 @@ currenciesUnique.forEach(function (value, _, map) {
 ```js
 const diplayMovements = function (movements) {
   // Empty the existing container
-  containerMovements.innerHTML = ''; // similar to text content
+  containerMovements.innerHTML = ""; // similar to text content
   movements.forEach(function (mov, i) {
     // mov is the value, i is the position
-    const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const type = mov > 0 ? "deposit" : "withdrawal";
     const html = `<div class="movements__row">
           <div class="movements__type movements__type--${type}">
           ${i + 1} ${type}</div>
           <div class="movements__value">${mov}</div>
         </div>`;
-    containerMovements.insertAdjacentHTML('afterbegin', html);
+    containerMovements.insertAdjacentHTML("afterbegin", html);
     //https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
   });
 };
@@ -4059,7 +4074,7 @@ diplayMovements(account1.movements); // 200, 450, -400, 3000, -650
 
 ```javascript
 const numbers = [1, 2, 3];
-const doubled = numbers.map(num => num * 2); // [2, 4, 6]
+const doubled = numbers.map((num) => num * 2); // [2, 4, 6]
 ```
 
 ---
@@ -4075,7 +4090,7 @@ const doubled = numbers.map(num => num * 2); // [2, 4, 6]
 
 ```javascript
 const numbers = [1, 2, 3, 4];
-const evenNumbers = numbers.filter(num => num % 2 === 0); // [2, 4]
+const evenNumbers = numbers.filter((num) => num % 2 === 0); // [2, 4]
 ```
 
 ---
@@ -4141,7 +4156,7 @@ console.log(movementsUSDfor); // Logs the new array of movements converted to US
 ```js
 const movementDescriptions = movements.map(
   (mov, i) =>
-    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+    `Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${Math.abs(
       mov
     )}`
 );
@@ -4170,7 +4185,7 @@ The goal of this code snippet is to take an array of movements (likely represent
 - Inside the arrow function, a **template literal** is used to construct a string for each movement:
 
 ```javascript
-`Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`;
+`Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${Math.abs(mov)}`;
 ```
 
 #### Components of the Template Literal:
@@ -4199,9 +4214,9 @@ const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
       .toLowerCase()
-      .split(' ')
-      .map(name => name[0]) //
-      .join('');
+      .split(" ")
+      .map((name) => name[0]) //
+      .join("");
   });
 };
 
@@ -4231,7 +4246,7 @@ const deposits = movements.filter(function (mov) {
 
 console.log(movements); //[200, 450, -400, 3000, -650, -130, 70, 1300]
 // 2. Arrow function with Filter method
-const withdrawals = movements.filter(mov => mov < 0);
+const withdrawals = movements.filter((mov) => mov < 0);
 console.log(withdrawals);
 console.log(deposits); // [200, 450, 3000, 70, 1300]
 
@@ -4256,7 +4271,7 @@ This creates a new array `deposits` containing only positive numbers (deposits) 
 ### Filter Method with Arrow Function
 
 ```javascript
-const withdrawals = movements.filter(mov => mov < 0);
+const withdrawals = movements.filter((mov) => mov < 0);
 ```
 
 This creates a new array `withdrawals` containing only negative numbers (withdrawals) from the `movements` array using the `filter` method with an arrow function.
@@ -4305,7 +4320,7 @@ console.log(balance);
 With DOM Manipulation
 
 ```js
-const labelBalance = document.querySelector('.balance__value');
+const labelBalance = document.querySelector(".balance__value");
 ```
 
 ```js
@@ -4319,7 +4334,7 @@ calcPrintBalance(account1.movements);
 ```js
 // Maximum value
 const maximumValue = movements.reduce(function (accumulator, movement) {
-  console.log('Comparing:', accumulator, 'and', movement); // Log comparisons
+  console.log("Comparing:", accumulator, "and", movement); // Log comparisons
   return accumulator > movement ? accumulator : movement; // Return if accumulator is higher than movement, return accumulator, if not then movement
 }, movements[0]);
 ```
@@ -4356,7 +4371,7 @@ const calcAverageHumanAge = function (age) {
 };
 j;
 calcAverageHumanAge(dogYears);
-console.log('-----------');
+console.log("-----------");
 calcAverageHumanAge(dogYears2);
 ```
 
@@ -4370,8 +4385,8 @@ calcAverageHumanAge(dogYears2);
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const eurToUsd = 1.1;
 const totalDepositUSD = movements
-  .filter(mov => mov > 0) // Only filter the amounts above 0
-  .map(mov => mov * eurToUsd) // Now multiply all the amounts
+  .filter((mov) => mov > 0) // Only filter the amounts above 0
+  .map((mov) => mov * eurToUsd) // Now multiply all the amounts
   .reduce((acc, mov) => acc + mov, 0); // Get the sum of all of the amounts
 console.log(totalDepositUSD);
 ```
@@ -4381,18 +4396,18 @@ IN DOM
 ```js
 const calcDisplaySummary = function (movements) {
   const incomes = movements
-    .filter(mov => mov > 0)
+    .filter((mov) => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes}€`;
 
   const outcomes = movements
-    .filter(mov => mov < 0)
+    .filter((mov) => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(outcomes)}€`;
 
   const interest = movements
-    .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .filter((mov) => mov > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
     .filter((int, i, arr) => {
       console.log(arr);
       return int >= 1;
@@ -4414,11 +4429,11 @@ calcDisplaySummary(account1.movements);
 
 ```js
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-const firstWithdrawal = movements.find(mov => mov < 0);
+const firstWithdrawal = movements.find((mov) => mov < 0);
 console.log(movements);
 console.log(firstWithdrawal);
 
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+const account = accounts.find((acc) => acc.owner === "Jessica Davis");
 console.log(account); // Prints the whole object
 ```
 
@@ -4455,16 +4470,16 @@ currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value)
 
 ```javascript
 const accounts = [
-  { username: 'johnDoe', password: '1234' },
-  { username: 'janeDoe', password: '5678' },
+  { username: "johnDoe", password: "1234" },
+  { username: "janeDoe", password: "5678" },
 ];
 
 // Simulate user input
-const inputLoginUsername = { value: 'janeDoe' };
+const inputLoginUsername = { value: "janeDoe" };
 
 // Find the account with the matching username
 const currentAccount = accounts.find(
-  acc => acc.username === inputLoginUsername.value
+  (acc) => acc.username === inputLoginUsername.value
 );
 
 console.log(currentAccount);
@@ -4483,13 +4498,13 @@ The `find` method helps locate the user object based on their username. Once you
 
 ```js
 // Transfer Money
-btnTransfer.addEventListener('click', function (e) {
+btnTransfer.addEventListener("click", function (e) {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
   const receiverAcc = accounts.find(
-    acc => acc.username === inputTransferTo.value
+    (acc) => acc.username === inputTransferTo.value
   );
-  inputTransferAmount.value = inputTransferTo.value = '';
+  inputTransferAmount.value = inputTransferTo.value = "";
 
   if (
     amount > 0 && // Check if the transfer amount is positive
@@ -4511,7 +4526,7 @@ btnTransfer.addEventListener('click', function (e) {
 
 ```js
 // Add an event listener to the 'btnClose' button to handle the click event
-btnClose.addEventListener('click', function (e) {
+btnClose.addEventListener("click", function (e) {
   e.preventDefault(); // Prevents the default form submission behavior
 
   // Check if the entered username and PIN match the current account's credentials
@@ -4521,7 +4536,7 @@ btnClose.addEventListener('click', function (e) {
   ) {
     // Find the index of the account in the 'accounts' array
     const index = accounts.findIndex(
-      acc => acc.username === currentAccount.username
+      (acc) => acc.username === currentAccount.username
     );
     // Explanation of findIndex:
     // - Iterates through each account in the 'accounts' array
@@ -4538,7 +4553,7 @@ btnClose.addEventListener('click', function (e) {
   }
 
   // Clear the input fields for username and PIN
-  inputCloseUsername.value = inputClosePin.value = '';
+  inputCloseUsername.value = inputClosePin.value = "";
 });
 ```
 
@@ -4557,16 +4572,16 @@ console.log(movements);
 console.log(movements.includes(-130)); // true
 
 // SOME: Condition
-console.log(movements.some(mov => mov === -130));
+console.log(movements.some((mov) => mov === -130));
 
-const anyDeposits = movements.some(mov => mov > 1500); // If its above 1500, then its true
+const anyDeposits = movements.some((mov) => mov > 1500); // If its above 1500, then its true
 console.log(anyDeposits);
 
 // EVERY
-console.log(movements.every(mov => mov > 0)); // false, as not every number is above 0
+console.log(movements.every((mov) => mov > 0)); // false, as not every number is above 0
 
 // Seperate callback
-const deposit = mov => mov > 0; // deposit arrow function for the numbers above 0
+const deposit = (mov) => mov > 0; // deposit arrow function for the numbers above 0
 console.log(movements.some(deposit));
 ```
 
@@ -4592,7 +4607,7 @@ const arrDeep = [
 console.log(arrDeep.flat(2)); // 2 levels of nesting
 
 const overallBalance = accounts
-  .map(acc => acc.movements)
+  .map((acc) => acc.movements)
   .flat() // Nest the array (Unwrap)
   .reduce((acc, mov) => acc + mov, 0);
 ```
@@ -4614,16 +4629,16 @@ const overallBalance = accounts
 ```js
 // 1.
 const bankDepositsSum = accounts
-  .flatMap(acc => acc.movements)
-  .filter(mov => mov > 0)
+  .flatMap((acc) => acc.movements)
+  .filter((mov) => mov > 0)
   .reduce((sum, cur) => sum + cur, 0);
 
 console.log(bankDepositsSum);
 
 // Calculate how many deposits there are over 1000
 const numDeposit1000 = accounts
-  .flatMap(acc => acc.movements)
-  .filter(mov => mov >= 1000).length;
+  .flatMap((acc) => acc.movements)
+  .filter((mov) => mov >= 1000).length;
 console.log(numDeposit1000);
 
 ///
@@ -4651,23 +4666,23 @@ console.log(0.1 + 0.2); //0.30000000000000004
 console.log(0.1 + 0.2 === 0.3); // false
 // Due to that, doing maths in JS is not good idea
 
-console.log(Number('23')); // Converts to integer
-console.log(+'23'); // Type coercion > Changing into a number
+console.log(Number("23")); // Converts to integer
+console.log(+"23"); // Type coercion > Changing into a number
 
 // Parsing
-console.log(Number.parseInt('30px')); //30
-console.log(Number.parseInt('e23')); // NAN
+console.log(Number.parseInt("30px")); //30
+console.log(Number.parseInt("e23")); // NAN
 
-console.log(Number.parseInt('2.5rem')); // 2
-console.log(Number.parseFloat('2.5rem')); // 2.5
+console.log(Number.parseInt("2.5rem")); // 2
+console.log(Number.parseFloat("2.5rem")); // 2.5
 
 // Checks if its not a number
 console.log(Number.isNaN(20)); // False
-console.log(Number.isNaN('20')); // False
+console.log(Number.isNaN("20")); // False
 
 // However, this is better. Checking if value is a number
 console.log(Number.isFinite(20)); //True
-console.log(Number.isFinite('20')); // False
+console.log(Number.isFinite("20")); // False
 ```
 
 ---
@@ -4680,10 +4695,10 @@ console.log(Number.isFinite('20')); // False
 console.log(Math.sqrt(25)); // 5
 console.log(25 ** (1 / 2)); // 5
 
-console.log(Math.max(5, 8, '23', 11, 2)); // 23, 23px will not work
+console.log(Math.max(5, 8, "23", 11, 2)); // 23, 23px will not work
 console.log(Math.min(1, 6, 4, 9, 2));
 
-console.log(Math.PI * Number.parseFloat('10px') ** 2);
+console.log(Math.PI * Number.parseFloat("10px") ** 2);
 
 console.log(Math.trunc(Math.random() * 6) + 1);
 
@@ -4819,13 +4834,13 @@ console.log(days1); // Shows 10 days difference
 ```js
 const now = new Date();
 const options = {
-  hour: 'numeric',
-  minute: 'numeric',
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
+  hour: "numeric",
+  minute: "numeric",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
 };
-labelDate.textContent = new Intl.DateTimeFormat('en-GB', options).format(now); // ISO language code
+labelDate.textContent = new Intl.DateTimeFormat("en-GB", options).format(now); // ISO language code
 
 // const locale = navigator.language // This will check browser language, can be used above
 // For more info check "mdn Intl"
@@ -4904,18 +4919,18 @@ console.log(document.head); // Logs the <head> element
 console.log(document.body); // Logs the <body> element
 
 // 🔍 Selecting specific elements from the DOM
-const header = document.querySelector('.header'); // Selects the first element with class 'header'
-const firstSection = document.querySelector('.section'); // Selects the first element with class 'section'
+const header = document.querySelector(".header"); // Selects the first element with class 'header'
+const firstSection = document.querySelector(".section"); // Selects the first element with class 'section'
 
-const section1 = document.getElementById('section--1'); // Selects the element with ID 'section--1'
+const section1 = document.getElementById("section--1"); // Selects the element with ID 'section--1'
 
-const allButtons = document.getElementsByTagName('button'); // Selects all <button> elements (HTMLCollection)
+const allButtons = document.getElementsByTagName("button"); // Selects all <button> elements (HTMLCollection)
 
-const btns = document.getElementsByClassName('btn'); // Selects all elements in the document that have the class btn
+const btns = document.getElementsByClassName("btn"); // Selects all elements in the document that have the class btn
 
 // 🧱 Creating and inserting elements dynamically
-const message = document.createElement('div'); // Creates a new <div> element
-message.classList.add('cookie-message'); // Adds class 'cookie-message' to it
+const message = document.createElement("div"); // Creates a new <div> element
+message.classList.add("cookie-message"); // Adds class 'cookie-message' to it
 
 // Sets HTML inside the element (replaces any existing textContent)
 message.innerHTML = `
@@ -4933,8 +4948,8 @@ header.append(message); // Inserts as the last child (moves it if already in DOM
 
 // ❌ Deleting the message when the button is clicked
 document
-  .querySelector('.btn--close-cookie') // Selects the close button inside the message
-  .addEventListener('click', function () {
+  .querySelector(".btn--close-cookie") // Selects the close button inside the message
+  .addEventListener("click", function () {
     message.remove(); // Removes the entire message element from the DOM
   });
 ```
@@ -4949,8 +4964,8 @@ document
 // 🆕 Lecture: Styling, Attributes, and Classes
 
 // 🎨 Inline styles
-message.style.backgroundColor = '#37383d'; // Sets inline background color of the element
-message.style.width - '120%'; // ❌ Has no effect — should use '=' not '-'
+message.style.backgroundColor = "#37383d"; // Sets inline background color of the element
+message.style.width - "120%"; // ❌ Has no effect — should use '=' not '-'
 
 // 🕵️‍♂️ Reading inline and computed styles
 console.log(message.style.backgroundColor); // Logs inline background color (only if set via JS or HTML style)
@@ -4959,34 +4974,34 @@ console.log(getComputedStyle(message).height); // Logs computed height (e.g., "5
 
 // 📏 Modify height based on current computed height
 message.style.height =
-  Number.parseFloat(getComputedStyle(message).height) + 30 + 'px';
+  Number.parseFloat(getComputedStyle(message).height) + 30 + "px";
 // Parses pixel height (as number), adds 30px, then sets new height
 
 // 🎨 Modify a CSS custom property (variable)
-document.documentElement.style.setProperty('--color-primary', 'orangered');
+document.documentElement.style.setProperty("--color-primary", "orangered");
 // Changes CSS variable value (e.g., used in :root { --color-primary: ... })
 
 // 🔤 Working with attributes
-const logo = document.querySelector('.nav__logo'); // Selects the logo image
+const logo = document.querySelector(".nav__logo"); // Selects the logo image
 
 console.log(logo.alt); // Logs current 'alt' attribute value of the logo
-logo.alt = 'New logo name'; // Sets a new value for the alt text
+logo.alt = "New logo name"; // Sets a new value for the alt text
 console.log(logo.alt); // Logs the updated alt text
 
 // ❌ Accessing non-standard attribute (fails)
 console.log(logo.designer); // undefined — not a known property
-console.log(logo.getAttribute('designer')); // null — not yet defined
+console.log(logo.getAttribute("designer")); // null — not yet defined
 
 // ✅ Set custom attribute
-logo.setAttribute('company', 'Bankist'); // Adds custom attribute: company="Bankist"
+logo.setAttribute("company", "Bankist"); // Adds custom attribute: company="Bankist"
 
 console.log(logo.src); // Logs absolute image URL (full path)
-console.log(logo.getAttribute('src')); // Logs relative src attribute from HTML
+console.log(logo.getAttribute("src")); // Logs relative src attribute from HTML
 
-const link = document.querySelector('.nav__link--btn'); // Selects nav button link
+const link = document.querySelector(".nav__link--btn"); // Selects nav button link
 
 console.log(link.href); // Logs absolute URL (full path)
-console.log(link.getAttribute('href')); // Logs relative URL value from HTML
+console.log(link.getAttribute("href")); // Logs relative URL value from HTML
 
 // 📦 Data attributes
 console.log(logo.dataset.versionNumber);
@@ -4994,10 +5009,10 @@ console.log(logo.dataset.versionNumber);
 // These attributes are prefixed with 'data-' in HTML, accessed via `dataset`
 
 // 🎯 Manipulating classes
-logo.classList.add('c'); // Adds class 'c'
-logo.classList.remove('c'); // Removes class 'c'
-logo.classList.toggle('c'); // Toggles class 'c' on/off
-logo.classList.contains('c'); // Checks if class 'c' exists (returns true/false)
+logo.classList.add("c"); // Adds class 'c'
+logo.classList.remove("c"); // Removes class 'c'
+logo.classList.toggle("c"); // Toggles class 'c' on/off
+logo.classList.contains("c"); // Checks if class 'c' exists (returns true/false)
 
 // ❌ Avoid overwriting all classes
 // logo.className = 'New classname'; // Replaces ALL existing classes — bad practice
@@ -5010,10 +5025,10 @@ logo.classList.contains('c'); // Checks if class 'c' exists (returns true/false)
 ---
 
 ```js
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
 
-btnScrollTo.addEventListener('click', function (e) {
+btnScrollTo.addEventListener("click", function (e) {
   //const s1coords = section1.getBoundingClientRect();
   // console.log(s1coords);
 
@@ -5034,7 +5049,7 @@ btnScrollTo.addEventListener('click', function (e) {
 
   // Modern way // Literally just this code
 
-  section1.scrollIntoView({ behavior: 'smooth' });
+  section1.scrollIntoView({ behavior: "smooth" });
 });
 ```
 
@@ -5045,20 +5060,20 @@ btnScrollTo.addEventListener('click', function (e) {
 ---
 
 ```js
-const h1 = document.querySelector('h1');
+const h1 = document.querySelector("h1");
 
 // Define a named function so we can remove it later
 const alertH1 = function (e) {
-  alert('You hovered');
+  alert("You hovered");
   // Optional: Remove immediately after first trigger (one-time use)
   // h1.removeEventListener('mouseenter', alertH1);
 };
 
 // Add event listener to trigger on mouse enter (like hover)
-h1.addEventListener('mouseenter', alertH1);
+h1.addEventListener("mouseenter", alertH1);
 
 // Remove the event listener after 3 seconds
-setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
 
 // ✅ Modern and preferred way
 // h1.addEventListener('mouseenter', function (e) {
@@ -5085,18 +5100,18 @@ const randomInt = (min, max) =>
 const randomColor = () =>
   `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 
-document.querySelector('.nav__link').addEventListener('click', function (e) {
+document.querySelector(".nav__link").addEventListener("click", function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('Container', e.target, e.currentTarget);
+  console.log("Container", e.target, e.currentTarget);
 });
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
+document.querySelector(".nav__links").addEventListener("click", function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('Container', e.target, e.currentTarget);
+  console.log("Container", e.target, e.currentTarget);
 });
-document.querySelector('.nav').addEventListener('click', function (e) {
+document.querySelector(".nav").addEventListener("click", function (e) {
   this.style.backgroundColor = randomColor();
-  console.log('Container', e.target, e.currentTarget);
+  console.log("Container", e.target, e.currentTarget);
 });
 ```
 
@@ -5107,11 +5122,11 @@ document.querySelector('.nav').addEventListener('click', function (e) {
 ---
 
 ```js
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
 
-btnScrollTo.addEventListener('click', function (e) {
-  section1.scrollIntoView({ behavior: 'smooth' });
+btnScrollTo.addEventListener("click", function (e) {
+  section1.scrollIntoView({ behavior: "smooth" });
 });
 // Event Delegation: Implementing Page Navigation
 
@@ -5133,15 +5148,15 @@ btnScrollTo.addEventListener('click', function (e) {
 // ✅ Event Delegation: Better way to handle nav links
 
 // Attach one event listener to the parent container of all nav links
-document.querySelector('.nav__links').addEventListener('click', function (e) {
+document.querySelector(".nav__links").addEventListener("click", function (e) {
   e.preventDefault(); // Prevent default link jump behavior (handled manually below)
 
   // 🔍 Only handle clicks that originated from actual nav links (not empty space or container)
-  if (e.target.classList.contains('nav__link')) {
-    const id = e.target.getAttribute('href'); // Extract the section ID from href (e.g., #section--2)
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href"); // Extract the section ID from href (e.g., #section--2)
 
     // 🔽 Scroll to the corresponding section smoothly
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
 ```
@@ -5154,18 +5169,18 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 ```js
 // Selecting an element
-const h1 = document.querySelector('h1'); // Selects the first <h1> element
+const h1 = document.querySelector("h1"); // Selects the first <h1> element
 
 // --- Going Downwards (Children) ---
-console.log(h1.querySelectorAll('.highlight')); // Finds all elements with class "highlight" inside <h1>
+console.log(h1.querySelectorAll(".highlight")); // Finds all elements with class "highlight" inside <h1>
 console.log(h1.children); // Returns only element children (HTMLCollection)
-h1.firstElementChild.style.color = 'red'; // Changes color of the first element child
-h1.lastElementChild.style.color = 'black'; // Changes color of the last element child
+h1.firstElementChild.style.color = "red"; // Changes color of the first element child
+h1.lastElementChild.style.color = "black"; // Changes color of the last element child
 
 // --- Going Upwards (Parents) ---
 console.log(h1.parentElement); // Gets the parent element of <h1>
-h1.closest('.header').style.background = 'var(--gradient-secondary)'; // Finds closest parent with class "header"
-h1.closest('h1').style.background = 'var(--gradient-primary)'; // Finds the closest ancestor that's an <h1>
+h1.closest(".header").style.background = "var(--gradient-secondary)"; // Finds closest parent with class "header"
+h1.closest("h1").style.background = "var(--gradient-primary)"; // Finds the closest ancestor that's an <h1>
 
 // --- Going Sideways (Siblings) ---
 console.log(h1.previousElementSibling); // Gets the previous sibling element
@@ -5174,7 +5189,7 @@ console.log(h1.nextElementSibling); // Gets the next sibling element
 // --- Looping through siblings (excluding the current element) ---
 console.log(h1.parentElement.children); // Gets all siblings including <h1>
 [...h1.parentElement.children].forEach(function (e) {
-  if (e !== h1) e.style.transform = 'scale(0.5)'; // Scales down all siblings except <h1>
+  if (e !== h1) e.style.transform = "scale(0.5)"; // Scales down all siblings except <h1>
 });
 
 // Less important
@@ -5199,22 +5214,22 @@ console.log(h1.nextSibling); // Gets next **node** (could also be whitespace or 
 // PAssing Arguments to Event Handlers
 
 const hoveringNavEffect = function (e, opacity) {
-  if (e.target.classList.contains('nav__link')) {
+  if (e.target.classList.contains("nav__link")) {
     const link = e.target;
-    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-    const logo = link.closest('.nav').querySelector('img');
+    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelector("img");
 
-    siblings.forEach(el => {
+    siblings.forEach((el) => {
       if (el !== link) el.style.opacity = opacity;
     });
     logo.style.opacity = opacity;
   }
 };
 
-nav.addEventListener('mouseover', function (e) {
+nav.addEventListener("mouseover", function (e) {
   hoveringNavEffect(e, 0.5);
 });
-nav.addEventListener('mouseout', function (e) {
+nav.addEventListener("mouseout", function (e) {
   // mouse out works everytime, while mouseleave works only once
   hoveringNavEffect(e, 1);
 });
@@ -5228,13 +5243,13 @@ nav.addEventListener('mouseout', function (e) {
 
 ```js
 // Sticky Navigation
-window.addEventListener('scroll', function (e) {
+window.addEventListener("scroll", function (e) {
   //Scroll is used everytime we scroll (to be avoided)
   console.log(window.scrollY);
 });
 
-if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
-else nav.classList.remove('sticky');
+if (window.scrollY > initialCoords.top) nav.classList.add("sticky");
+else nav.classList.remove("sticky");
 ```
 
 # 209. **A better way: The Intersection Observer API**
@@ -5243,7 +5258,7 @@ else nav.classList.remove('sticky');
 
 ```js
 // Select the header element
-const header = document.querySelector('.header');
+const header = document.querySelector(".header");
 
 // Get the height of the navigation bar
 const navHeight = nav.getBoundingClientRect().height;
@@ -5255,10 +5270,10 @@ const stickyNav = function (entries) {
   console.log(entry); // Debug: log the intersection entry
 
   // If header is not intersecting, add sticky class to nav
-  if (!entry.isIntersecting) nav.classList.add('sticky');
+  if (!entry.isIntersecting) nav.classList.add("sticky");
   // If header is intersecting again, remove sticky class
   else {
-    nav.classList.remove('sticky');
+    nav.classList.remove("sticky");
   }
 };
 
@@ -5280,7 +5295,7 @@ headerObserver.observe(header);
 ---
 
 ```js
-const header = document.querySelector('.header');
+const header = document.querySelector(".header");
 const navHeight = nav.getBoundingClientRect().height;
 console.log(navHeight);
 
@@ -5288,9 +5303,9 @@ const stickyNav = function (entries) {
   const [entry] = entries;
   console.log(entry);
 
-  if (!entry.isIntersecting) nav.classList.add('sticky');
+  if (!entry.isIntersecting) nav.classList.add("sticky");
   else {
-    nav.classList.remove('sticky');
+    nav.classList.remove("sticky");
   }
 };
 
@@ -5303,12 +5318,12 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 headerObserver.observe(header);
 
 // # 210. Revealing elements on scroll
-const allSections = document.querySelectorAll('.section');
+const allSections = document.querySelectorAll(".section");
 
 const revealSection = function (entries, observer) {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
-    entry.target.classList.remove('section--hidden');
+    entry.target.classList.remove("section--hidden");
     observer.unobserve(entry.target);
   });
 };
@@ -5320,7 +5335,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
-  section.classList.add('section--hidden');
+  section.classList.add("section--hidden");
 });
 ```
 
@@ -5328,16 +5343,16 @@ allSections.forEach(function (section) {
 
 ```js
 // Lazy loading images DIDNT WORK
-const imgTargets = document.querySelectorAll('img[data-src]');
+const imgTargets = document.querySelectorAll("img[data-src]");
 
 const loadImg = function (entries, observer) {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
 
     entry.target.src = entry.target.dataset.src;
 
-    entry.target.addEventListener('load', function () {
-      entry.target.classList.remove('lazy-img');
+    entry.target.addEventListener("load", function () {
+      entry.target.classList.remove("lazy-img");
     });
   });
 };
@@ -5347,7 +5362,7 @@ const imgObserver = new IntersectionObserver(loadImg, {
   threshold: 0,
 });
 
-imgTargets.forEach(img => imgObserver.observe(img));
+imgTargets.forEach((img) => imgObserver.observe(img));
 ```
 
 ---
@@ -5456,7 +5471,7 @@ const Person = function (firstName, birthYear) {
   //   console.log(2024 - this.birthYear);
   // };
 };
-const radek = new Person('Radek', 1997);
+const radek = new Person("Radek", 1997);
 console.log(radek);
 
 // 1. New {} is created
@@ -5484,9 +5499,9 @@ console.log(radek.__proto__); // Shows the prototype property
 console.log(radek.__proto__ === Person.prototype); //true
 console.log(Person.prototype.isPrototypeOf(radek));
 
-Person.prototype.species = 'Homo Sapiens';
+Person.prototype.species = "Homo Sapiens";
 console.log(radek); // It adds species and Homosapiens as value
-console.log(radek.hasOwnProperty('species')); // False, as it is added through prototype, not in a class
+console.log(radek.hasOwnProperty("species")); // False, as it is added through prototype, not in a class
 ```
 
 ---
@@ -5522,7 +5537,7 @@ Person.prototype.sayHello = function () {
   return `Hello, my name is ${this.name}`;
 };
 
-const alice = new Person('Alice');
+const alice = new Person("Alice");
 console.log(alice.sayHello()); // Output: "Hello, my name is Alice"
 ```
 
@@ -5596,8 +5611,8 @@ class Car {
   }
 }
 
-const bmw = new Car('BMW', 120);
-const merc = new Car('Mercedes', 95);
+const bmw = new Car("BMW", 120);
+const merc = new Car("Mercedes", 95);
 
 bmw.state();
 merc.state();
@@ -5624,7 +5639,7 @@ Car.prototype.brake = function () {
   console.log(`${this.make} is going at ${this.speed} km/h`);
 };
 
-const bmw = new Car('BMW', 120);
+const bmw = new Car("BMW", 120);
 bmw.accelerate();
 bmw.accelerate();
 bmw.accelerate();
@@ -5656,7 +5671,7 @@ class PersonCl {
   }
 }
 
-const jessica = new PersonCl('Jessica', 1996);
+const jessica = new PersonCl("Jessica", 1996);
 console.log(jessica);
 jessica.calcAge();
 
@@ -5676,7 +5691,7 @@ jessica.greet();
 
 ```js
 const account = {
-  owner: 'Radek',
+  owner: "Radek",
   movements: [200, 530, 120, 300],
   get latest() {
     return this.movements.slice(-1).pop();
@@ -5710,12 +5725,12 @@ const PersonProto = {
 
 const steven = Object.create(PersonProto);
 console.log(steven);
-steven.name = 'Steven';
+steven.name = "Steven";
 steven.birthYear = 1967;
 steven.calcAge();
 
 const sarah = Object.create(PersonProto);
-sarah.init('Sarah', 1978);
+sarah.init("Sarah", 1978);
 sarah.calcAge();
 ```
 
@@ -5747,18 +5762,18 @@ sarah.calcAge();
 # 258. **Our first AJAX Call: XMLHttpRequest**
 
 ```js
-'use strict';
+"use strict";
 
-const btn = document.querySelector('.btn-country');
-const countriesContainer = document.querySelector('.countries');
+const btn = document.querySelector(".btn-country");
+const countriesContainer = document.querySelector(".countries");
 
 ///////////////////////////////////////
 const GetCountryData = function (country) {
   const request = new XMLHttpRequest(); //Old school way
-  request.open('GET', `https://restcountries.com/v2/name/${country}`);
+  request.open("GET", `https://restcountries.com/v2/name/${country}`);
   request.send();
 
-  request.addEventListener('load', function () {
+  request.addEventListener("load", function () {
     const [data] = JSON.parse(this.responseText);
     console.log(data);
 
@@ -5777,14 +5792,14 @@ const GetCountryData = function (country) {
   </article>
   `;
 
-    countriesContainer.insertAdjacentHTML('beforeend', html);
+    countriesContainer.insertAdjacentHTML("beforeend", html);
     countriesContainer.style.opacity = 1;
   });
 };
 
-GetCountryData('france');
-GetCountryData('usa');
-GetCountryData('united kingdom');
+GetCountryData("france");
+GetCountryData("usa");
+GetCountryData("united kingdom");
 ```
 
 ---
@@ -5838,16 +5853,16 @@ const renderCountry = function (data, className) {
       </div>
   </article>
   `;
-  countriesContainer.insertAdjacentHTML('beforeend', html);
+  countriesContainer.insertAdjacentHTML("beforeend", html);
   countriesContainer.style.opacity = 1;
 };
 const getCountryAndNeighbour = function (country) {
   // Ajax call 1
   const request = new XMLHttpRequest(); //Old school way
-  request.open('GET', `https://restcountries.com/v2/name/${country}`);
+  request.open("GET", `https://restcountries.com/v2/name/${country}`);
   request.send();
 
-  request.addEventListener('load', function () {
+  request.addEventListener("load", function () {
     const [data] = JSON.parse(this.responseText);
     console.log(data);
     // Render country 1
@@ -5860,18 +5875,18 @@ const getCountryAndNeighbour = function (country) {
 
     // Ajax call 2
     const request2 = new XMLHttpRequest(); //Old school way
-    request2.open('GET', `https://restcountries.com/v2/alpha/${neighbour}`);
+    request2.open("GET", `https://restcountries.com/v2/alpha/${neighbour}`);
     request2.send();
-    request2.addEventListener('load', function () {
+    request2.addEventListener("load", function () {
       console.log(this.responseText);
       const data2 = JSON.parse(this.responseText);
 
-      renderCountry(data2, 'neighbour');
+      renderCountry(data2, "neighbour");
     });
   });
 };
 
-getCountryAndNeighbour('spain');
+getCountryAndNeighbour("spain");
 ```
 
 ---
@@ -5881,7 +5896,7 @@ getCountryAndNeighbour('spain');
 ---
 
 ```js
-const request = fetch('https://restcountries.com/v2/name/portugal');
+const request = fetch("https://restcountries.com/v2/name/portugal");
 console.log(request);
 ```
 
@@ -5897,20 +5912,20 @@ console.log(request);
 const getCountryData = function (country) {
   // Fetch country data from the API
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(response => response.json()) // Convert response to JSON
-    .then(data => {
+    .then((response) => response.json()) // Convert response to JSON
+    .then((data) => {
       renderCountry(data[0]);
       const neighbour = data[0].borders[0];
       if (!neighbour) return;
 
       return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
     })
-    .then(response => response.json())
-    .then(data => renderCountry(data, 'neighbour'));
+    .then((response) => response.json())
+    .then((data) => renderCountry(data, "neighbour"));
 };
 
 // Call the function to get data for Japan
-getCountryData('poland');
+getCountryData("poland");
 ```
 
 ---
@@ -5920,8 +5935,8 @@ getCountryData('poland');
 ---
 
 ```js
-const getJSON = function (url, errorMsg = 'Something went wrong') {
-  return fetch(url).then(response => {
+const getJSON = function (url, errorMsg = "Something went wrong") {
+  return fetch(url).then((response) => {
     if (!response.ok)
       throw new Error(`${errorMsg} ${response.status} Try again!`); // If response is not OK, throw an error
     return response.json(); // Convert response to JSON
@@ -5931,23 +5946,23 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
 const getCountryData = function (country) {
   // Fetch country data from the API using the given country name
 
-  getJSON(`https://restcountries.com/v2/name/${country}`, 'country not found')
-    .then(data => {
+  getJSON(`https://restcountries.com/v2/name/${country}`, "country not found")
+    .then((data) => {
       renderCountry(data[0]);
       console.log(data); // Display the country details
       const neighbour = data[0].borders[0];
 
-      if (!neighbour) throw new Error('No neighbour found');
+      if (!neighbour) throw new Error("No neighbour found");
       // Fetch data for the neighboring country
       return getJSON(`https://restcountries.com/v2/alpha/${neighbour}`);
     })
-    .then(data => renderCountry(data, 'neighbour')) // Display neighbor country details
-    .catch(err => console.error(err)); // Catch and log any errors
+    .then((data) => renderCountry(data, "neighbour")) // Display neighbor country details
+    .catch((err) => console.error(err)); // Catch and log any errors
 };
 
 // When the button is clicked, fetch data for 'kdkd' (which is not a real country)
-btn.addEventListener('click', function () {
-  getCountryData('japan');
+btn.addEventListener("click", function () {
+  getCountryData("japan");
 });
 ```
 
@@ -5971,15 +5986,15 @@ btn.addEventListener('click', function () {
 const myPromise = new Promise((resolve, reject) => {
   let success = true;
   if (success) {
-    resolve('Operation Successful'); // When the operation is successful
+    resolve("Operation Successful"); // When the operation is successful
   } else {
-    reject('Operation Failed'); // When the operation fails
+    reject("Operation Failed"); // When the operation fails
   }
 });
 
 myPromise
-  .then(result => console.log(result)) // Handling success
-  .catch(error => console.error(error)); // Handling errors
+  .then((result) => console.log(result)) // Handling success
+  .catch((error) => console.error(error)); // Handling errors
 ```
 
 ---
@@ -5992,13 +6007,13 @@ myPromise
 - `response.json()` is also a **Promise**, converting the response to JSON.
 
 ```js
-fetch('https://api.example.com/data')
-  .then(response => {
-    if (!response.ok) throw new Error('Failed to fetch data');
+fetch("https://api.example.com/data")
+  .then((response) => {
+    if (!response.ok) throw new Error("Failed to fetch data");
     return response.json();
   })
-  .then(data => console.log(data)) // Handling the JSON data
-  .catch(err => console.error(err)); // Handling errors
+  .then((data) => console.log(data)) // Handling the JSON data
+  .catch((err) => console.error(err)); // Handling errors
 ```
 
 ---
@@ -6009,8 +6024,8 @@ fetch('https://api.example.com/data')
 - Uses `.then()` to handle responses and `.catch()` for errors.
 
 ```js
-const getJSON = function (url, errorMsg = 'Something went wrong') {
-  return fetch(url).then(response => {
+const getJSON = function (url, errorMsg = "Something went wrong") {
+  return fetch(url).then((response) => {
     if (!response.ok)
       throw new Error(`${errorMsg} ${response.status} Try again!`);
     return response.json();
@@ -6029,18 +6044,18 @@ const getJSON = function (url, errorMsg = 'Something went wrong') {
 
 ```js
 const getCountryData = function (country) {
-  getJSON(`https://restcountries.com/v2/name/${country}`, 'Country not found')
-    .then(data => {
+  getJSON(`https://restcountries.com/v2/name/${country}`, "Country not found")
+    .then((data) => {
       console.log(data); // Log country data
       renderCountry(data[0]); // Render country details
 
       const neighbour = data[0].borders?.[0]; // Get first neighbor
-      if (!neighbour) throw new Error('No neighbour found');
+      if (!neighbour) throw new Error("No neighbour found");
 
       return getJSON(`https://restcountries.com/v2/alpha/${neighbour}`);
     })
-    .then(data => renderCountry(data, 'neighbour')) // Render neighbour data
-    .catch(err => console.error(err)); // Handle errors
+    .then((data) => renderCountry(data, "neighbour")) // Render neighbour data
+    .catch((err) => console.error(err)); // Handle errors
 };
 ```
 
@@ -6052,9 +6067,9 @@ const getCountryData = function (country) {
 - It ensures the app doesn’t break due to failed requests.
 
 ```js
-fetch('https://api.example.com/wrong-url')
-  .then(response => response.json())
-  .catch(err => console.error('Something went wrong:', err));
+fetch("https://api.example.com/wrong-url")
+  .then((response) => response.json())
+  .catch((err) => console.error("Something went wrong:", err));
 ```
 
 ---
@@ -6067,11 +6082,11 @@ fetch('https://api.example.com/wrong-url')
 ```js
 const fetchData = function (url) {
   return fetch(url)
-    .then(response => {
-      if (!response.ok) throw new Error('Request failed!');
+    .then((response) => {
+      if (!response.ok) throw new Error("Request failed!");
       return response.json();
     })
-    .catch(error => console.error('Error:', error));
+    .catch((error) => console.error("Error:", error));
 };
 ```
 
@@ -6082,8 +6097,8 @@ const fetchData = function (url) {
 - `getCountryData('japan')` is triggered when a button is clicked.
 
 ```js
-btn.addEventListener('click', function () {
-  getCountryData('japan');
+btn.addEventListener("click", function () {
+  getCountryData("japan");
 });
 ```
 
@@ -6112,24 +6127,24 @@ btn.addEventListener('click', function () {
 ---
 
 ```js
-const btn = document.querySelector('.btn-country');
+const btn = document.querySelector(".btn-country");
 
 const whereAmI = function (lat, lng) {
   fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=YOUR_API_KEY`)
-    .then(response => {
+    .then((response) => {
       if (!response.ok)
         throw new Error(`Problem with geocoding: ${response.status}`);
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       if (data.error)
         throw new Error(`Geocode error: ${data.error.description}`);
       console.log(data);
     })
-    .catch(err => console.error('Something went wrong:', err));
+    .catch((err) => console.error("Something went wrong:", err));
 };
 
-btn.addEventListener('click', function () {
+btn.addEventListener("click", function () {
   whereAmI(19.037, 72.873);
 });
 ```
@@ -6145,18 +6160,18 @@ btn.addEventListener('click', function () {
 ---
 
 ```js
-console.log('Test start'); // (1) Synchronous code runs first
+console.log("Test start"); // (1) Synchronous code runs first
 
-setTimeout(() => console.log('0 sec timer'), 0); // (5) Timer callback goes to the callback queue
+setTimeout(() => console.log("0 sec timer"), 0); // (5) Timer callback goes to the callback queue
 
-Promise.resolve('Resolved promise 1').then(res => console.log(res)); // (3) Microtask queue runs after sync code
+Promise.resolve("Resolved promise 1").then((res) => console.log(res)); // (3) Microtask queue runs after sync code
 
-Promise.resolve('Resolved promise 2').then(res => {
+Promise.resolve("Resolved promise 2").then((res) => {
   for (let i = 0; i < 1333333333; i++) {} // (Blocking) Synchronous long loop before logging
   console.log(res); // (4) This executes after the loop finishes
 });
 
-console.log('Test end'); // (2) Next synchronous line runs
+console.log("Test end"); // (2) Next synchronous line runs
 ```
 
 ---
@@ -6166,27 +6181,27 @@ console.log('Test end'); // (2) Next synchronous line runs
 ---
 
 ```js
-'use strict'; // Enforces strict mode to catch common errors
+"use strict"; // Enforces strict mode to catch common errors
 
 // Creating a new Promise that simulates a lottery
 const lotteryPromise = new Promise(function (resolve, reject) {
-  console.log('Lottery is happening!'); // Logs message immediately
+  console.log("Lottery is happening!"); // Logs message immediately
 
   setTimeout(function () {
     // Simulates a delay of 2 seconds before deciding the result
     if (Math.random() >= 0.5) {
       // Randomly decides if the user wins (50% chance)
-      resolve('You win'); // If condition is met, the promise resolves successfully
+      resolve("You win"); // If condition is met, the promise resolves successfully
     } else {
-      reject(new Error('You lose')); // Otherwise, the promise rejects with an error
+      reject(new Error("You lose")); // Otherwise, the promise rejects with an error
     }
   }, 2000); // 2-second delay before resolving or rejecting
 });
 
 // Handling the lotteryPromise result
 lotteryPromise
-  .then(res => console.log(res)) // If resolved (win), log "You win"
-  .catch(err => console.error(err)); // If rejected (lose), log the error message
+  .then((res) => console.log(res)) // If resolved (win), log "You win"
+  .catch((err) => console.error(err)); // If rejected (lose), log the error message
 
 // Function that returns a Promise that resolves after a given number of seconds
 const wait = function (seconds) {
@@ -6198,10 +6213,10 @@ const wait = function (seconds) {
 // Chaining promises to create a delay sequence
 wait(2) // Calls `wait` function to create a delay of 2 seconds
   .then(() => {
-    console.log('I waited for 2 seconds'); // Logs after 2 seconds
+    console.log("I waited for 2 seconds"); // Logs after 2 seconds
     return wait(1); // Returns a new promise that resolves after 1 more second
   })
-  .then(() => console.log('I waited for 1 second')); // Logs after an additional second
+  .then(() => console.log("I waited for 1 second")); // Logs after an additional second
 ```
 
 ---
@@ -6211,9 +6226,9 @@ wait(2) // Calls `wait` function to create a delay of 2 seconds
 ---
 
 ```js
-'use strict';
+"use strict";
 
-const btn = document.querySelector('.btn-country');
+const btn = document.querySelector(".btn-country");
 let isFetching = false; // Prevent multiple requests
 
 const whereAmI = function () {
@@ -6221,21 +6236,21 @@ const whereAmI = function () {
   isFetching = true;
 
   getPosition()
-    .then(pos => {
+    .then((pos) => {
       const { latitude: lat, longitude: lng } = pos.coords;
       return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
     })
-    .then(response => {
+    .then((response) => {
       if (!response.ok)
         throw new Error(`Problem with geocoding: ${response.status}`);
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       if (data.error)
         throw new Error(`Geocode error: ${data.error.description}`);
       console.log(`You are in ${data.city}, ${data.country}`);
     })
-    .catch(err => console.error('Something went wrong:', err))
+    .catch((err) => console.error("Something went wrong:", err))
     .finally(() => {
       isFetching = false; // Reset flag after request completes
     });
@@ -6247,7 +6262,7 @@ const getPosition = function () {
   });
 };
 
-btn.addEventListener('click', whereAmI);
+btn.addEventListener("click", whereAmI);
 ```
 
 ---
@@ -6257,13 +6272,13 @@ btn.addEventListener('click', whereAmI);
 ---
 
 ```js
-'use strict';
+"use strict";
 
-const btn = document.querySelector('.btn-country');
-const countriesContainer = document.querySelector('.countries');
+const btn = document.querySelector(".btn-country");
+const countriesContainer = document.querySelector(".countries");
 
 // Function to render country info to the DOM
-const renderCountry = function (data, className = '') {
+const renderCountry = function (data, className = "") {
   const html = `
     <article class="country ${className}">
       <img class="country__img" src="${data.flags.png}" />
@@ -6282,7 +6297,7 @@ const renderCountry = function (data, className = '') {
       </div>
     </article>
     `;
-  countriesContainer.insertAdjacentHTML('beforeend', html); // Insert HTML into DOM
+  countriesContainer.insertAdjacentHTML("beforeend", html); // Insert HTML into DOM
   countriesContainer.style.opacity = 1; // Make container visible
 };
 
@@ -6308,8 +6323,8 @@ const WhereAmI = async function (country) {
   renderCountry(data[0]); // Render the first result
 };
 
-WhereAmI('portugal'); // Start with Portugal
-console.log('First'); // Logs immediately, shows async behavior
+WhereAmI("portugal"); // Start with Portugal
+console.log("First"); // Logs immediately, shows async behavior
 ```
 
 ---
@@ -6337,13 +6352,13 @@ try {
 ---
 
 ```js
-'use strict';
+"use strict";
 
-const btn = document.querySelector('.btn-country');
-const countriesContainer = document.querySelector('.countries');
+const btn = document.querySelector(".btn-country");
+const countriesContainer = document.querySelector(".countries");
 
 // Function to render country info to the DOM
-const renderCountry = function (data, className = '') {
+const renderCountry = function (data, className = "") {
   const html = `
     <article class="country ${className}">
       <img class="country__img" src="${data.flags.png}" />
@@ -6351,7 +6366,7 @@ const renderCountry = function (data, className = '') {
         <h3 class="country__name">${data.name}</h3>
         <h4 class="country__region">${data.region}</h4>
         <p class="country__row"><span>👫</span>${
-          (+data.population / 1000000).toFixed(1) + 'm'
+          (+data.population / 1000000).toFixed(1) + "m"
         } people</p> <!-- Population in millions -->
         <p class="country__row"><span>🗣️</span>${
           data.languages[0].name
@@ -6362,7 +6377,7 @@ const renderCountry = function (data, className = '') {
       </div>
     </article>
     `;
-  countriesContainer.insertAdjacentHTML('beforeend', html); // Insert HTML into DOM
+  countriesContainer.insertAdjacentHTML("beforeend", html); // Insert HTML into DOM
   countriesContainer.style.opacity = 1; // Make container visible
 };
 
@@ -6384,7 +6399,7 @@ const WhereAmI = async function () {
       `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`
     );
     if (!resGeo.ok) {
-      throw new Error('Something went wrong with getting the location');
+      throw new Error("Something went wrong with getting the location");
     }
 
     const dataGeo = await resGeo.json();
@@ -6395,7 +6410,7 @@ const WhereAmI = async function () {
       `https://restcountries.com/v2/name/${dataGeo.countryCode}`
     );
     if (!res.ok) {
-      throw new Error('Something went wrong with getting the country');
+      throw new Error("Something went wrong with getting the country");
     }
     const data = await res.json();
     //console.log(data); // Log data to console
@@ -6410,7 +6425,7 @@ const WhereAmI = async function () {
     throw err;
   }
 };
-console.log('1: Getting location...');
+console.log("1: Getting location...");
 // const city = WhereAmI();
 // console.log(city);
 
@@ -6437,11 +6452,11 @@ console.log('1: Getting location...');
 ---
 
 ```js
-'use strict'; // Enables strict mode for better error-checking and safer JavaScript
+"use strict"; // Enables strict mode for better error-checking and safer JavaScript
 
 // Helper function to fetch JSON data from a URL
-const getJSON = function (url, errorMsg = 'Something went wrong') {
-  return fetch(url).then(response => {
+const getJSON = function (url, errorMsg = "Something went wrong") {
+  return fetch(url).then((response) => {
     if (!response.ok)
       throw new Error(`${errorMsg} ${response.status} Try again!`); // If response fails, throw an error
     return response.json(); // Otherwise, convert response body to JSON
@@ -6459,7 +6474,7 @@ const get3Countries = async function (c1, c2, c3) {
     ]);
 
     // Map over the fetched data to get the capital of each country
-    console.log(data.map(d => d[0].capital)); // Log capitals of the three countries
+    console.log(data.map((d) => d[0].capital)); // Log capitals of the three countries
   } catch (err) {
     // If any fetch fails, catch the error and log it
     console.error(`Oopsie: ${err}`);
@@ -6467,7 +6482,7 @@ const get3Countries = async function (c1, c2, c3) {
 };
 
 // Call the function with 3 country names
-get3Countries('portugal', 'canada', 'poland');
+get3Countries("portugal", "canada", "poland");
 ```
 
 ---
@@ -6477,9 +6492,9 @@ get3Countries('portugal', 'canada', 'poland');
 ---
 
 ```js
-'use strict'; // Enables strict mode for better error-checking and safer JavaScript
-const getJSON = function (url, errorMsg = 'Something went wrong') {
-  return fetch(url).then(response => {
+"use strict"; // Enables strict mode for better error-checking and safer JavaScript
+const getJSON = function (url, errorMsg = "Something went wrong") {
+  return fetch(url).then((response) => {
     if (!response.ok)
       throw new Error(`${errorMsg} ${response.status} Try again!`); // If response fails, throw an error
     return response.json(); // Otherwise, convert response body to JSON
@@ -6504,15 +6519,15 @@ const timeout = function (sec) {
 };
 
 Promise.race([getJSON(`https://restcountries.com/v2/name/italy`), timeout(1)])
-  .then(res => console.log(res[0]))
-  .catch(err => console.log(err));
+  .then((res) => console.log(res[0]))
+  .catch((err) => console.log(err));
 
 // Promise.allSettled
 Promise.allSettled([
-  Promise.resolve('Success'),
-  Promise.reject('Error'),
-  Promise.resolve('Another Success'),
-]).then(res => console.log(res));
+  Promise.resolve("Success"),
+  Promise.reject("Error"),
+  Promise.resolve("Another Success"),
+]).then((res) => console.log(res));
 ```
 
 ---
@@ -6526,7 +6541,7 @@ Promise.allSettled([
 ---
 
 ```js
-'use strict';
+"use strict";
 
 // Importing module
 
@@ -6539,20 +6554,20 @@ Promise.allSettled([
 // addToCart('bread', 5);
 // console.log(price, quantity);
 
-console.log('Importing module');
+console.log("Importing module");
 
 // import * as ShoppingCart from './shoppingCart.js';
 // ShoppingCart.addToCart('bread', 5);
 // console.log(ShoppingCart.totalPrice); // Bad practice
 
-import add from './shoppingCart.js';
-add('pizza', 2);
-add('bread', 5);
-add('apples', 3);
+import add from "./shoppingCart.js";
+add("pizza", 2);
+add("bread", 5);
+add("apples", 3);
 
-('use strict');
+("use strict");
 //Exporting module
-console.log('Exporting module');
+console.log("Exporting module");
 
 const shippingCost = 10;
 export const cart = [];
@@ -6767,13 +6782,13 @@ function sumPrices(price1, price2) {
 **Bad:**
 
 ```js
-var name = 'Jonas';
+var name = "Jonas";
 ```
 
 **Good:**
 
 ```js
-const name = 'Jonas';
+const name = "Jonas";
 ```
 
 ---
@@ -6783,7 +6798,7 @@ const name = 'Jonas';
 **Bad:**
 
 ```js
-if (age == '18') {
+if (age == "18") {
   // true even if age is a string
 }
 ```
@@ -6832,7 +6847,7 @@ const counter = (function () {
 function login(user) {
   if (user) {
     if (user.isActive) {
-      console.log('Welcome back!');
+      console.log("Welcome back!");
     }
   }
 }
@@ -6843,7 +6858,7 @@ function login(user) {
 ```js
 function login(user) {
   if (!user || !user.isActive) return;
-  console.log('Welcome back!');
+  console.log("Welcome back!");
 }
 ```
 
@@ -6856,15 +6871,15 @@ function login(user) {
 **Bad:**
 
 ```js
-console.log('Welcome ' + name);
-console.log('Welcome ' + surname);
+console.log("Welcome " + name);
+console.log("Welcome " + surname);
 ```
 
 **Good:**
 
 ```js
 function greet(person) {
-  console.log('Welcome ' + person);
+  console.log("Welcome " + person);
 }
 
 greet(name);
@@ -6886,7 +6901,7 @@ const doubled = numbers.map(function (n) {
 **Good:**
 
 ```js
-const doubled = numbers.map(n => n * 2);
+const doubled = numbers.map((n) => n * 2);
 ```
 
 ---
@@ -6897,8 +6912,8 @@ const doubled = numbers.map(n => n * 2);
 
 ```js
 fetch(url)
-  .then(res => res.json())
-  .then(data => console.log(data));
+  .then((res) => res.json())
+  .then((data) => console.log(data));
 ```
 
 **Good:**
@@ -6920,7 +6935,7 @@ try {
   const res = await fetch(url);
   const data = await res.json();
 } catch (err) {
-  console.error('Failed to fetch data');
+  console.error("Failed to fetch data");
 }
 ```
 
@@ -6975,7 +6990,7 @@ for (let i = 0; i < items.length; i++) {
 **Good:**
 
 ```js
-items.forEach(item => console.log(item));
+items.forEach((item) => console.log(item));
 ```
 
 ---
